@@ -17,7 +17,7 @@
   1. 本リポジトリのクローン
   2. `src/github-token.config`にGitHubアクセストークンを入れておく
   3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値）
-      (Example)
+        (Example)
       ~~~
       org_name/repo_name,
       sunchit/coding-decoded,

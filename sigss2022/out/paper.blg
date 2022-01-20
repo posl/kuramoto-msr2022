@@ -1,0 +1,58 @@
+This is pBibTeX, Version 0.99d-j0.33 (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: out/paper.aux
+The style file: junsrt.bst
+Database file #1: references.bib
+Warning--empty booktitle in Interpretation_For_Nonparametric_Test
+Warning--can't use both volume and number fields in Interpretation_For_Nonparametric_Test
+Warning--empty booktitle in G*Power1
+Warning--can't use both volume and number fields in G*Power1
+Warning--empty booktitle in G*Power2
+Warning--can't use both volume and number fields in G*Power2
+Warning--empty booktitle in Test_Power
+Warning--can't use both volume and number fields in Test_Power
+Warning--empty booktitle in Test_Level
+Warning--can't use both volume and number fields in Test_Level
+You've used 7 entries,
+            2270 wiz_defined-function locations,
+            593 strings with 5103 characters,
+and the built_in function-call counts, 2713 in all, are:
+= -- 223
+> -- 43
+< -- 13
++ -- 19
+- -- 12
+* -- 146
+:= -- 299
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 175
+empty$ -- 280
+format.name$ -- 24
+if$ -- 694
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 7
+newline$ -- 38
+num.names$ -- 7
+pop$ -- 54
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 159
+stack$ -- 0
+substring$ -- 183
+swap$ -- 77
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 10
+while$ -- 21
+width$ -- 8
+write$ -- 79
+is.kanji.str$ -- 69
+(There were 10 warnings)

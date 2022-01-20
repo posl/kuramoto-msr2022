@@ -1,0 +1,118 @@
+\documentclass[paper, technicalreport]{ieicej}
+\usepackage{otf}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{latexsym}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{color}
+\usepackage{listings}
+
+
+\lstset{
+    language=Java,
+    %commentstyle = {\color[cmyk]{1,0.4,1,0}}, %コメントのスタイル
+    commentstyle = {}, %コメントのスタイル
+    basicstyle={\ttfamily}, %書体の指定
+    %basicstyle=\ttfamily\footnotesize,
+    frame=tb, %フレームの指定
+    framesep=3pt, %フレームと中身（コード）の間隔
+    breaklines=true, %行が長くなった場合の改行
+    %linewidth=7cm, %フレームの横幅
+    lineskip=-0.4ex, %行間の調整
+    tabsize=4, %Tabを何文字幅にするかの指定
+    %numbers=left,
+    caption={\ttfamily},
+    keywordstyle=\color{blue},
+    xrightmargin=0zw,
+    escapechar=@
+}
+
+\renewcommand{\lstlistingname}{プログラム}
+
+\setcounter{page}{1}
+
+\field{}
+\jtitle{GitHubにおけるバグ報告等の\\動画及び画像の活用実態に関する調査}
+\etitle{The investigation of the usage of videos and images for bug reports in GitHub}
+
+\authorlist{
+    \alignorder=3
+    \breakauthorline{3}
+    \authorentry[kuramoto@posl.ait.kyushu-u.ac.jp]{蔵元 宏樹}{Hiroki Kuramto}{九州大学}
+    \authorentry[ishimoto@posl.ait.kyushu-u.ac.jp]{石本 優太}{Yuta Ishimoto}{九州大学}
+    \authorentry[shindo@posl.ait.kyushu-u.ac.jp]{新堂 風}{Kaze Shindo}{九州大学}
+    \authorentry[kondo@ait.kyushu-u.ac.jp]{近藤 将成}{Masanari Kondo}{九州大学}
+    \authorentry[kashiwa@ait.kyushu-u.ac.jp]{柏 祐太郎}{Yutaro Kashiwa}{九州大学}
+    \authorentry[kamei@ait.kyushu-u.ac.jp]{亀井 靖高}{Yasutaka Kamei}{九州大学}
+    \authorentry[ubayashi@ait.kyushu-u.ac.jp]{鵜林 尚靖}{Naoyasu Ubayashi}{九州大学}
+}
+\affiliate[九州大学]{九州大学}{Kyushu University}
+
+\begin{document}
+
+\begin{abstract}
+    バグの症状の迅速で的確な把握は，デバッグ作業の効率に大きく影響する．
+    バグの再現動画やバグの状況を表す画像は，デバッグ作業に有用であると期待できる．
+    本研究の目的は，ソフトウェア開発現場におけるバグ報告動画及び画像の活用実態を明らかにすることである．
+    GitHubで公開されている約4,000件のリポジトリを対象に，課題報告（Issueレポート）において動画及び画像の有無による影響を調査した．
+    その結果として，動画及び画像が含まれる課題報告は，そうでないものに比べて，課題報告が解決するまでの時間が平均で，2.9\%\textasciitilde17.6\%増加し，
+    またコメント数が平均で76.4\%\textasciitilde143\%増加した．
+    一方で，最初のコメントがつくまでの時間が平均で20.1\%\textasciitilde25.4\%減少した．
+    これらの結果の詳細について報告する．
+\end{abstract}
+
+\begin{keyword}
+    GitHub，動画，画像，バグ報告，Issue
+\end{keyword}
+
+\begin{eabstract}
+    A quick and accurate understanding of the symptoms of a bug can greatly affect the efficiency of debugging.
+    Videos of bug reproductions and images showing the status of bugs are expected to be useful in the debugging process.
+    The purpose of this study is to clarify the actual usage of bug report videos and images in software development sites.
+    In this study, we investigated the impact of including video or images in the issue reports of about 4,000 public repositories in GitHub.
+    As a result, the average time to resolve an issue report increased by 2.9\%\textasciitilde17.6\% 
+    and the average number of comments increased by 76.4\%\textasciitilde143\% for issue reports that included video and images compared to those that did not.
+    On the other hand, the average time until the first comment decreased by 20.1\%\textasciitilde25.4\%.
+    We report the details of these results.
+\end{eabstract}
+
+\begin{ekeyword}
+    GitHub, Movie, Image, Bug report, Issue
+\end{ekeyword}
+
+
+\maketitle
+
+{\large
+% はじめに
+\input{section/intro}
+% 動機
+\input{section/motivation}
+% 本調査で用いる分析法
+\input{section/method}
+% データセット
+\input{section/dataset}
+% 調査
+\input{section/analyze}
+% 考察
+\input{section/consideration}
+% 妥当性への脅威
+\input{section/threats}
+% まとめと今後の展望
+\input{section/conclusion}
+}
+
+\section*{謝辞}
+本研究の一部はXXXの助成を受けた．
+
+%\bibliographystyle{jplain}
+%\bibliography{references}
+
+\bibliographystyle{junsrt}
+\bibliography{references}
+%\begin{thebibliography}{9}% 文献数が10未満の時 {9} 10以上の時は{99}
+%    \bibitem{}
+%\end{thebibliography}
+
+\end{document}

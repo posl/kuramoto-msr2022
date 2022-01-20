@@ -18,17 +18,19 @@
   2. `src/github-token.config`にGitHubアクセストークンを入れておく
   3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値）
       (Example)
+      ~~~
       Name,
-sunchit/coding-decoded,
-codenameone/codenameone,
-ssynhtn/wave-view,
-hmage/norm,
-airar-dev/unity-ar-colormapping,
-vulcanjs/vulcanjs-cli,
-swapmyvote/swapmyvote,
-parrit/parrit,
-fingerprintjs/fingerprintjs,
-gokrazy/breakglass
+      sunchit/coding-decoded,
+      codenameone/codenameone,
+      ssynhtn/wave-view,
+      hmage/norm,
+      airar-dev/unity-ar-colormapping,
+      vulcanjs/vulcanjs-cli,
+      swapmyvote/swapmyvote,
+      parrit/parrit,
+      fingerprintjs/fingerprintjs,
+      gokrazy/breakglass
+      ~~~
   5. python parser_for_issue.py
   6. python body2word.py
   7. python tf-idf.py

@@ -19,17 +19,11 @@
       <br>アクセストークンは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
   3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
       ~~~
-      org_name/repo_name,
-      sunchit/coding-decoded,
-      codenameone/codenameone,
-      ssynhtn/wave-view,
-      hmage/norm,
-      airar-dev/unity-ar-colormapping,
-      vulcanjs/vulcanjs-cli,
-      swapmyvote/swapmyvote,
-      parrit/parrit,
-      fingerprintjs/fingerprintjs,
-      gokrazy/breakglass
+      org_name/repo_name
+      sunchit/coding-decoded
+      codenameone/codenameone
+      ssynhtn/wave-view
+      hmage/norm
       ~~~
       `org_name/repo_name`は例えば，`posl/kuramoto-msr2022`
   4. Docker container起動（以下，コンテナ内で行う）

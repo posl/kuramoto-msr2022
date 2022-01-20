@@ -15,7 +15,7 @@
 データの取得方法について
   
 - 本リポジトリのクローン
-- ~src/github-token.config~にGitHubアクセストークンを記述しておく
+- `src/github-token.config`にGitHubアクセストークンを入れておく
 - python parser_for_issue.py
 - python body2word.py
 - python tf-idf.py

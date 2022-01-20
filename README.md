@@ -5,11 +5,9 @@
 - posl / kuramoto-github-video　　
 - posl / msr2022　　
 
-# Data Showcase
 ## MSR Data showcase submissions are expected to include:
-
 ### A description of the data source. <br>
-
+- 
 ### A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any). <br>
 [pyGitHub](https://pygithub.readthedocs.io/en/latest/introduction.html)を用いてデータを収集した．
   
@@ -43,4 +41,4 @@
 - ボットを取り除く工程の追加
 - 複数のgithub-access-tokenを用いたデータの並列取得を可能にする
 ### Any limitations and/or challenges in creating or using the data set. <br>
-- github-access-token の late-limit（５０００requests per hour）　の制約は大きい
+- github-access-token の late-limit（5000requests/hour）の制約は大きい

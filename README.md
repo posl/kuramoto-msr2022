@@ -15,8 +15,8 @@
   
 本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
   1. 本リポジトリのクローン
-  2. `src/github-token.config`にGitHubアクセストークンを入れておく
-      <br>アクセストークンは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
+  2. `src/github-token.config`にgithub-access-tokenを入れておく
+      <br>github-access-tokenは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
   3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
       ~~~
       org_name/repo_name <- この行はそのまま（書いても実行されない）
@@ -38,5 +38,9 @@
 ### A description of the originality of the data set (that is, even if the data set has been used in a published paper, its complete description must be unpublished) and similar existing datasets (if any) <br>
 - 動画及び画像の添付数を調べるのは初（調査の限り）
 ### A description of the design of the tool, and how to use the tool in practice ideas for future research questions that could be answered using the data set. <br>
+- 
 ### Ideas for further improvements that could be made to the data set. <br>
+- ボットを取り除く工程の追加
+- 複数のgithub-access-tokenを用いたデータの並列取得を可能にする
 ### Any limitations and/or challenges in creating or using the data set. <br>
+- github-access-token の late-limit（５０００requests per hour）　の制約は大きい

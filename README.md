@@ -16,7 +16,8 @@
 本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
   1. 本リポジトリのクローン
   2. `src/github-token.config`にGitHubアクセストークンを入れておく
-  3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
+      <br>アクセストークンは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
+  4. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
       ~~~
       org_name/repo_name,
       sunchit/coding-decoded,

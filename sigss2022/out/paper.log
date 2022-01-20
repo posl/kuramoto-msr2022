@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.7)  20 JAN 2022 11:31
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.7)  20 JAN 2022 11:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -343,14 +343,11 @@ File: ./image/data_content_trends.pdf Graphic file (type pdf)
 File: ./image/dataset_plot.pdf Graphic file (type pdf)
 <./image/dataset_plot.pdf>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (12.92696pt too wide) in paragraph at lines 100--105
+Overfull \hbox (12.92696pt too wide) in paragraph at lines 101--106
 \JY1/hmc/m/n/10 が有意に大きく ， $\OML/lmm/m/it/10 Num[]of[]comments$ \JY1/hmc/m/n/10 及び $\OML/lmm/m/it/10 Num[]of[]char$
  []
 
-[4]) (./section/consideration.tex [5]) (./section/threats.tex) (./section/conclusion.tex)
+[4]) (./section/consideration.tex) (./section/threats.tex [5]) (./section/conclusion.tex)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 106.
 (out/paper.bbl
@@ -368,4 +365,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  68i,14n,74p,406b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/paper.dvi (6 pages, 45996 bytes).
+Output written on out/paper.dvi (6 pages, 45944 bytes).

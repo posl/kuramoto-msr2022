@@ -10,6 +10,8 @@
 
 - A description of the data source,
 - A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any),
+[pyGitHub](https://pygithub.readthedocs.io/en/latest/introduction.html)を用いてデータを収集した．
+
 - A description of the storage mechanism, including a schema if applicable,
 - If the data has been used by the authors or others, a description of how this was done including references to previously published papers,
 - A description of the originality of the data set (that is, even if the data set has been used in a published paper, its complete description must be unpublished) and similar existing datasets (if any)

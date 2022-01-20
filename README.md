@@ -19,7 +19,7 @@
   3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値）
       (Example)
       ~~~
-      Name,
+      org_name/repo_name,
       sunchit/coding-decoded,
       codenameone/codenameone,
       ssynhtn/wave-view,

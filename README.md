@@ -19,7 +19,7 @@
       <br>アクセストークンは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
   3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
       ~~~
-      org_name/repo_name
+      org_name/repo_name <- この行はそのまま（書いても実行されない）
       sunchit/coding-decoded
       codenameone/codenameone
       ssynhtn/wave-view

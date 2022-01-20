@@ -34,7 +34,9 @@
 ### A description of the storage mechanism, including a schema if applicable. <br>
 - ?
 ### If the data has been used by the authors or others, a description of how this was done including references to previously published papers. <br>
+- 該当しない
 ### A description of the originality of the data set (that is, even if the data set has been used in a published paper, its complete description must be unpublished) and similar existing datasets (if any) <br>
+- 動画及び画像の添付数を調べるのは初（調査の限り）
 ### A description of the design of the tool, and how to use the tool in practice ideas for future research questions that could be answered using the data set. <br>
 ### Ideas for further improvements that could be made to the data set. <br>
 ### Any limitations and/or challenges in creating or using the data set. <br>

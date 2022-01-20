@@ -12,13 +12,13 @@
 
 ### A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any). <br>
 [pyGitHub](https://pygithub.readthedocs.io/en/latest/introduction.html)を用いてデータを収集した．
-データの取得方法について
   
-- 本リポジトリのクローン
-- `src/github-token.config`にGitHubアクセストークンを入れておく
-- python parser_for_issue.py
-- python body2word.py
-- python tf-idf.py
+本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
+  1. 本リポジトリのクローン
+  2. `src/github-token.config`にGitHubアクセストークンを入れておく
+  3. python parser_for_issue.py
+  4. python body2word.py
+  5. python tf-idf.py
 
 ### A description of the storage mechanism, including a schema if applicable. <br>
 ### If the data has been used by the authors or others, a description of how this was done including references to previously published papers. <br>

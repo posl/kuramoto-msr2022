@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.7)  20 JAN 2022 15:15
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.7)  20 JAN 2022 16:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -170,112 +170,145 @@ File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2018/09/02 1.7 (Carsten Heinz)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box71
+\shadowsize=\dimen171
+\@Sbox=\box72
+\do@VerbBox=\toks19
+\the@fancyput=\toks20
+\this@fancyput=\toks21
+\EndVerbatimTokens=\toks22
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read2
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/ascmac/ascmac.sty
+Package: ascmac 2020/01/15 v2.1 ascmac wrapper (community edition) 
+(/usr/local/texlive/2021/texmf-dist/tex/latex/ascmac/tascmac.sty
+Package: tascmac 2020/01/15 v2.1 ascmac package (community edition) 
+\@savetbaselineshift=\dimen172
+\@saveybaselineshift=\dimen173
+\scb@x=\box73
+\scscb@x=\box74
+\@bw=\dimen174
+\@nbox=\box75
+\@nbody=\box76
+\@scw=\dimen175
+\ascmac@hoboxa=\box77
+\ascmac@hoboxb=\box78
+\@itemh=\dimen176
+\@iboxpos=\toks23
+\@iboxstr=\box79
+\@bwsp=\box80
+\@@bwsp=\box81
+\@bcal=\count279
+\shaderule=\dimen177
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.6494pt on input line 52.
+(Font)              scaled to size 8.6494pt on input line 53.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.6494pt on input line 52.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 52.
+(Font)              scaled to size 8.6494pt on input line 53.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 53.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2021-03-18 L3 backend support: dvips
-\l__pdf_internal_box=\box71
-\g__pdf_backend_object_int=\count279
-\l__pdf_backend_content_box=\box72
-\l__pdf_backend_model_box=\box73
-\g__pdf_backend_annotation_int=\count280
-\g__pdf_backend_link_int=\count281
-\g__pdf_backend_link_sf_int=\count282
+\l__pdf_internal_box=\box82
+\g__pdf_backend_object_int=\count280
+\l__pdf_backend_content_box=\box83
+\l__pdf_backend_model_box=\box84
+\g__pdf_backend_annotation_int=\count281
+\g__pdf_backend_link_int=\count282
+\g__pdf_backend_link_sf_int=\count283
 ) (out/paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-\c@lstlisting=\count283
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+\c@lstlisting=\count284
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 9.61044pt on input line 54.
+(Font)              scaled to size 9.61044pt on input line 55.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 9.61044pt on input line 54.
+(Font)              scaled to size 9.61044pt on input line 55.
 LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 54.
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 55.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.61044pt on input line 54.
+(Font)              scaled to size 9.61044pt on input line 55.
 LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 54.
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 55.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.61044pt on input line 54.
+(Font)              scaled to size 9.61044pt on input line 55.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 6.72731pt on input line 85.
+(Font)              scaled to size 6.72731pt on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 6.72731pt on input line 85.
+(Font)              scaled to size 6.72731pt on input line 86.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 15.37671pt on input line 85.
+(Font)              scaled to size 15.37671pt on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 15.37671pt on input line 85.
+(Font)              scaled to size 15.37671pt on input line 86.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 11.53253pt on input line 85.
+(Font)              scaled to size 11.53253pt on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 11.53253pt on input line 85.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 85.
+(Font)              scaled to size 11.53253pt on input line 86.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 86.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 85.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 86.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 85.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 86.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 85.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 86.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 85.
+(Font)              <12> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 85.
+(Font)              <8> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 85.
+(Font)              <6> on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 7.68835pt on input line 85.
+(Font)              scaled to size 7.68835pt on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 5.76627pt on input line 85.
+(Font)              scaled to size 5.76627pt on input line 86.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 10.09096pt on input line 85.
+(Font)              scaled to size 10.09096pt on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 10.09096pt on input line 85.
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 85.
+(Font)              scaled to size 10.09096pt on input line 86.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.5> on input line 85.
+(Font)              <10.5> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.34996> on input line 85.
+(Font)              <7.34996> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.25> on input line 85.
+(Font)              <5.25> on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 7.06363pt on input line 85.
+(Font)              scaled to size 7.06363pt on input line 86.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 5.04547pt on input line 85.
+(Font)              scaled to size 5.04547pt on input line 86.
 (./section/intro.tex
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 (Font)              scaled to size 10.52342pt on input line 1.
@@ -345,7 +378,7 @@ Overfull \hbox (12.92696pt too wide) in paragraph at lines 103--108
 
 [4]) (./section/consideration.tex [5]) (./section/threats.tex) (./section/conclusion.tex)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 106.
+(Font)              <9> on input line 107.
 (out/paper.bbl
 LaTeX Font Info:    Kanji font shape `JY1/hgt/m/it' undefined
 (Font)              No change on input line 6.
@@ -353,12 +386,12 @@ LaTeX Font Info:    Kanji font shape `JY1/hgt/m/it' undefined
 (Font)              No change on input line 12.
 ) [6] (out/paper.aux) ) 
 Here is how much of TeX's memory you used:
- 5027 strings out of 479466
- 68172 string characters out of 5870549
- 580613 words of memory out of 5000000
- 22641 multiletter control sequences out of 15000+600000
- 489894 words of font info for 134 fonts, out of 8000000 for 9000
+ 5293 strings out of 479466
+ 71508 string characters out of 5870549
+ 586556 words of memory out of 5000000
+ 22895 multiletter control sequences out of 15000+600000
+ 489990 words of font info for 135 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  68i,14n,74p,406b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/paper.dvi (6 pages, 46380 bytes).
+Output written on out/paper.dvi (6 pages, 46544 bytes).

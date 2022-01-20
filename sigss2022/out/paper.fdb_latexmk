@@ -1,23 +1,24 @@
 # Fdb version 3
-["bibtex out/paper"] 1642588885 "out/paper.aux" "out/paper.bbl" "out/paper" 1642659389
+["bibtex out/paper"] 1642662267 "out/paper.aux" "out/paper.bbl" "out/paper" 1642662496
   "junsrt.bst" 0 -1 0 ""
-  "out/paper.aux" 1642659333 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
+  "out/paper.aux" 1642662495 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
   "references.bib" 1642580578 2991 b8c72d459522eeb53571252f496152e1 ""
   (generated)
-  "out/paper.bbl"
   "out/paper.blg"
-["dvipdf"] 1642659333 "out/paper.dvi" "out/paper.pdf" "out/paper" 1642659389
-  "out/paper.dvi" 1642659333 46380 814da9e56db0ba35534a1a6be8aa8104 "latex"
+  "out/paper.bbl"
+["dvipdf"] 1642662496 "out/paper.dvi" "out/paper.pdf" "out/paper" 1642662496
+  "out/paper.dvi" 1642662495 46544 92bcce85198820f418e9ebd99879772f "latex"
   (generated)
   "out/paper.pdf"
-["latex"] 1642659332 "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" "out/paper.dvi" "paper" 1642659389
-  "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" 1642575896 4788 ce97f0e93f3c6b933afac78139937103 ""
+["latex"] 1642662495 "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" "out/paper.dvi" "paper" 1642662496
+  "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" 1642662245 4829 f82752d576e11e898922e7144154cfe6 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm" 1136768653 3584 d3d8ac8b25ca19c0a40b86a5db1e8ccc ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1463434352 856 7404843a5f798859944d7973a47821d5 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin9.tfm" 1463434352 856 b22b8128b44bf8881977f2c74b361f47 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/ascmac/ascgrp.tfm" 1520635638 448 9a1f3a95c3a7e2681aa6eefcf410b7ac ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr7.tfm" 1136768653 1300 53d07721103816e093902637bc167021 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlgothr-h.tfm" 1320249963 504 e15e0ced49bc0fca57e32b1199da50ac ""
@@ -62,9 +63,12 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm" 1254269338 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm" 1254269338 11884 c93929a6974dce79eabb778f219d7e18 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm" 1254269338 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/ascmac/ascmac.sty" 1579124881 590 834565f4a016952bf667fd346b7aee71 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/ascmac/tascmac.sty" 1579124881 11463 e16f2fec3bf4db0d4002a155e4cf4467 ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty" 1601675358 4947 8cb7717f0cc771eca0fda15160c7fee9 ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/base/latexsym.sty" 1580683321 2854 12555a1cadee722c56d2816ab5a895f5 ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty" 1581112666 2821 2c0928feafd5527387e29a1af774d030 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/fancybox/fancybox.sty" 1274111957 27261 5ae6156674330dc345adb79b6e5d8966 ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/dvipdfmx.def" 1616189247 12854 d1d8e11aeb3b6a981367508e762ca48a ""
@@ -95,18 +99,18 @@
   "image/dataset_plot.pdf" 1642492682 388857 56c0346ec092f93d8be7594fd5c6e75a ""
   "listings.sty" 1642131022 80393 e50532c071e7315c7d501df966c756d8 ""
   "lstmisc.sty" 1642131022 77020 8c559a2f9bd8bc19dcb41741ff285061 ""
-  "out/paper.aux" 1642659333 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
-  "out/paper.bbl" 1642588886 1437 dbcd527961836b8c9356be8ae4e61b03 "bibtex out/paper"
-  "paper.tex" 1642575896 4788 ce97f0e93f3c6b933afac78139937103 ""
+  "out/paper.aux" 1642662495 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
+  "out/paper.bbl" 1642662267 1437 dbcd527961836b8c9356be8ae4e61b03 "bibtex out/paper"
+  "paper.tex" 1642662245 4829 f82752d576e11e898922e7144154cfe6 ""
   "section/analyze.tex" 1642648086 5714 33ca0d98a88f11fa92142c000d1fd15b ""
   "section/conclusion.tex" 1642589327 1015 1f77b8a02743785c6ec8755e0ee826e8 ""
-  "section/consideration.tex" 1642659387 4116 003b54eeb249608cf25300ae2fcdf9dc ""
+  "section/consideration.tex" 1642662494 4094 347f4759c85725a348feddfa21296737 ""
   "section/dataset.tex" 1642650093 5882 03608d0636e8029290ff2d671d8702ad ""
   "section/intro.tex" 1642575961 1583 10d12c7cb228c56f0cef332594811120 ""
   "section/method.tex" 1642646830 4772 705a8913fed59b7193e12eb09370615c ""
   "section/motivation.tex" 1642581618 1094 5ce62c8d9330c71e358bc1da02786e75 ""
   "section/threats.tex" 1642659211 2174 8d49c6f1c33f7bf8a5285274974fe731 ""
   (generated)
-  "out/paper.log"
   "out/paper.aux"
+  "out/paper.log"
   "out/paper.dvi"

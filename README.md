@@ -41,4 +41,4 @@
 - ボットを取り除く工程の追加
 - 複数のgithub-access-tokenを用いたデータの並列取得を可能にする
 ### Any limitations and/or challenges in creating or using the data set. <br>
-- github-access-token の late-limit（5000requests/hour）の制約は大きい
+- github-access-token の late-limit（5000requests/hour）の制約は極めて大きなネックになる

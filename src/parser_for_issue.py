@@ -77,7 +77,6 @@ def main():
                                         "num_of_char",
                                         "issue_words"],
                         create_file = False)
-    mylog.setup_slack()
 
 
     download_list = my_log.mylog(file_name = 'out_for_issue/__logfile__/download_list_issue.csv',
@@ -150,7 +149,6 @@ def main():
         elif repo_done_state == 'open':
             STATE_LIST.append('open')
         for STATE in STATE_LIST:
-            mylog.slack(f"[{who_am_i}] start {STATE}_{full_name_or_id}")
             path_for_print = f"<{STATE}>" + myget_name_right(text=path, target="src/out_for_issue/")
             
             issues_list = r.get_issues(state=STATE)
@@ -256,30 +254,31 @@ def main():
                             comment_user_tmp = comment_user.split(",")
                             if len(comment_user_tmp) > 1:
                                 comment_user = comment_user_tmp[0]
-                        my_dict.append([comment_user,comment.created_at.ctime(),comment_text])
+                        my_dict.append([comment_user,
+                                        comment.created_at.ctime(),
+                                        comment_text])
                         break
-
 
                     num_of_comments = issue.comments
                     mylog.append_row_direct([r.id,
-                                repo_org,
-                                issue_ID,
-                                issue.title,
-                                issue.number,
-                                issue.created_at,
-                                issue.user.name,
-                                issue.closed_at,
-                                [label.name for label in issue.labels],
-                                pullrequest_id,
-                                pullrequest_created_at,
-                                pullrequest_merged_at,
-                                num_of_mov,
-                                num_of_img,
-                                datetime.datetime.now(),
-                                my_dict,
-                                num_of_comments,
-                                num_of_char,
-                                target_text])
+                                            repo_org,
+                                            issue_ID,
+                                            issue.title,
+                                            issue.number,
+                                            issue.created_at,
+                                            issue.user.name,
+                                            issue.closed_at,
+                                            [label.name for label in issue.labels],
+                                            pullrequest_id,
+                                            pullrequest_created_at,
+                                            pullrequest_merged_at,
+                                            num_of_mov,
+                                            num_of_img,
+                                            datetime.datetime.now(),
+                                            my_dict,
+                                            num_of_comments,
+                                            num_of_char,
+                                            target_text])
                     if mov_exist:
                         pass
                     else:
@@ -293,10 +292,6 @@ def main():
             else:# STATE == "open"
                 done_list.rewrite_row([full_name_or_id, 'success'],idx=done_list.search_target(target=full_name_or_id,column1=done_list.get_column_id('reponame_or_id')))
             done_list.export()
-            mylog.slack(f"[{who_am_i}] done {STATE}_{full_name_or_id}")
-
-    # 全処理終了
-    mylog.slack(f"[{who_am_i}] all done!")
     return 0
 
 

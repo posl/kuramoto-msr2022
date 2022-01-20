@@ -69,13 +69,13 @@ $Steel-Dwass$法による検定結果を表\ref{Steel-Dwass_result}に示す．
 \begin{table}[t]
   \begin{center}
   \caption{調査項目ごとの多重比較の結果}
-  \begin{tabular}{l r|c}
+  \begin{tabular}{l r|r}
     \hline
     調査項目 & 対 & 有意確率 \\
     \hline \hline
     $Issue\_open\_time$ & & \\
-     & \bf{$Img$~vs~$None$} & 0.002 \\
-     & \bf{$Mov$~vs~$None$} & 0.021 \\
+     & \bf{$Img$~vs~$None$} & **~0.002 \\
+     & \bf{$Mov$~vs~$None$} & **~0.021 \\
      & \bf{$Img$~vs~$~Mov$} & 0.381 \\
     \hline
     $First\_comment\_time$ & & \\
@@ -84,16 +84,18 @@ $Steel-Dwass$法による検定結果を表\ref{Steel-Dwass_result}に示す．
      & \bf{$Img$~vs~$~Mov$} & 0.404 \\
     \hline
     $Num\_of\_comments$ & & \\
-     & \bf{$Img$~vs~$None$} & 0.001 \\
-     & \bf{$Mov$~vs~$None$} & 0.001 \\
+     & \bf{$Img$~vs~$None$} & *~0.001 \\
+     & \bf{$Mov$~vs~$None$} & *~0.001 \\
      & \bf{$Img$~vs~$~Mov$} & 0.211 \\
     \hline
     $Num\_of\_char$ & & \\
-     & \bf{$Img$~vs~$None$} & 0.001 \\
-     & \bf{$Mov$~vs~$None$} & 0.001 \\
+     & \bf{$Img$~vs~$None$} & *~0.001 \\
+     & \bf{$Mov$~vs~$None$} & *~0.001 \\
      & \bf{$Img$~vs~$~Mov$} & 0.599 \\
     \hline
   \end{tabular}\\
+  \small
+    *~ : 両側検定で有意 ~~~ ** : 片側検定で有意\\
   \label{Steel-Dwass_result}
   \end{center}
 \end{table}

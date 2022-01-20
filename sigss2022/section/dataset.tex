@@ -50,13 +50,11 @@ https://user-images.githubusercontent.com/XXX.mp4 \\
 
 XXXの部分は，半角英数字，"/"，"-"のみで構成される．
 
-従って，以下の正規表現に適合した文字列の出現回数を，拡張子Yに応じて$Num\_of\_img$，及び，$Num\_of\_mov$とした．\\
+従って，以上のURLを正規表現で取得し出現回数を，拡張子に応じて$Num\_of\_img$，及び，$Num\_of\_mov$とした．\\
 
-https://user-images.githubusercontent.com/[\textbackslash w/-]+.Y \\
+動画及び画像を含むIssueについて，上記URLを除外処理したテキストを用いて，$Words$を正規表現で取得した．
+また，処理済みのIssueのテキストの長さを，$Num\_of\_char$とした．
 
-$Words$は，Issueのテキストから正規表現で取得した．
-また，Issueのテキストの長さを，$Num\_of\_char$とした．
-動画及び画像を含むIssueについては，上記URLは除外する前処理を行った．
 
 我々は事前調査で，$Issue\_open\_time$が，何らかの要因により負値をとるIssueが混在していることを発見した．
 このような不正な値を含むIssueを除外するため，30seconds <= $Issue\_open\_time$ <= 1yearの条件を設けた．

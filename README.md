@@ -31,6 +31,7 @@
       fingerprintjs/fingerprintjs,
       gokrazy/breakglass
       ~~~
+      `org_name/repo_name`は例えば，`posl/kuramoto-msr2022`
   5. python parser_for_issue.py
   6. python body2word.py
   7. python tf-idf.py

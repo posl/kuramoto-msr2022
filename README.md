@@ -16,9 +16,22 @@
 本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
   1. 本リポジトリのクローン
   2. `src/github-token.config`にGitHubアクセストークンを入れておく
-  3. python parser_for_issue.py
-  4. python body2word.py
-  5. python tf-idf.py
+  3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値）
+      (Example)
+      Name,
+sunchit/coding-decoded,
+codenameone/codenameone,
+ssynhtn/wave-view,
+hmage/norm,
+airar-dev/unity-ar-colormapping,
+vulcanjs/vulcanjs-cli,
+swapmyvote/swapmyvote,
+parrit/parrit,
+fingerprintjs/fingerprintjs,
+gokrazy/breakglass
+  5. python parser_for_issue.py
+  6. python body2word.py
+  7. python tf-idf.py
 
 ### A description of the storage mechanism, including a schema if applicable. <br>
 ### If the data has been used by the authors or others, a description of how this was done including references to previously published papers. <br>

@@ -1,9 +1,8 @@
 # kuramoto-msr2022
 
-## MSR Data showcase submissions are expected to include:
-### A description of the data source. <br>
+## A description of the data source. <br>
 - 
-### A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any). <br>
+## A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any). <br>
 [pyGitHub](https://pygithub.readthedocs.io/en/latest/introduction.html)を用いてデータを収集した．
   
 本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
@@ -33,16 +32,16 @@
   9. python analyzer.py
   10. python analyzer_test.py
 
-### A description of the storage mechanism, including a schema if applicable. <br>
+## A description of the storage mechanism, including a schema if applicable. <br>
 - ?
-### If the data has been used by the authors or others, a description of how this was done including references to previously published papers. <br>
+## If the data has been used by the authors or others, a description of how this was done including references to previously published papers. <br>
 - 該当しない
-### A description of the originality of the data set (that is, even if the data set has been used in a published paper, its complete description must be unpublished) and similar existing datasets (if any) <br>
+## A description of the originality of the data set (that is, even if the data set has been used in a published paper, its complete description must be unpublished) and similar existing datasets (if any) <br>
 - 動画及び画像の添付数を調べるのは初（調査の限り）
-### A description of the design of the tool, and how to use the tool in practice ideas for future research questions that could be answered using the data set. <br>
+## A description of the design of the tool, and how to use the tool in practice ideas for future research questions that could be answered using the data set. <br>
 - 
-### Ideas for further improvements that could be made to the data set. <br>
+## Ideas for further improvements that could be made to the data set. <br>
 - ボットを取り除く工程の追加
 - 複数のgithub-access-tokenを用いたデータの並列取得を可能にする
-### Any limitations and/or challenges in creating or using the data set. <br>
+## Any limitations and/or challenges in creating or using the data set. <br>
 - github-access-token の late-limit（5000requests/hour）の制約は極めて大きなネックになる

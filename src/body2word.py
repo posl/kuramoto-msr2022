@@ -13,7 +13,7 @@ rm_tags = ("'")
 def main():
 
     #ログ関係のインスタンス生成
-    mylog = my_log.mylog(file_name = 'out_for_issue',
+    mylog = my_log.mylog(file_name = 'out/out_for_issue',
                         field_names = ["repo_id",
                                         "repo_org",
                                         "issue_id",
@@ -34,7 +34,7 @@ def main():
                                         "num_of_char",
                                         "issue_words"],
                         create_file = False)
-    mylog2 = my_log.mylog(file_name = 'out_for_issue',
+    mylog2 = my_log.mylog(file_name = 'out/out_for_issue',
                         field_names = ["repo_org",
                                         "issue_number",
                                         "issue_created_at",
@@ -59,15 +59,15 @@ def main():
     # src/で実行
     wd = os.getcwd()
 
-    repos = glob.glob(f"{wd}/out_for_issue/*")
+    repos = glob.glob(f"{wd}/out/out_for_issue/*")
     for repo in repos:
-        repo_name = myget_name_right(repo,"out_for_issue/")
+        repo_name = myget_name_right(repo,"out/out_for_issue/")
         print(f"{repo_name}")
         if repo_name == "__logfile__":
             print("   ------>  pass")
         else:
-            mylog.setup_file(f"out_for_issue/{repo_name}/parsing_issue_done_list.csv")
-            mylog2.setup_file(f"out_for_issue/{repo_name}/parsing_issue_done_list_light.csv")
+            mylog.setup_file(f"out/out_for_issue/{repo_name}/parsing_issue_done_list.csv")
+            mylog2.setup_file(f"out/out_for_issue/{repo_name}/parsing_issue_done_list_light.csv")
 
             for idx in tqdm(range(1,mylog.get_len(include_name_field=True))):
                 ## issue_comment

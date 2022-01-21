@@ -13,10 +13,10 @@ def main():
 
     #ログ関係のインスタンス生成
     # parsing_issue_done_list.csv
-    input = my_log.mylog(file_name = 'out_for_issue',
+    input = my_log.mylog(file_name = 'out/out_for_issue',
                         create_file = False)
     # words_idf_list.csv
-    output = my_log.mylog(file_name = 'out_for_issue',
+    output = my_log.mylog(file_name = 'out/out_for_issue',
                             field_names = ["word",
                                             "idf",
                                             "num_of_files"],
@@ -24,17 +24,17 @@ def main():
 
     # src/で実行
     wd = os.getcwd()
-    repos = glob.glob(f"{wd}/out_for_issue/*")
+    repos = glob.glob(f"{wd}/out/out_for_issue/*")
 #================================= idf session =================================#
     print("\n\t=========== idf session ===========\n")
     for repo in repos:
-        repo_name = myget_name_right(repo,"out_for_issue/")
+        repo_name = myget_name_right(repo,"out/out_for_issue/")
         print(f"{repo_name}",flush=True)
         if repo_name == "__logfile__":
             print("\t------>\tpass")
         else:
-            input.setup_file(f"out_for_issue/{repo_name}/parsing_issue_done_list.csv")
-            output.setup_file(f"out_for_issue/{repo_name}/words_idf_list.csv")
+            input.setup_file(f"out/out_for_issue/{repo_name}/parsing_issue_done_list.csv")
+            output.setup_file(f"out/out_for_issue/{repo_name}/words_idf_list.csv")
             output.reset_file()
 
             input_len = input.get_len(include_name_field=False)
@@ -71,9 +71,9 @@ def main():
         if repo_name == "__logfile__":
             print("\t------>\tpass")
         else:
-            input.setup_file(f"out_for_issue/{repo_name}/parsing_issue_done_list.csv")
+            input.setup_file(f"out/out_for_issue/{repo_name}/parsing_issue_done_list.csv")
             input_len = input.get_len()
-            output.setup_file(f"out_for_issue/{repo_name}/words_idf_list.csv")
+            output.setup_file(f"out/out_for_issue/{repo_name}/words_idf_list.csv")
             sum_of_words = 0
             # キャッシュ
             ast_literal_eval = ast.literal_eval
@@ -110,13 +110,6 @@ def main():
                     target_dic.pop(dic_key)
                 input.rewrite_specific_item(idx=idx,column_id=in_col,new_data=target_dic)
             input.export()
-
-
-
-                
-
-
-
 
 
 def myget_name_left(text, target):

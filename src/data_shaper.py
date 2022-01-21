@@ -11,14 +11,14 @@ import math
 csv.field_size_limit(sys.maxsize)
 def main():
     wd = os.getcwd()
-    repos = glob.glob(f"{wd}/out_for_issue/*")
+    repos = glob.glob(f"{wd}/out/out_for_issue/*")
 
     # ファイル操作オブジェクト
-    in_f  = my_log.mylog(file_name="out_for_issue/",
+    in_f  = my_log.mylog(file_name="out/out_for_issue/",
                         create_file=False)
-    out_f = my_log.mylog(file_name="out_for_issue/",create_file=False)
+    out_f = my_log.mylog(file_name="out/out_for_issue/",create_file=False)
 
-    movs_num_list = my_log.mylog(file_name = 'out_for_issue',
+    movs_num_list = my_log.mylog(file_name = 'out/out_for_issue',
                                 field_names = ['mov_number',
                                                 'mov_url',
                                                 'pixels_of_height',
@@ -41,15 +41,15 @@ def main():
                             "issue_words",
                             "num_of_char"])
     for repo in repos:
-        repo_name = myget_name_right(repo,"out_for_issue/")
+        repo_name = myget_name_right(repo,"out/out_for_issue/")
         print(f"{repo_name}")
         if repo_name == "__logfile__":
             print("   ------>  pass")
         else:
             # ファイルセットアップ
-            in_f.setup_file(file_name=f"out_for_issue/{repo_name}/parsing_issue_done_list.csv")
+            in_f.setup_file(file_name=f"out/out_for_issue/{repo_name}/parsing_issue_done_list.csv")
             in_f.set_field_names()
-            out_f.setup_file(file_name=f"data/data_for_RQ1/{repo_name}.csv")
+            out_f.setup_file(file_name=f"out/data/data_for_RQ1/{repo_name}.csv")
             out_f.reset_file()
 
             # row取り出し & データ処理
@@ -120,9 +120,9 @@ def main():
             print("   ------>  pass")
         else:
             # ファイルセットアップ
-            in_f.setup_file(file_name=f"out_for_issue/{repo_name}/parsing_issue_done_list_light.csv")
+            in_f.setup_file(file_name=f"out/out_for_issue/{repo_name}/parsing_issue_done_list_light.csv")
             in_f.set_field_names()
-            out_f.setup_file(file_name=f"data/data_for_RQ1/_all_repository.csv")
+            out_f.setup_file(file_name=f"out/data/data_for_RQ1/_all_repository.csv")
 
             # row取り出し & データ処理
             rows = in_f.get_rows()

@@ -14,25 +14,18 @@ import datetime
 # for get_links
 import re
 
-print("\n\033[32m...........program booting...........\033[0m\n")
-
 csv.field_size_limit(sys.maxsize)
-who_am_i = "pc_for_research" # slackの通知名
 args = sys.argv
 
 # using username and password or using an access token
-if len(args) == 2:
-    token = args[1]
-    g = Github(f"{token}",timeout=30)
-else:
-    try:
-        with open("config/github-token.config", "r") as f:
-            token = f.read()
-            g = Github(f"{token}",timeout=30)
-    except:
-        print("github token = ",end="")
-        token = input()
+try:
+    with open("config/github-token.config", "r") as f:
+        token = f.read()
         g = Github(f"{token}",timeout=30)
+except:
+    print("github token = ",end="")
+    token = input()
+    g = Github(f"{token}",timeout=30)
 
 rate_limit = g.get_rate_limit().core.limit
 print(f"rate_limit = {rate_limit} per an hour")
@@ -47,16 +40,20 @@ def main():
         os.chdir("./src")
         wd = os.getcwd()
     try:
-        os.mkdir("./out_for_issue")
+        os.mkdir("./out")
     except FileExistsError:
         pass
     try:
-        os.mkdir("./out_for_issue/__logfile__")
+        os.mkdir("./out/out_for_issue")
+    except FileExistsError:
+        pass
+    try:
+        os.mkdir("./out/out_for_issue/__logfile__")
     except FileExistsError:
         pass
     
     #ログ関係のインスタンス生成
-    mylog = my_log.mylog(file_name = 'out_for_issue',
+    mylog = my_log.mylog(file_name = 'out/out_for_issue',
                         field_names = ["repo_id",
                                         "repo_org",
                                         "issue_id",
@@ -79,7 +76,7 @@ def main():
                         create_file = False)
 
 
-    download_list = my_log.mylog(file_name = 'out_for_issue/__logfile__/download_list_issue.csv',
+    download_list = my_log.mylog(file_name = 'out/out_for_issue/__logfile__/download_list_issue.csv',
                                 field_names = ['flag',
                                                 'repo_name',
                                                 'PR_id',
@@ -90,7 +87,7 @@ def main():
     movs_num_list = my_log.mylog(file_name = 'out_for_issue',
                                 field_names = ['mov_number','mov_url'],
                                 create_file = False)
-    done_list = my_log.mylog(file_name = 'out_for_issue/__logfile__/logfile_parsing_issue_reponame.csv',
+    done_list = my_log.mylog(file_name = 'out/out_for_issue/__logfile__/logfile_parsing_issue_reponame.csv',
                             field_names = ['reponame_or_id','state'])
 
     # 選定済みリストの読み込み
@@ -99,7 +96,7 @@ def main():
         l = [row for row in reader]
         my_repo_list = [row[0] for row in l[1:]]
     
-    with open('out_for_issue/__logfile__/logfile_parsing_issue_reponame.csv', "r") as f:
+    with open('out/out_for_issue/__logfile__/logfile_parsing_issue_reponame.csv', "r") as f:
         reader = csv.reader(f)
         l = [row for row in reader]
         my_repo_list2 = []
@@ -130,7 +127,7 @@ def main():
         mov_exist = "n"
 
         # フォルダ作成
-        abst_path = f"out_for_issue/{r.owner.login}_{r.name}"
+        abst_path = f"out/out_for_issue/{r.owner.login}_{r.name}"
         path = f"{wd}/{abst_path}"
         try:
             os.mkdir(path)
@@ -149,7 +146,7 @@ def main():
         elif repo_done_state == 'open':
             STATE_LIST.append('open')
         for STATE in STATE_LIST:
-            path_for_print = f"<{STATE}>" + myget_name_right(text=path, target="src/out_for_issue/")
+            path_for_print = f"<{STATE}>" + myget_name_right(text=path, target="src/out/out_for_issue/")
             
             issues_list = r.get_issues(state=STATE)
             total_issues = issues_list.totalCount
@@ -169,7 +166,7 @@ def main():
 
                 else:
                     # issue毎にid名のフォルダを作る
-                    f_path = f"out_for_issue/{repo_myorg}/{str(issue_ID)}"
+                    f_path = f"out/out_for_issue/{repo_myorg}/{str(issue_ID)}"
                     try:
                         os.mkdir(f_path)
                     except FileExistsError:

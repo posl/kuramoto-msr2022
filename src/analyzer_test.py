@@ -9,15 +9,15 @@ import scikit_posthocs as sp
 
 def main():
     if not(os.path.exists("data/analyzer_RQ1_test/")):
-        os.mkdir("data/analyzer_RQ1_test/")
+        os.mkdir("out/data/analyzer_RQ1_test/")
     print("\033[32m data \033[0m")
     columns_stack  = ["issue_open_time","first_comment_time","num_of_comments","num_of_char"]
-    with open('data/data_for_RQ1/_samplingDataFrame.pickle', 'rb') as f:
+    with open('out/data/data_for_RQ1/_samplingDataFrame.pickle', 'rb') as f:
         df = pickle.load(f)
     df_none = df.query('issue_type == "None"')
     df_img  = df.query('issue_type in ["Img", "Both"]')
     df_mov  = df.query('issue_type in ["Mov", "Both"]')
-    with open('data/data_for_RQ1/_samplingDataFrame_for_comment_time.pickle', 'rb') as f:
+    with open('out/data/data_for_RQ1/_samplingDataFrame_for_comment_time.pickle', 'rb') as f:
         df_for_comment_time = pickle.load(f)
     df_ct_none = df_for_comment_time.query('issue_type == "None"')
     df_ct_img  = df_for_comment_time.query('issue_type in ["Img", "Both"]')
@@ -48,7 +48,7 @@ def main():
         result = stats.levene(df_none_col,df_img_col,df_mov_col)
         print(f"等分散性{result}")
         pyplot.tight_layout()
-        pyplot.savefig(f"data/analyzer_RQ1_test/plobplot_#{col}.png",dpi=100)
+        pyplot.savefig(f"out/data/analyzer_RQ1_test/plobplot_#{col}.png",dpi=100)
         pyplot.close()
         pyplot.figure()
 

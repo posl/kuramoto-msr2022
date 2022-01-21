@@ -14,19 +14,18 @@ import seaborn
 import pandas
 import pickle
 import math
-SAMPLE_SIZE = 2000
+
+SAMPLE_SIZE = 1
+MAX_NUM_OF_WORDS = 50
+
 pyplot.rcParams['font.size'] = 5
 seaborn.set_context('talk', font_scale=0.9)
 warnings.filterwarnings('ignore') # 警告メッセージを出ないようにしている
 csv.field_size_limit(sys.maxsize)
 # imgの出力先
-out_imgfile = "data/analyzer_RQ1_imgs/"
+out_imgfile = "out/data/analyzer_Result/"
 try:
-    os.mkdir("data/")
-except FileExistsError:
-    pass
-try:
-    os.mkdir("data/analyzer_RQ1_imgs/")
+    os.mkdir("out/data/analyzer_Result/")
 except FileExistsError:
     pass
 def main():
@@ -34,7 +33,7 @@ def main():
     outfile = my_log.mylog(file_name='data/',create_file=False)
     out_text = my_log.mylog(file_name="data/",create_file=False)
     wd = os.getcwd()
-    repos = glob.glob(f"{wd}/data/data_for_RQ1/*")
+    repos = glob.glob(f"{wd}/out/data/data_for_RQ1/*")
 
     # 初期化
     y_0_none = [0,0,0,0,0,0,0]
@@ -56,7 +55,7 @@ def main():
             len_repos -= 1
         else:
             print(repo_name)
-            infile.setup_file(f"data/data_for_RQ1/{repo_name}.csv")
+            infile.setup_file(f"out/data/data_for_RQ1/{repo_name}.csv")
             infile.set_field_names()
             # カラム番号取得
             col_num_of_img = infile.get_column_id('num_of_img')
@@ -93,12 +92,13 @@ def main():
             data_dic_img2 = sorted(data_dic_img.items(), key=lambda x:x[1], reverse=True)
             data_dic_mov2 = sorted(data_dic_mov.items(), key=lambda x:x[1], reverse=True)
             # 上位num個の単語を選択
-            num = 40
-            data_dic_none = {k:l for k,l in data_dic_none2[:num]}
-            data_dic_img  = {k:l for k,l in data_dic_img2[:num]}
-            data_dic_mov  = {k:l for k,l in data_dic_mov2[:num]}
+            num = MAX_NUM_OF_WORDS
+            print(f"========>>> {max(num,len(data_dic_none2))}")
+            data_dic_none = {k:l for k,l in data_dic_none2[:max(num,len(data_dic_none2))]}
+            data_dic_img  = {k:l for k,l in data_dic_img2[:max(num,len(data_dic_img2))]}
+            data_dic_mov  = {k:l for k,l in data_dic_mov2[:max(num,len(data_dic_mov2))]}
             outfile.set_field_names(["repo_org","type","high_tfidf_words"])
-            outfile.setup_file(f"data/analyzer_RQ1_tfidf/{printName}.csv")
+            outfile.setup_file(f"out/data/analyzer_tfidf/{printName}.csv")
             outfile.write_row([repo_name,"none",data_dic_none])
             outfile.write_row([repo_name,"img",data_dic_img])
             outfile.write_row([repo_name,"mov",data_dic_mov])
@@ -194,19 +194,22 @@ def main():
     data_4_dic_none = {k:l for k,l in data_4_dic_none2[:num]}
     data_4_dic_img  = {k:l for k,l in data_4_dic_img2[:num]}
     data_4_dic_mov  = {k:l for k,l in data_4_dic_mov2[:num]}
-    outfile.set_field_names(["repo_org","type","high_tfidf_words"])
-    outfile.setup_file(f"data/analyzer_RQ1_tfidf/{printName}.csv")
-    outfile.write_row(["all","none",data_4_dic_none.keys()])
-    outfile.write_row(["all","img",data_4_dic_img.keys()])
-    outfile.write_row(["all","mov",data_4_dic_mov.keys()])
+    outfile.set_field_names(["type","high_tfidf_words"])
+    outfile.setup_file(f"out/data/analyzer_Result/{printName}.csv")
+    outfile.write_row(["none",data_4_dic_none.keys()])
+    outfile.write_row(["img",data_4_dic_img.keys()])
+    outfile.write_row(["mov",data_4_dic_mov.keys()])
     outfile.export()
 
 ########### 箱図
     printName_list  = ["issue_open_time","first_comment_time","num_of_comments","num_of_char"]
-    df = pandas.read_csv("./data/data_for_RQ1/_all_repository.csv",usecols=lambda x: x not in ['issue_number', 'issue_created_at_year'])
+    df = pandas.read_csv("./out/data/data_for_RQ1/_all_repository.csv",usecols=lambda x: x not in ['issue_number', 'issue_created_at_year'])
     df_none = df.query('issue_type == "None"')
     df_img  = df.query('issue_type in ["Img", "Both"]')
     df_mov  = df.query('issue_type in ["Mov", "Both"]')
+    if min(len(df_none),len(df_img),len(df_mov))<SAMPLE_SIZE:
+        print("lack of number of samples\nPlease change SAMPLE_SIZE")
+        sys.exit()
     df_none = df_none.sample(n=SAMPLE_SIZE, replace=True)
     df_img  = df_img.sample(n=SAMPLE_SIZE, replace=True)
     df_mov  = df_mov.sample(n=SAMPLE_SIZE, replace=True)
@@ -263,7 +266,7 @@ def main():
         pyplot.close()
         pyplot.figure()
 
-    df2 = pandas.read_csv("./data/data_for_RQ1/_all_repository.csv")
+    df2 = pandas.read_csv("./out/data/data_for_RQ1/_all_repository.csv")
     df2_none = df2.query('issue_type == "None"')
     df2_img  = df2.query('issue_type in ["Img", "Both"]')
     df2_mov  = df2.query('issue_type in ["Mov", "Both"]')
@@ -302,9 +305,9 @@ def main():
         out_text.write_row(["Both"]+[data.min(),data.quantile(0.25),data.quantile(0.5),data.quantile(0.75),data.max(),data.mean(),math.sqrt(data.var())])
         out_text.export()
 
-    with open('data/data_for_RQ1/_samplingDataFrame.pickle', 'wb') as f:
+    with open('out/data/data_for_RQ1/_samplingDataFrame.pickle', 'wb') as f:
         pickle.dump(x, f)
-    with open('data/data_for_RQ1/_samplingDataFrame_for_comment_time.pickle', 'wb') as f:
+    with open('out/data/data_for_RQ1/_samplingDataFrame_for_comment_time.pickle', 'wb') as f:
         pickle.dump(x_for_comment_time, f)
 
 def myget_name_left(text, target):

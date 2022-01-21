@@ -28,6 +28,9 @@
   5. python parser_for_issue.py
   6. python body2word.py
   7. python tf-idf.py
+  8. python data_shaper.py
+  9. python analyzer.py
+  10. python analyzer_test.py
 
 ### A description of the storage mechanism, including a schema if applicable. <br>
 - ?

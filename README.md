@@ -13,7 +13,7 @@
   
 本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
   1. 本リポジトリのクローン
-  2. `src/github-token.config`にgithub-access-tokenを入れておく
+  2. `src/config/github-token.config`にgithub-access-tokenを入れておく
       <br>github-access-tokenは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
   3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
       ~~~

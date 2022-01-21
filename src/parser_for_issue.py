@@ -227,10 +227,12 @@ def main():
                         num_of_char = 0
                     else:num_of_char = len(issue_body)
 
-                    for rm_text in img_urls:
-                        num_of_char -= len(rm_text)
-                    for rm_text in mov_urls:
-                        num_of_char -= len(rm_text)
+                    if img_exist:
+                        for rm_text in img_urls:
+                            num_of_char -= len(rm_text)
+                    if mov_exist:
+                        for rm_text in mov_urls:
+                            num_of_char -= len(rm_text)
                     
                     words = re.findall("[a-zA-Z']+", target_text)
                     target_text = ""

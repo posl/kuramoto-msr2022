@@ -6,8 +6,6 @@ import my_log
 from tqdm import tqdm
 import csv
 csv.field_size_limit(sys.maxsize)
-# キャッシュ
-re_findall = re.findall
 
 # rm not_necessary_word
 rm_tags = ("'")
@@ -124,7 +122,7 @@ def main():
                     target_comments[2] = target_comments[2].replace("'","")
                     target_comments[2] = target_comments[2].replace('"',"")
                     target_comments[2] = target_comments[2].replace("  "," ")
-                    words = re_findall("[a-zA-Z']+", target_comments[2].lower())
+                    words = re.findall("[a-zA-Z']+", target_comments[2].lower())
                     l = list(words)
                     for rm_tag in rm_tags:
                         try:
@@ -157,7 +155,7 @@ def main():
                 # 大文字を小文字に変換
                 target_text = target_text.lower()
 
-                words = re_findall("[a-zA-Z]+", target_text)
+                words = re.findall("[a-zA-Z]+", target_text)
 
                 l = list(words)
                 for rm_tag in rm_tags:

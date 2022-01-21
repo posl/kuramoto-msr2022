@@ -1,37 +1,112 @@
-FILE_NAME := paper
-SUBDIR = section
-TEMP_FILES := \
-    $(FILE_NAME).aux \
-    $(FILE_NAME).bbl \
-    $(FILE_NAME).log \
-    $(FILE_NAME).blg \
-    $(FILE_NAME).brf \
-    $(FILE_NAME).dvi \
-    $(FILE_NAME).out \
-	$(FILE_NAME).fls \
-	$(FILE_NAME).fdb_latexmk
-SECTION_FILES = \
-    $(FILE_NAME).tex
-BIBTEX_FILES = references.bib
-DEBUG=no
-ifneq '$(DEBUG)' 'yes'
-LATEX_FLAGS="-interaction=batchmode --file-line-error --synctex=1"
-endif
-LATEX_FLAG_ENC="-kanji=utf8"
-OPEN ?= open
-.DELETE_ON_ERROR:
-################################################################################
-# Main paper building
-################################################################################
-$(FILE_NAME).pdf: $(SECTION_FILES) $(BIBTEX_FILES)
-	platex $(LATEX_FLAGS) $(FILE_NAME)
-	pbibtex $(FILE_NAME)
-	platex $(LATEX_FLAGS) $(FILE_NAME)
-	platex $(LATEX_FLAGS) $(FILE_NAME)
-	dvipdfmx $(FILE_NAME)
-	rm -f $(TEMP_FILES) $(SUBDIR)/*.aux
-.PHONY: clean view
-clean:
-	rm -f $(TEMP_FILES) $(GEN_FIGURES) $(FILE_NAME).pdf $(SUBDIR)/*.aux
-view: $(FILE_NAME).pdf
-	$(OPEN) $(FILE_NAME).pdf
+#
+# Makefile for acmart package
+#
+# This file is in public domain
+#
+# $Id: Makefile,v 1.10 2016/04/14 21:55:57 boris Exp $
+#
+
+PACKAGE=acmart
+
+
+PDF = $(PACKAGE).pdf acmguide.pdf
+
+all:  ${PDF} ALLSAMPLES
+
+
+%.pdf:  %.dtx   $(PACKAGE).cls
+	pdflatex $<
+	- bibtex $*
+	pdflatex $<
+	- makeindex -s gind.ist -o $*.ind $*.idx
+	- makeindex -s gglo.ist -o $*.gls $*.glo
+	pdflatex $<
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
+	do pdflatex $<; done
+
+
+acmguide.pdf: $(PACKAGE).dtx $(PACKAGE).cls
+	pdflatex -jobname acmguide $(PACKAGE).dtx
+	- bibtex acmguide
+	pdflatex -jobname acmguide $(PACKAGE).dtx
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' acmguide.log) \
+	do pdflatex -jobname acmguide $(PACKAGE).dtx; done
+
+%.cls:   %.ins %.dtx
+	pdflatex $<
+
+
+ALLSAMPLES:
+	cd samples; pdflatex samples.ins; cd ..
+	for texfile in samples/*.tex; do \
+		pdffile=$${texfile%.tex}.pdf; \
+		${MAKE} $$pdffile; \
+	done
+
+samples/%: %
+	cp $^ samples
+
+
+samples/$(PACKAGE).cls: $(PACKAGE).cls
+samples/ACM-Reference-Format.bst: ACM-Reference-Format.bst
+
+samples/%.pdf:  samples/%.tex   samples/$(PACKAGE).cls samples/ACM-Reference-Format.bst
+	cd $(dir $@) && pdflatex-dev $(notdir $<)
+	- cd $(dir $@) && bibtex $(notdir $(basename $<))
+	cd $(dir $@) && pdflatex-dev $(notdir $<)
+	cd $(dir $@) && pdflatex-dev $(notdir $<)
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $(basename $<).log) \
+	  do cd $(dir $@) && pdflatex-dev $(notdir $<); done
+
+samples/sample-xelatex.pdf:  samples/sample-xelatex.tex   samples/$(PACKAGE).cls samples/ACM-Reference-Format.bst
+	cd $(dir $@) && xelatex-dev $(notdir $<)
+	- cd $(dir $@) && bibtex $(notdir $(basename $<))
+	cd $(dir $@) && xelatex-dev $(notdir $<)
+	cd $(dir $@) && xelatex-dev $(notdir $<)
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $(basename $<).log) \
+	  do cd $(dir $@) && xelatex-dev $(notdir $<); done
+
+samples/sample-lualatex.pdf:  samples/sample-lualatex.tex   samples/$(PACKAGE).cls samples/ACM-Reference-Format.bst
+	cd $(dir $@) && lualatex-dev $(notdir $<)
+	- cd $(dir $@) && bibtex $(notdir $(basename $<))
+	cd $(dir $@) && lualatex-dev $(notdir $<)
+	cd $(dir $@) && lualatex-dev $(notdir $<)
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $(basename $<).log) \
+	  do cd $(dir $@) && lualatex-dev $(notdir $<); done
+
+
+
+.PRECIOUS:  $(PACKAGE).cfg $(PACKAGE).cls
+
+docclean:
+	$(RM)  *.log *.aux \
+	*.cfg *.glo *.idx *.toc \
+	*.ilg *.ind *.out *.lof \
+	*.lot *.bbl *.blg *.gls *.cut *.hd \
+	*.dvi *.ps *.thm *.tgz *.zip *.rpi \
+	samples/$(PACKAGE).cls samples/ACM-Reference-Format.bst \
+	samples/*.log samples/*.aux samples/*.out \
+	samples/*.bbl samples/*.blg samples/*.cut 
+
+
+
+clean: docclean
+	$(RM)  $(PACKAGE).cls \
+	samples/*.tex
+
+distclean: clean
+	$(RM)  *.pdf samples/sample-*.pdf
+
+#
+# Archive for the distribution. Includes typeset documentation
+#
+archive:  all clean
+	COPYFILE_DISABLE=1 tar -C .. -czvf ../$(PACKAGE).tgz --exclude '*~' --exclude '*.tgz' --exclude '*.zip'  --exclude CVS --exclude '.git*' $(PACKAGE); mv ../$(PACKAGE).tgz .
+
+zip:  all clean
+	zip -r  $(PACKAGE).zip * -x '*~' -x '*.tgz' -x '*.zip' -x CVS -x 'CVS/*'
+
+documents.zip: all docclean
+	zip -r $@ acmart.pdf acmguide.pdf samples *.cls ACM-Reference-Format.*
+
+.PHONY: all ALLSAMPLES docclean clean distclean archive zip

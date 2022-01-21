@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex out/paper"] 1642662267 "out/paper.aux" "out/paper.bbl" "out/paper" 1642662496
+["bibtex out/paper"] 1642743969 "out/paper.aux" "out/paper.bbl" "out/paper" 1642754175
   "junsrt.bst" 0 -1 0 ""
-  "out/paper.aux" 1642662495 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
+  "out/paper.aux" 1642754174 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
   "references.bib" 1642580578 2991 b8c72d459522eeb53571252f496152e1 ""
   (generated)
   "out/paper.blg"
   "out/paper.bbl"
-["dvipdf"] 1642662496 "out/paper.dvi" "out/paper.pdf" "out/paper" 1642662496
-  "out/paper.dvi" 1642662495 46544 92bcce85198820f418e9ebd99879772f "latex"
+["dvipdf"] 1642754174 "out/paper.dvi" "out/paper.pdf" "out/paper" 1642754175
+  "out/paper.dvi" 1642754174 47784 fa3b3f9e7787843efd5158b3532e3ef6 "latex"
   (generated)
   "out/paper.pdf"
-["latex"] 1642662495 "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" "out/paper.dvi" "paper" 1642662496
-  "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" 1642662245 4829 f82752d576e11e898922e7144154cfe6 ""
+["latex"] 1642754173 "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" "out/paper.dvi" "paper" 1642754175
+  "/Users/kuramotohiroki/Desktop/github_clone/kuramoto-github-video/tex/sigss2022/paper.tex" 1642727902 4835 5e3294c82d049635c165a6456cd33d0f ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm" 1136768653 3584 d3d8ac8b25ca19c0a40b86a5db1e8ccc ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
@@ -37,6 +37,7 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm" 1254269338 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm" 1254269338 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm" 1254269338 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm" 1254269338 12020 46464c854bf317de2a7a0bbe4a1160ca ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm" 1254269338 12064 09aa3eeac96bf141d673bb1b0385ce55 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm" 1254269338 12064 a35db870f0b76c338d749c56dc030ef5 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm" 1254269338 12084 b7f5e4c003de6f57f07c7e9fee73a37c ""
@@ -99,18 +100,18 @@
   "image/dataset_plot.pdf" 1642492682 388857 56c0346ec092f93d8be7594fd5c6e75a ""
   "listings.sty" 1642131022 80393 e50532c071e7315c7d501df966c756d8 ""
   "lstmisc.sty" 1642131022 77020 8c559a2f9bd8bc19dcb41741ff285061 ""
-  "out/paper.aux" 1642662495 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
-  "out/paper.bbl" 1642662267 1437 dbcd527961836b8c9356be8ae4e61b03 "bibtex out/paper"
-  "paper.tex" 1642662245 4829 f82752d576e11e898922e7144154cfe6 ""
-  "section/analyze.tex" 1642648086 5714 33ca0d98a88f11fa92142c000d1fd15b ""
-  "section/conclusion.tex" 1642589327 1015 1f77b8a02743785c6ec8755e0ee826e8 ""
-  "section/consideration.tex" 1642662494 4094 347f4759c85725a348feddfa21296737 ""
-  "section/dataset.tex" 1642650093 5882 03608d0636e8029290ff2d671d8702ad ""
-  "section/intro.tex" 1642575961 1583 10d12c7cb228c56f0cef332594811120 ""
-  "section/method.tex" 1642646830 4772 705a8913fed59b7193e12eb09370615c ""
-  "section/motivation.tex" 1642581618 1094 5ce62c8d9330c71e358bc1da02786e75 ""
-  "section/threats.tex" 1642659211 2174 8d49c6f1c33f7bf8a5285274974fe731 ""
+  "out/paper.aux" 1642754174 913 a2a5e824ac6b5b09f52a2d7d4b22507a "latex"
+  "out/paper.bbl" 1642743969 1437 dbcd527961836b8c9356be8ae4e61b03 "bibtex out/paper"
+  "paper.tex" 1642727902 4835 5e3294c82d049635c165a6456cd33d0f ""
+  "section/conclusion.tex" 1642741986 1003 895a0daccf9e6297e563df833a5d233a ""
+  "section/consideration.tex" 1642743098 4481 5a3f5613d5386f1ee7267844d13aa226 ""
+  "section/dataset.tex" 1642754172 5760 cd40e6aebf7c8fcd121b67f439808cf8 ""
+  "section/intro.tex" 1642741511 1613 281e2e035773c96b7581dbc47178fc75 ""
+  "section/investigation.tex" 1642743968 7275 a61b2d26fccfd9015e371ee7d3ced270 ""
+  "section/method.tex" 1642740402 4547 e8f96d765ea14c55bb1837ed33856bb0 ""
+  "section/motivation.tex" 1642742281 1514 8eed69ad78d2a218dedb0a88b9c1b5b0 ""
+  "section/threats.tex" 1642743621 2151 4305f549077eb21f82d266b6d03a7b07 ""
   (generated)
-  "out/paper.aux"
-  "out/paper.log"
   "out/paper.dvi"
+  "out/paper.log"
+  "out/paper.aux"

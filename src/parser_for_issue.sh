@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "bash booting..."
+echo "bash start."
 
 while true; do
     echo "start parser_for_issue.py..."
@@ -7,4 +7,3 @@ while true; do
     echo "sleep 60seconds..."
     sleep 60
 done
-exit 0

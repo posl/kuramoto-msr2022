@@ -48,7 +48,7 @@
     at.yearで取得
 ~~~
 
-本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
+本調査のデータの取得手順は以下（出力先：`src/out/`）
   1. 本リポジトリのクローン
   2. `src/config/github-token.config`にgithub-access-tokenを入れておく
       <br>github-access-tokenは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token

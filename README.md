@@ -1,11 +1,54 @@
 # kuramoto-msr2022
 
-## A description of the data source. <br>
-- 
+## A description of the data source.
+- _data_issue_open_time.csv
+  - Issue群別のissue_open_timeの代表値
+- _data_first_comment_time.csv
+  - Issue群別のfirst_comment_timeの代表値
+- _data_num_of_comments .csv
+  - Issue群別のnum_of_commentsの代表値
+- _date_num_of_char.csv
+  - Issue群別のnum_of_charの代表値
+- tf-idf_words#ALL_REPOSITORY.csv 
+  - Issue群別のtf-idf上位200単語
+- issue_created_at_year#ALL_REPOSITORY.csv 
+  - 年別の動画及び画像の含有率推移
 ## A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any). <br>
 [pyGitHub](https://pygithub.readthedocs.io/en/latest/introduction.html)を用いてデータを収集した．
-  
-本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
+~~~
+データセットの調査項目は以下の8つ
+（$はpygithubより直接取得可能）
+- issue_open_time
+    $repo.issue.created_at
+    $repo.issue.closed_at 
+    以上の差分を求めて取得（ともにpython.Datetimeクラス）
+- first_comment_time 
+    $repo.issue.created_at 
+    $repo.issue.comment.created_at 
+    以上の差分を求めて取得（ともにpython.Datetimeクラス）
+- num_of_comments 
+    for i in $repo.issue.comments: 
+      num_of_comment += 1
+- num_of_char 
+    len( $repo.issue.body ) 
+    ただし，動画及び画像URLは事前に除く
+- num_of_img 
+    $repo.issue.bodyから正規表現で取得 
+    XXX.mp4では不十分 
+    ログ貼り付けたものも含まれていまう 
+    https://user-images.githubusercontent.com/XXX.拡張子 で取得する
+- num_of_mov 
+    $repo.issue.bodyから正規表現で取得 
+    https://user-images.githubusercontent.com/XXX.拡張子 で取得する
+- words 
+    $repo.issue.bodyから正規表現[\w]+で取得 
+    注意) it's　==>> (it, s) 
+- issue_created_at_year
+    at = $repo.issue.created_at
+    at.yearで取得
+~~~
+
+本調査のデータの取得手順は以下（出力先：`src/out/`）
   1. 本リポジトリのクローン
   2. `src/config/github-token.config`にgithub-access-tokenを入れておく
       <br>github-access-tokenは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
@@ -30,8 +73,10 @@
   7. python tf-idf.py
   8. python data_shaper.py
   9. python count_up.py
-  10. python analyzer.py
-  11. python analyzer_test.py
+      この結果をもとにサンプルサイズを決定する．
+      サンプルサイズは`analyzer.py`中の大域変数
+  11. python analyzer.py
+  12. python analyzer_test.py
 
 ## A description of the storage mechanism, including a schema if applicable. <br>
 - ?
@@ -40,9 +85,10 @@
 ## A description of the originality of the data set (that is, even if the data set has been used in a published paper, its complete description must be unpublished) and similar existing datasets (if any) <br>
 - 動画及び画像の添付数を調べるのは初（調査の限り）
 ## A description of the design of the tool, and how to use the tool in practice ideas for future research questions that could be answered using the data set. <br>
-- 
+- さまざまなパラメータの関係性を分析できる
+- 動画及び画像を含む時の出単語分析から報告者の心理状況を分析するなど，行動経済学にも応用できる可能性がある．
 ## Ideas for further improvements that could be made to the data set. <br>
-- ボットを取り除く工程の追加
+- ボットによるissueの除去工程の追加
 - 複数のgithub-access-tokenを用いたデータの並列取得を可能にする
 ## Any limitations and/or challenges in creating or using the data set. <br>
 - github-access-token の late-limit（5000requests/hour）の制約は極めて大きなネックになる

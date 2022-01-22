@@ -1,0 +1,18 @@
+# redundant
+main.pdf
+*.swp
+*.xcp
+*.gz
+*.aux
+.DS_Store
+
+# backup
+_masa_check
+temp
+
+# omni
+omni
+
+# comments
+comments
+

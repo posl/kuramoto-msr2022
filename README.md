@@ -40,7 +40,8 @@
 ## A description of the originality of the data set (that is, even if the data set has been used in a published paper, its complete description must be unpublished) and similar existing datasets (if any) <br>
 - 動画及び画像の添付数を調べるのは初（調査の限り）
 ## A description of the design of the tool, and how to use the tool in practice ideas for future research questions that could be answered using the data set. <br>
-- 
+- さまざまなパラメータの関係性を分析できる
+- 動画及び画像を含む時の出単語分析から報告者の心理状況を分析するなど，行動経済学にも応用できる可能性がある．
 ## Ideas for further improvements that could be made to the data set. <br>
 - ボットを取り除く工程の追加
 - 複数のgithub-access-tokenを用いたデータの並列取得を可能にする

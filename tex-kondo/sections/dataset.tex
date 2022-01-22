@@ -61,6 +61,8 @@ count the appearances of images and movies as $\#imgs$ and $\#movs$.
 The identification of images and movies is based on the extension of 
 the URLs. 
 
+\masa{@kuramoto: Do you remove the issues that do not have URLs?
+otherwise, the following explanation is wrong}
 For the issues that include the URL, we excluded them and 
 counted the number of words as $\#words$. 
 In addition, we counted the number of characters as $\#chars$. 
@@ -71,6 +73,15 @@ these values are excluded from the dataset.
 Specifically, we only retrieved the issues that meet 
 the condition: $30\ sec \leq IssueOpenTime \leq 1\ year$.
 The number of issues that meet this condition is 711,160 (92.23\%).
+
+\input{tables/issue-category}
+
+We classified the issues into three categories based on 
+whether they have images and movies. 
+Table 2 shows the number of issues for each category. 
+It should be noted that issues that have both 
+the images and movies are counted for both 
+$Img$ and $Mov$ categories. 
 
 \subsection{Dataset Description}
 \masa{Originality and easy analysis (if need)}

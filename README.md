@@ -1,45 +1,20 @@
 # kuramoto-msr2022
 
 ## A description of the data source.
-- issue_open_time 
-- first_comment_time 
-- num_of_comments 
-- num_of_char 
-- num_of_img 
-- num_of_mov 
-- words 
-- issue_created_at_year 
+- _data_issue_open_time.csv
+  - Issue群別のissue_open_timeの代表値
+- _data_first_comment_time.csv
+  - Issue群別のfirst_comment_timeの代表値
+- _data_num_of_comments .csv
+  - Issue群別のnum_of_commentsの代表値
+- _date_num_of_char.csv
+  - Issue群別のnum_of_charの代表値
+- tf-idf_words#ALL_REPOSITORY.csv 
+  - Issue群別のtf-idf上位200単語
+- issue_created_at_year#ALL_REPOSITORY.csv 
+  - 年別の動画及び画像の含有率推移
 ## A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any). <br>
 [pyGitHub](https://pygithub.readthedocs.io/en/latest/introduction.html)を用いてデータを収集した．
-  
-本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
-  1. 本リポジトリのクローン
-  2. `src/config/github-token.config`にgithub-access-tokenを入れておく
-      <br>github-access-tokenは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
-  3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
-      ~~~
-      repo_name <- 最初の行はそのまま（書いても実行されない）
-      sunchit/coding-decoded
-      codenameone/codenameone
-      ssynhtn/wave-view
-      hmage/norm
-      ~~~
-      また，最初の列のみ参照されるため，以下の様な形式でも構わない
-      ~~~
-      repo_name             , num_of_star , url             , ....
-      sunchit/coding-decoded, 10          , ht_tps://~~~~~~ , ....
-      ~~~
-      
-      `org_name/repo_name`は例えば，`posl/kuramoto-msr2022`
-  4. Docker container起動（以下，コンテナ内で行う）
-  5. python parser_for_issue.py
-  6. python body2word.py
-  7. python tf-idf.py
-  8. python data_shaper.py
-  9. python count_up.py
-  10. python analyzer.py
-  11. python analyzer_test.py
-
 ~~~
 データセットの調査項目は以下の8つ
 （$はpygithubより直接取得可能）
@@ -72,6 +47,34 @@
     at = $repo.issue.created_at
     at.yearで取得
 ~~~
+
+本調査のデータの取得手順は以下（出力先：`src/out_for_issue/`）
+  1. 本リポジトリのクローン
+  2. `src/config/github-token.config`にgithub-access-tokenを入れておく
+      <br>github-access-tokenは，(GitHub)Setting > Developer settings > personal_access_token > Generate new token
+  3. `src/results.csv`に取得したいリポジトリ名を入力（カンマ区切り値） <br> (Example)
+      ~~~
+      repo_name <- 最初の行はそのまま（書いても実行されない）
+      sunchit/coding-decoded
+      codenameone/codenameone
+      ssynhtn/wave-view
+      hmage/norm
+      ~~~
+      また，最初の列のみ参照されるため，以下の様な形式でも構わない
+      ~~~
+      repo_name             , num_of_star , url             , ....
+      sunchit/coding-decoded, 10          , ht_tps://~~~~~~ , ....
+      ~~~
+      
+      `org_name/repo_name`は例えば，`posl/kuramoto-msr2022`
+  4. Docker container起動（以下，コンテナ内で行う）
+  5. python parser_for_issue.py
+  6. python body2word.py
+  7. python tf-idf.py
+  8. python data_shaper.py
+  9. python count_up.py
+  10. python analyzer.py
+  11. python analyzer_test.py
 
 ## A description of the storage mechanism, including a schema if applicable. <br>
 - ?

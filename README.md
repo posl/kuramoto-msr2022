@@ -88,7 +88,7 @@
 - さまざまなパラメータの関係性を分析できる
 - 動画及び画像を含む時の出単語分析から報告者の心理状況を分析するなど，行動経済学にも応用できる可能性がある．
 ## Ideas for further improvements that could be made to the data set. <br>
-- ボットを取り除く工程の追加
+- ボットによるissueの除去工程の追加
 - 複数のgithub-access-tokenを用いたデータの並列取得を可能にする
 ## Any limitations and/or challenges in creating or using the data set. <br>
 - github-access-token の late-limit（5000requests/hour）の制約は極めて大きなネックになる

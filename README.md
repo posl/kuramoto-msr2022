@@ -3,33 +3,33 @@
 ## A description of the data source. <br>
 データセットの調査項目は以下の8つ
 （$はpygithubより直接取得可能）
-- issue_open_time
-    $repo.issue.created_at
-    $repo.issue.closed_at
+- issue_open_time <br>
+    $repo.issue.created_at <br>
+    $repo.issue.closed_at <br>
     以上の差分を求めて取得（ともにpython.Datetimeクラス）
-- first_comment_time
-    $repo.issue.created_at
-    $repo.issue.comment.created_at
+- first_comment_time <br>
+    $repo.issue.created_at <br>
+    $repo.issue.comment.created_at <br>
     以上の差分を求めて取得（ともにpython.Datetimeクラス）
-- num_of_comments
-    for i in $repo.issue.comments:
+- num_of_comments <br>
+    for i in $repo.issue.comments: <br>
       num_of_comment += 1
-- num_of_char
-    len( $repo.issue.body )
+- num_of_char <br>
+    len( $repo.issue.body ) <br>
     ただし，動画及び画像URLは事前に除く
-- num_of_img
-    $repo.issue.bodyから正規表現で取得
-    XXX.mp4では不十分
-    ログ貼り付けたものも含まれていまう
+- num_of_img <br>
+    $repo.issue.bodyから正規表現で取得 <br>
+    XXX.mp4では不十分 <br>
+    ログ貼り付けたものも含まれていまう <br>
     https://user-images.githubusercontent.com/XXX.拡張子 で取得する
-- num_of_mov
-    $repo.issue.bodyから正規表現で取得
+- num_of_mov <br>
+    $repo.issue.bodyから正規表現で取得 <br>
     https://user-images.githubusercontent.com/XXX.拡張子 で取得する
-- words
-    $repo.issue.bodyから正規表現[\w]+で取得
-    注意) it's　==>> (it, s)
-- issue_created_at_year
-    at = $repo.issue.created_at
+- words <br>
+    $repo.issue.bodyから正規表現[\w]+で取得 <br>
+    注意) it's　==>> (it, s) 
+- issue_created_at_year <br>
+    at = $repo.issue.created_at <br>
     at.yearで取得
 ## A description of the methodology used to gather the data (including provenance and the tool used to create/generate/gather the data, if any). <br>
 [pyGitHub](https://pygithub.readthedocs.io/en/latest/introduction.html)を用いてデータを収集した．

@@ -73,8 +73,10 @@
   7. python tf-idf.py
   8. python data_shaper.py
   9. python count_up.py
-  10. python analyzer.py
-  11. python analyzer_test.py
+      この結果をもとにサンプルサイズを決定する．
+      サンプルサイズは`analyzer.py`中の大域変数
+  11. python analyzer.py
+  12. python analyzer_test.py
 
 ## A description of the storage mechanism, including a schema if applicable. <br>
 - ?

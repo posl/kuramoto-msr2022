@@ -32,6 +32,46 @@ This process was conducted from November 2021 to December 2021.
 
 \input{tables/issue-attr}
 
+We retrieved the attributes from the collected issues 
+that are the data in the database. 
+\tab{tab:issue-attr} shows the eight attributes 
+retrieved from the issues. 
+
+We used \texttt{PyGithub}\masa{add citation} to execute GitHub API 
+to retrieve the attributes from the issues. 
+$IssueOpenTime$, $FirstCommentTime$,
+and $IssueCreatedYear$ can be directly
+retrieved by \texttt{PyGithub}.
+On the contrary,
+$\#chars$, $\#imgs$, $\#movs$, and $\#words$
+need the conversion from the retrieved raw data.
+We describe the details of the conversion. 
+The attached images and movies are transformed into 
+URLs and put in the text of issues as the markdown format. 
+The following URL is an example.
+
+\begin{quote}
+	https://user-images.githubusercontent.com/XXX.mp4
+\end{quote}
+
+\noindent{}
+The part of XXX consists of alphanumeric, ``/'', and ``-''.
+Hence, we prepared the regular expression for this URL and 
+count the appearances of images and movies as $\#imgs$ and $\#movs$. 
+The identification of images and movies is based on the extension of 
+the URLs. 
+
+For the issues that include the URL, we excluded them and 
+counted the number of words as $\#words$. 
+In addition, we counted the number of characters as $\#chars$. 
+
+We noticed that some $IssueOpenTime$ values are less than zero. 
+We decided that these values are invalid and the issues having 
+these values are excluded from the dataset. 
+Specifically, we only retrieved the issues that meet 
+the condition: $30\ sec \leq IssueOpenTime \leq 1\ year$.
+The number of issues that meet this condition is 711,160 (92.23\%).
+
 \subsection{Dataset Description}
 \masa{Originality and easy analysis (if need)}
 

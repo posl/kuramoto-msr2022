@@ -62,6 +62,39 @@
   10. python analyzer.py
   11. python analyzer_test.py
 
+~~~
+データセットの調査項目は以下の8つ
+（$はpygithubより直接取得可能）
+- issue_open_time
+    $repo.issue.created_at
+    $repo.issue.closed_at 
+    以上の差分を求めて取得（ともにpython.Datetimeクラス）
+- first_comment_time 
+    $repo.issue.created_at 
+    $repo.issue.comment.created_at 
+    以上の差分を求めて取得（ともにpython.Datetimeクラス）
+- num_of_comments 
+    for i in $repo.issue.comments: 
+      num_of_comment += 1
+- num_of_char 
+    len( $repo.issue.body ) 
+    ただし，動画及び画像URLは事前に除く
+- num_of_img 
+    $repo.issue.bodyから正規表現で取得 
+    XXX.mp4では不十分 
+    ログ貼り付けたものも含まれていまう 
+    https://user-images.githubusercontent.com/XXX.拡張子 で取得する
+- num_of_mov 
+    $repo.issue.bodyから正規表現で取得 
+    https://user-images.githubusercontent.com/XXX.拡張子 で取得する
+- words 
+    $repo.issue.bodyから正規表現[\w]+で取得 
+    注意) it's　==>> (it, s) 
+- issue_created_at_year
+    at = $repo.issue.created_at
+    at.yearで取得
+~~~
+
 ## A description of the storage mechanism, including a schema if applicable. <br>
 - ?
 ## If the data has been used by the authors or others, a description of how this was done including references to previously published papers. <br>

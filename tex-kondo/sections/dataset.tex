@@ -85,6 +85,11 @@ and convert all issues into $\#chars$ and $Words$.
 We noticed that some $IssueOpenTime$ values are less than zero. 
 We decided that these values are invalid and the issues having 
 these values are excluded from the dataset. 
+In addition, to study the impact of videos and images on 
+the communication in issues, 
+we excluded issues that resolved less than 30 secs. 
+This is because this issue resolution time is too short 
+to communicate with each other. 
 Specifically, we only retrieved the issues that meet 
 the condition: $30\ sec \leq IssueOpenTime \leq 1\ year$.
 The number of issues that meet this condition is 711,160 (92.23\%).

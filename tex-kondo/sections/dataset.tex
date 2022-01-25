@@ -92,6 +92,15 @@ $Img$ and $Mov$ categories.
 We extract a part of the retrieved issues in \tab{tab:example-dataset}. 
 Each row corresponds to the values of the attributes of an issue. 
 
+\input{tables/wort-tfidf}
+
+We used $Words$ to compute the TFIDF values\masa{need citation} for each category. 
+The TFIDF values will support researchers who investigate 
+the differences in the appearances of words with and without 
+images/movies. 
+\tab{tag:tfidf} shows the top-10 TFIDF words in $Words$ 
+for each category extracted from our dataset. 
+
 \subsection{Dataset Description}
 
 \input{figures/data-category-trend}
@@ -122,5 +131,3 @@ however, we observed differences across the categories.
 For example, the 25th, 50th, and 75th percentiles of 
 the $Img$ and $Mov$ categories in $IssueResolvedTime$ are 
 longer than those of the $None$ category. 
-
-\input{tables/wort-tfidf}

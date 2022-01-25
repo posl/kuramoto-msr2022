@@ -15,7 +15,7 @@ We first select the repositories based on the following conditions:
 \begin{itemize}
 	\item the number of stars $\geq$ 10
 	\item the number of issues $\geq$ 1
-	\item the latest commit\masa{or the latest issue?} is in 2021
+	\item the latest commit is in 2021
 \end{itemize}
 We used the number of stars for retrieving the repositories 
 in which the owner may communicate with other developers and 
@@ -47,9 +47,14 @@ $IssueOpenTime$, $FirstCommentTime$,
 and $IssueCreatedYear$ can be directly
 retrieved by \texttt{PyGitHub}.
 On the contrary,
-$\#chars$, $\#imgs$, $\#movs$, and $\#words$
+$\#chars$, $\#imgs$, $\#movs$, and $Words$
 need the conversion from the retrieved raw data.
 We describe the details of the conversion. 
+It should be noted that we converted the first description of 
+issues into these four attribute values and 
+ignore the comments and the title.
+\masa{Is this description correct?}
+
 The attached images and movies are transformed into 
 URLs and put in the text of issues as the markdown format. 
 The following URL is an example.
@@ -64,12 +69,18 @@ Hence, we prepared the regular expression for this URL and
 count the appearances of images and movies as $\#imgs$ and $\#movs$. 
 The identification of images and movies is based on the extension of 
 the URLs. 
+Specifically, we used png, PNG, jpg, JPG, and jpeg as 
+the extensions for images and 
+gif, GIF, mp4, MP4, and mov as the extensions for movies.
 
-\masa{@kuramoto: Do you remove the issues that do not have URLs?
-otherwise, the following explanation is wrong}
-For the issues that include the URL, we excluded them and 
-counted the number of words as $\#words$. 
-In addition, we counted the number of characters as $\#chars$. 
+We counted the number of characters as $\#chars$ and 
+stored the words as $Words$ for all issues. 
+In this process, if the description of the issue 
+includes the URL, we exclude it from the description, 
+and convert all issues into $\#chars$ and $Words$.
+% For the issues that include the URL, we excluded them and 
+% counted the number of words as $\#words$. 
+% In addition, we counted the number of characters as $\#chars$. 
 
 We noticed that some $IssueOpenTime$ values are less than zero. 
 We decided that these values are invalid and the issues having 

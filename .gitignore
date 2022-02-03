@@ -5,6 +5,7 @@ main.pdf
 *.gz
 *.aux
 .DS_Store
+paper
 
 # backup
 _masa_check

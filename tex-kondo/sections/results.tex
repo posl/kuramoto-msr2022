@@ -2,3 +2,71 @@
 \label{sec:results}
 
 \input{tables/steel-dwass-result}
+
+
+% 初期段階の調査として，画像及び動画がissueの各attributesに
+% 与える影響について調査する．
+% 表2で得られたそれぞれのカテゴリ間で比較を比較を行う．
+% 等分散性を仮定できないデータが含まれていたため，
+% 比較にはSteel-Dwass testを採用する．
+% 
+% visualizationは，issueの解決時間，
+% コメント数，文字数に何らかの影響を与える．
+% 検定結果を表6に示す．
+% 有意水準は0.05を採用する．
+% IssueResolvedTimeにおいて，
+% ImgとMovは片側検定で有意差があった．
+% また，表Xより，平均値，中央値でNoneカテゴリの
+% issueよりImgとMovカテゴリのissueの方が
+% 課題解決時間が長かった．
+% よって，画像もしくは動画がissue作成時に付与
+% される課題はその解決時間が有意に長くなる．
+% また，#comments及び#charsでは両側検定で
+% 有意であり，これらのattributesにも
+% 有意な影響を与えることがわかった．
+% ただし，imageとmovieに有意差は
+% 観測されなかった．
+
+% As an initial analysis, we investigated 
+% the impact of images and movies on 
+% the issues in terms of the attributes. 
+As an initial analysis, we investigated 
+the differences with and without images and movies 
+for each attribute on the issues. 
+Specifically, we compared the attributes between 
+the categories in \tab{tab:issue-category}. 
+Because our preliminary study shows that 
+the distributions for each category do not 
+come from normal distributions, 
+we used a non-parametric test called the \textit{Steel-Dwass test}. 
+
+\textbf{The attribute values are changed 
+with and without images and movies.}
+\tab{tab:Steel-Dwass-test} shows the results of 
+the Steel-Dwass test. 
+The asterisks indicate significance based on 
+the Steel-Dwass test: * indicates $p$ < 0.05 in 
+the two-sided test; 
+** indicates $p$ < 0.05 in the one-sided test. 
+We observed that the issues in the $Img$ category and 
+the $Mov$ category are significantly different from those 
+in the $None$ category in terms of $IssueResolvedTime$. 
+Also, \tab{tab:issue_stat_categories} shows that 
+the mean and the median $IssueResolvedTime$ values of 
+the issues in the $Img$ category and the $Mov$ category are 
+longer than those in the $None$ category. 
+Hence, the issues with images or movies tend to need 
+a longer time to be resolved. 
+
+In addition, we observed that the issues in 
+the $Img$ category and the $Mov$ category are 
+significantly different from those in 
+the $None$ category in terms of $\#comments$ and 
+$\#chars$. 
+Hence, the issues with images or movies 
+tend to have different numbers of 
+comments and words in the issue description.
+
+It should be noted that we do not observe 
+the difference between the $Img$ category and 
+the $Mov$ category. 

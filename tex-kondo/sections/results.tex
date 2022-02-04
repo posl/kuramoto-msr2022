@@ -121,9 +121,22 @@ the $Mov$ category.
 
 \input{tables/tf-idf-result}
 
-We used $Words$ to compute the TFIDF values\masa{need citation} for each category. 
-The TFIDF values will support researchers who investigate 
-the differences in the appearances of words with and without 
-images/movies. 
-\tab{tab:tfidf-result} shows the top-10 TFIDF words in $Words$ 
-for each category extracted from our dataset. 
+% We used $Words$ to compute the TFIDF values\masa{need citation} for each category. 
+% The TFIDF values will support researchers who investigate 
+% the differences in the appearances of words with and without 
+% images/movies. 
+We suppose that images and movies are utilized to 
+describe specific contents such as GUI bugs. 
+Hence, we computed the TFIDF values\masa{need citation} 
+on $Words$ for each category. 
+The TFIDF values clarify the differences in the appearances of 
+words with and without images/movies. 
+
+\textbf{The issues with either images or movies have 
+more words about visualization or GUI.}
+\tab{tab:tfidf-result} shows the top-10 TFIDF words
+% in $Words$ 
+for each category.
+It should be noted that we remove a kind of stop words such as 
+``at'', ``it'', and ``the''. 
+% extracted from our dataset. 

@@ -56,11 +56,7 @@ two research questions.
 	In this RQ, we clarify whether this assumption is true. 
 \end{itemize}
 
-\input{figures/data-collection-overview}
-
-\subsection{Data Collection}
-\fig{fig:data-collection-overview} shows
-an overview of the data collection process.
+\subsection{Context Selection}
 We collected the data from the issues of 
 the publicly available repositories on GitHub. 
 We first select the repositories based on the following conditions:
@@ -86,37 +82,44 @@ We discuss the threat to validity of
 this process in \sec{sec:limitation}. 
 This process was conducted from November 2021 to December 2021.
 
-\input{tables/issue-attr}
+\input{figures/data-collection-overview}
 
-We retrieved the attributes from the collected issues 
-that are the data in the database. 
-\tab{tab:issue-attr} shows the eight attributes 
-retrieved from the issues. 
-
-We used \texttt{PyGitHub}\masa{add citation} to execute GitHub API 
-to retrieve the attributes from the issues. 
-$IssueOpenTime$, $FirstCommentTime$,
-and $IssueCreatedYear$ can be directly
-retrieved by \texttt{PyGitHub}.
-On the contrary,
-$\#chars$, $\#imgs$, $\#movs$, and $Words$
-need the conversion from the retrieved raw data.
-We describe the details of the conversion. 
-It should be noted that we converted the first description of 
-issues into these four attribute values and 
-ignore the comments and the title.
-\masa{Is this description correct?}
-
-The attached images and movies are transformed into 
-URLs and put in the text of issues as the markdown format. 
-The following URL is an example.
-
+\subsection{Data Collection}
+\fig{fig:data-collection-overview} shows an overview of the data collection process. We first collect issue report data with \texttt{PyGitHub}\masa{add citation} that internally execute GitHub API. Next, we download movies and images from GitHub since the collected issue data contain only the file names of images and movies. The attached images and movies are transformed into URLs and put in the text of issues as the markdown format. \kashiwa{DO-YU-IMI???}
+The following URL is an example to download mp4 files. 
 \begin{quote}
 	https://user-images.githubusercontent.com/XXX.mp4
+	\\\kashiwa{XXXX HA YADA. It looks a template}
 \end{quote}
 
 \noindent{}
-The part of XXX consists of alphanumeric, ``/'', and ``-''.
+where, the part of XXX consists of alphanumeric, ``/'', and ``-''.
+
+\input{tables/issue-category}
+Consequently, we downloaded XXX images and XXX movies. 
+We classified the issues into three categories based on 
+whether they have images and movies. 
+\tab{tab:issue-category} shows the number of issues for each category. Note that issues often have both images and movies. These issues are included in both $Img$ and $Mov$ categories. Thus, the total number of downloaded issues is different from the sum of \#issues in Table X. 
+
+% \input{tables/issue-ex}
+% We extract a part of the retrieved issues in \tab{tab:example-dataset}. 
+% Each row corresponds to the values of the attributes of an issue. 
+
+\subsection{Metrics Computation}
+\input{tables/issue-attr}
+We retrieved the attributes from the collected issues 
+that are the data in the database. \tab{tab:issue-attr} shows the eight attributes 
+retrieved from the issues. 
+$IssueOpenTime$, $FirstCommentTime$,
+and $IssueCreatedYear$ can be extracted from issue reports. 
+
+On the contrary, $\#chars$, $\#imgs$, $\#movs$, and $Words$ need several pre-processes from issue reports. 
+
+It should be noted that we converted the first description of 
+issues into these four attribute values and 
+ignore the comments and the title.
+\masa{Is this description correct?}\kashiwa{I dont get this}
+
 Hence, we prepared the regular expression for this URL and 
 count the appearances of images and movies as $\#imgs$ and $\#movs$. 
 The identification of images and movies is based on the extension of 
@@ -145,16 +148,3 @@ to communicate with each other.
 Specifically, we only retrieved the issues that meet 
 the condition: $30\ sec \leq IssueOpenTime \leq 1\ year$.
 The number of issues that meet this condition is 711,160 (92.23\%).
-
-\input{tables/issue-category}
-
-We classified the issues into three categories based on 
-whether they have images and movies. 
-\tab{tab:issue-category} shows the number of issues for each category. 
-It should be noted that issues that have both 
-the images and movies are counted for both 
-$Img$ and $Mov$ categories. 
-
-% \input{tables/issue-ex}
-% We extract a part of the retrieved issues in \tab{tab:example-dataset}. 
-% Each row corresponds to the values of the attributes of an issue. 

@@ -1,80 +1,105 @@
 \section{Introduction}
 \label{sec:intro}
-In recent years, distributed development~\citep{sengupta2006ICSE} 
-such as remote work has become more important 
-than in the last decades~\citep{ford2021TOSEM}. 
-Indeed, developers in industry also employ remote work
-in recent years~\citep{gitlab2020survey}.
-% for work-life balance. 
-To make distributed development successful, 
-developers have to be aware of their communication 
-in their communities. 
-% For example, developers for open source software develop software
-% at different times and in different regions, while
-For example, developers for open source software are 
-distributed around the world and live in different time zones, 
-while developers in the same company generally gather around 
-the office and live in the same time zone. 
-GitLab Inc. in which all developers work remotely 
-public their knowledge of the key steps 
-to make remote work successful~\citep{gitlab2020remoteplaybook}. 
+``What makes good issues?'' has been studied for decades and 
+is still an ultimate research question. 
+Issues (a.k.a. bug reports) that report bugs with 
+insufficient information delay fixing bugs. 
+For example, Zimmermann~\et~\citep{zimmermann2010TSE} reported 
+that the steps to reproduce bugs and stack traces are important 
+to developers while such ones are occasionally missing or incorrect. 
+This mismatch between what developers need and 
+what reporters who write issues provide would seriously delay fixing bugs. 
+Also, prior studies reported the quality of issues affects 
+the issue resolution time\masa{need citation} and 
+issue resolution rate\masa{need citation}. 
 
 
-However, in general, distributed development still has 
-the challenge in communication~\citep{ford2021TOSEM}. 
-% \masa{ford's work is a good reference}
-For example, in non-distributed development, 
-developers would discuss a bug by showing the display of 
-their laptop face-to-face. 
-The questioner would easily share the way to reproduce the bug 
-and the questionee could understand the details of the bug. 
-On the contrary, in distributed development such as 
-open source software, they have to discuss the bug 
-in asynchronous communication 
-such as text using issue tracking systems. 
-In addition, it is generally difficult to explain the way 
-to reproduce the bug in text communication 
-even if it is easy to explain the bug by showing 
-the display of their laptop. 
-Hence, it would take a long time to fix the bug 
-in distributed development. 
+%% In recent years, distributed development~\citep{sengupta2006ICSE} 
+%% such as remote work has become more important 
+%% than in the last decades~\citep{ford2021TOSEM}. 
+%% Indeed, developers in industry also employ remote work
+%% in recent years~\citep{gitlab2020survey}.
+%% % for work-life balance. 
+%% To make distributed development successful, 
+%% developers have to be aware of their communication 
+%% in their communities. 
+%% % For example, developers for open source software develop software
+%% % at different times and in different regions, while
+%% For example, developers for open source software are 
+%% distributed around the world and live in different time zones, 
+%% while developers in the same company generally gather around 
+%% the office and live in the same time zone. 
+%% GitLab Inc. in which all developers work remotely 
+%% public their knowledge of the key steps 
+%% to make remote work successful~\citep{gitlab2020remoteplaybook}. 
+
+%% However, in general, distributed development still has 
+%% the challenge in communication~\citep{ford2021TOSEM}. 
+%% % \masa{ford's work is a good reference}
+%% For example, in non-distributed development, 
+%% developers would discuss a bug by showing the display of 
+%% their laptop face-to-face. 
+%% The questioner would easily share the way to reproduce the bug 
+%% and the questionee could understand the details of the bug. 
+%% On the contrary, in distributed development such as 
+%% open source software, they have to discuss the bug 
+%% in asynchronous communication 
+%% such as text using issue tracking systems. 
+%% In addition, it is generally difficult to explain the way 
+%% to reproduce the bug in text communication 
+%% even if it is easy to explain the bug by showing 
+%% the display of their laptop. 
+%% Hence, it would take a long time to fix the bug 
+%% in distributed development. 
 
 
 To address this challenge, GitHub released a new feature 
 to easily share movies in May 2021~\citep{github-video-blog}. 
-Developers can share their movies such as the mp4 format 
+Developers and reporters can share their movies such as the mp4 format 
 on GitHub (\eg,  issues, pull requests, and discussions). 
-For example, developers can share the way to reproduce bugs 
-with the screen capture and the questionee can understand 
-the bugs quickly even in asynchronous communication. 
+Of course, they can use the images on GitHub as well. 
+Such visualized issues (\textit{visual issues}) have the potential to 
+easily share information without incorrect one.  
+For example, reporters can share the steps to reproduce bugs 
+with the screen capture and developers can understand 
+the steps quickly~\citep{github-video-blog}.
+% even in asynchronous communication. 
 % In addition, developers can share the background and 
 % the importance of the complex changes easier with 
 % only asynchronous communication. 
+However, no studies about the impact of visual issues exist. 
+Our ultimate goal is to establish the advantages of visual issues 
+on software development and promote using them.
 
 
-Asynchronous communication with 
-%movies 
-such visualization
-has the potential 
-to promote distributed development. 
-Indeed, developers can use this feature to make communication 
-in open source software development accelerate. 
-However, no studies about asynchronous communication with 
-the visualization in software development exist.
-% as this feature is new. 
-% Hence, it is important to prepare the dataset of the visualization
-% for software development. 
-Hence, it is important to prepare the dataset of the visualization 
-and study it to reveal the impact of the visualization.
+%% Asynchronous communication with 
+%% %movies 
+%% such visualization
+%% has the potential 
+%% to promote distributed development. 
+%% Indeed, developers can use this feature to make communication 
+%% in open source software development accelerate. 
+%% However, no studies about asynchronous communication with 
+%% the visualization in software development exist.
+%% % as this feature is new. 
+%% % Hence, it is important to prepare the dataset of the visualization
+%% % for software development. 
+%% Hence, it is important to prepare the dataset of the visualization 
+%% and study it to reveal the impact of the visualization.
 
 
 
 % We present a dataset. 
-In this paper, we present the first dataset to accelerate 
-the research about the impact of visualization 
-in communication in GitHub and the initial analysis. 
+%% In this paper, we present the first dataset to accelerate 
+%% the research about the impact of visualization 
+%% in communication in GitHub and the initial analysis. 
+As a precursor to this goal, in this paper, 
+we conducted a preliminary study about the impact of 
+using visual issues on software development on GitHub. 
+In addition, to promote the research about visual issues, 
+we built a dataset of visual issues. 
 This dataset consists of movies and images 
-in publicly available repositories in GitHub. 
+in publicly available repositories on GitHub. 
 Specifically, we collected 
 3,819 movies and 
 33,079 images from 
@@ -82,14 +107,15 @@ Specifically, we collected
 4,173 publicly available repositories.
 
 Our initial analysis reveals that 
-1) the images and movies are still not popular 
-in the issues, while the number of issues with images 
-and movies slightly increases in recent years, 
-2) the issues with either images or movies need 
-a longer time to be resolved than the issues without them, and 
-3) the issues with either images or movies are more related to 
+1) the visual issues are still not popular,
+while the number of them has slightly increased in recent years, 
+% 2) the issues with either images or movies need 
+2) the visual issues need 
+a longer time to be resolved than the issues without images and movies, and 
+% 3) the issues with either images or movies are more related to 
+3) the visual issues are more related to 
 the topics of visualization and GUI. 
 The main contribution of this paper is 
-opening a new research perspective to utilize visualization 
-in asynchronous communication and 
-preparing a new dataset for this research. 
+opening a new research perspective to study visual issues
+% in asynchronous communication 
+and preparing a new dataset for this research. 

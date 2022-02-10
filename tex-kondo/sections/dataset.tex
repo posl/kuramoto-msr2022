@@ -57,26 +57,28 @@ two research questions.
 \end{itemize}
 
 \subsection{Context Selection}
-We collected the data from the issues of 
+We collected the data from closed issue reports of 
 the publicly available repositories on GitHub. 
-We first select the repositories based on the following conditions:
+We first selected the repositories based on the following conditions:
 \begin{itemize}
 	\item the number of stars $\geq$ 10
-	\item the number of issues $\geq$ 1
+	\item the number of issue reports $\geq$ 1
 	\item the latest commit is in 2021
 \end{itemize}
-We used the number of stars for retrieving the repositories 
-in which the owner may communicate with other developers and 
-discard repositories developed by only the owner. 
+% We used the number of stars for retrieving the repositories 
+% in which the owner may communicate with other developers and 
+% discard repositories developed by only the owner. 
+We used the number of stars for collecting the repositories 
+that get attention from other developers. 
 In addition, we used the date of the latest commit 
 because the major release of the feature is in 2021. 
 Beforehand, the feature was the beta version. 
 The number of the repositories that meet 
 the conditions is 289,115. 
 We randomly selected 4,173 repositories from them 
-due to the execution time to collect issues. 
+due to the execution time to collect closed issue reports. 
 This number is less than 2\% of all repositories. 
-However, the number of resolved issues 
+However, the number of closed issue reports
 in these repositories is already 770,656. 
 We discuss the threat to validity of 
 this process in \sec{sec:limitation}. 
@@ -87,14 +89,14 @@ This process was conducted from November 2021 to December 2021.
 \subsection{Data Collection}
 \fig{fig:data-collection-overview} shows an overview of 
 the data collection process. 
-We first collect issue report data with \texttt{PyGitHub}\masa{add citation} 
+We first collected closed issue report data with \texttt{PyGitHub}\masa{add citation} 
 that internally execute GitHub API. 
-Next, we download movies and images from GitHub.
+Next, we downloaded movies and images from GitHub.
 % since the collected issue data contain only the file names of 
 % images and movies. The attached images and movies are 
 % transformed into URLs and put in the text of issues as the markdown format. 
 %The following URL is an example to download mp4 files. 
-GitHub transformed the images and movies into URLs such as:
+GitHub transforms the images and movies into URLs such as:
 \kashiwa{DO-YU-IMI???}
 \masa{to kashiwa: how about this?}
 \begin{quote}
@@ -103,27 +105,29 @@ GitHub transformed the images and movies into URLs such as:
 	\\\kashiwa{XXXX HA YADA. It looks a template}
 \masa{to kashiwa: how about this?}
 \end{quote}
-Hence, we used the regular expression for this URL
+Hence, we prepared the regular expression 
 % to download the images and movies. 
 %\noindent{}
 %where, the part of XXX consists of alphanumeric, ``/'', and ``-''.
 % Hence, we prepared the regular expression for this URL and 
-to
-count the appearances of images and movies as $\#imgs$ and $\#movs$. 
+to extract URLs. 
 The identification of images and movies is based on the extension of 
 the URLs. 
 Specifically, we used png, PNG, jpg, JPG, and jpeg as 
 the extensions for images and 
 gif, GIF, mp4, MP4, and mov as the extensions for movies.
-Consequently, we downloaded 33,079 images and 3,819 movies.\masa{to kuramoto: i wrote these numbers. are the numbers correct?} 
+Consequently, we downloaded 33,079 images and 3,819 movies
+with the collected URLs.\masa{to kuramoto: i wrote these numbers. are the numbers correct?} 
 
-We classified the issues into three categories based on 
+We classified the issue reports into three categories based on 
 whether they have images and movies. 
-\tab{tab:issue-category} shows the number of issues for each category. 
-Note that issues often have both images and movies. 
-These issues are included in both $Img$ and $Mov$ categories. 
-Thus, the total number of downloaded issues is different from 
+\tab{tab:issue-category} shows the number of issue reports for each category. 
+Note that issue reports often have both images and movies. 
+These issue reports are included in both $Img$ and $Mov$ categories. 
+Thus, the total number of downloaded issue reports is different from 
 the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I highlight the unknown table number}. 
+In this paper, we refer to the issue reports in the $Mov$ category 
+as \textit{visual issue reports}. 
 
 \input{tables/issue-category}
 
@@ -133,40 +137,15 @@ the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I hi
 
 \subsection{Metrics Computation}
 \input{tables/issue-attr}
-We retrieved the attributes from the collected issues 
-that are the data in the database. \tab{tab:issue-attr} shows the eight attributes 
-retrieved from the issues. 
+We retrieved the attributes from the collected issue reports.
+% that are the data in the database. 
+\tab{tab:issue-attr} shows the eight attributes 
+retrieved from the issue reports. 
 $IssueResolvedTime$, $FirstCommentTime$,
-and $IssueCreatedYear$ can be extracted from issue reports. 
-
-On the contrary, $\#chars$, $\#imgs$, $\#movs$, and $Words$ need several pre-processes from issue reports. 
-% It should be noted that we computed these attributes 
-% on the description of issue reports. 
-% Hence, we computed these attributes on neither 
-% the title nor the comments on the issue reports. 
-It should be noted that issue reports consist of three contents: 
-title, description, and comments. 
-We computed $\#chars$, $\#imgs$, $\#movs$, and $Words$ based on the description only. 
-Hence, we used neither the title nor the comments 
-to compute these attributes.
-% It should be noted that we converted the first description of 
-% issues into these four attribute values and 
-% ignore the comments and the title.
-\kashiwa{I dont get this}
-\masa{to kashiwa: how about this?}
-
-
-We counted the number of characters as $\#chars$ and 
-stored the words as $Words$ for all issues. 
-In this process, if the description of the issue 
-includes the URL, we exclude it from the description, 
-and convert all issues into $\#chars$ and $Words$.
-% For the issues that include the URL, we excluded them and 
-% counted the number of words as $\#words$. 
-% In addition, we counted the number of characters as $\#chars$. 
+$IssueCreatedYear$, and $\#comments$ can be extracted from issue reports. 
 
 We noticed that some $IssueResolvedTime$ values are less than zero. 
-We decided that these values are invalid and the issues having 
+We decided that these values are invalid and the issue reports having 
 these values are excluded from our analysis and the dataset. 
 In addition, we excluded issue reports resolved in 
 too short periods because such issue reports may not 
@@ -179,3 +158,33 @@ be related to bugs.
 Specifically, we only retrieved the issue reports that meet 
 the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
 The number of issue reports that meet this condition is 711,160 (92.23\%).
+
+On the contrary, $\#chars$, $\#imgs$, $\#movs$, and $Words$ need several pre-processes from issue reports. 
+% It should be noted that we computed these attributes 
+% on the description of issue reports. 
+% Hence, we computed these attributes on neither 
+% the title nor the comments on the issue reports. 
+We counted the number of characters as $\#chars$ and 
+stored the words as $Words$ for all issue reports. 
+In this process, if the description of the issue report 
+includes the URL, we exclude it from the description, 
+and convert all issue reports into $\#chars$ and $Words$.
+We counted the appearances of images and movies
+as $\#imgs$ and $\#movs$
+with the regular expression for the URL.
+% For the issues that include the URL, we excluded them and 
+% counted the number of words as $\#words$. 
+% In addition, we counted the number of characters as $\#chars$. 
+
+It should be noted that issue reports consist of three contents: 
+title, description, and comments. 
+We computed $\#chars$, $\#imgs$, $\#movs$, and $Words$ based on the description only. 
+Hence, we used neither the title nor the comments 
+to compute these attributes.
+% It should be noted that we converted the first description of 
+% issues into these four attribute values and 
+% ignore the comments and the title.
+\kashiwa{I dont get this}
+\masa{to kashiwa: how about this?}
+
+

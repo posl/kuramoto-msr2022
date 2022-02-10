@@ -85,21 +85,39 @@ This process was conducted from November 2021 to December 2021.
 \input{figures/data-collection-overview}
 
 \subsection{Data Collection}
-\fig{fig:data-collection-overview} shows an overview of the data collection process. We first collect issue report data with \texttt{PyGitHub}\masa{add citation} that internally execute GitHub API. Next, we download movies and images from GitHub since the collected issue data contain only the file names of images and movies. The attached images and movies are transformed into URLs and put in the text of issues as the markdown format. \kashiwa{DO-YU-IMI???}
-The following URL is an example to download mp4 files. 
+\fig{fig:data-collection-overview} shows an overview of 
+the data collection process. 
+We first collect issue report data with \texttt{PyGitHub}\masa{add citation} 
+that internally execute GitHub API. 
+Next, we download movies and images from GitHub.
+% since the collected issue data contain only the file names of 
+% images and movies. The attached images and movies are 
+% transformed into URLs and put in the text of issues as the markdown format. 
+%The following URL is an example to download mp4 files. 
+GitHub transformed the images and movies into URLs such as:
+\kashiwa{DO-YU-IMI???}
+\masa{to kashiwa: how about this?}
 \begin{quote}
-	https://user-images.githubusercontent.com/XXX.mp4
+	% https://user-images.githubusercontent.com/XXX.mp4
+	https://user-images.githubusercontent.com/file-name.mp4
 	\\\kashiwa{XXXX HA YADA. It looks a template}
+\masa{to kashiwa: how about this?}
 \end{quote}
+Hence, we used the regular expression 
+to download the images and movies. 
+%\noindent{}
+%where, the part of XXX consists of alphanumeric, ``/'', and ``-''.
+Consequently, we downloaded 33,079 images and 3,819 movies.\masa{to kuramoto: i wrote these numbers. are the numbers correct?} 
 
-\noindent{}
-where, the part of XXX consists of alphanumeric, ``/'', and ``-''.
-
-\input{tables/issue-category}
-Consequently, we downloaded XXX images and XXX movies. 
 We classified the issues into three categories based on 
 whether they have images and movies. 
-\tab{tab:issue-category} shows the number of issues for each category. Note that issues often have both images and movies. These issues are included in both $Img$ and $Mov$ categories. Thus, the total number of downloaded issues is different from the sum of \#issues in Table X. 
+\tab{tab:issue-category} shows the number of issues for each category. 
+Note that issues often have both images and movies. 
+These issues are included in both $Img$ and $Mov$ categories. 
+Thus, the total number of downloaded issues is different from 
+the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I highlight the unknown table number}. 
+
+\input{tables/issue-category}
 
 % \input{tables/issue-ex}
 % We extract a part of the retrieved issues in \tab{tab:example-dataset}. 

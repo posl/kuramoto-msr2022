@@ -103,10 +103,18 @@ GitHub transformed the images and movies into URLs such as:
 	\\\kashiwa{XXXX HA YADA. It looks a template}
 \masa{to kashiwa: how about this?}
 \end{quote}
-Hence, we used the regular expression 
-to download the images and movies. 
+Hence, we used the regular expression for this URL
+% to download the images and movies. 
 %\noindent{}
 %where, the part of XXX consists of alphanumeric, ``/'', and ``-''.
+% Hence, we prepared the regular expression for this URL and 
+to
+count the appearances of images and movies as $\#imgs$ and $\#movs$. 
+The identification of images and movies is based on the extension of 
+the URLs. 
+Specifically, we used png, PNG, jpg, JPG, and jpeg as 
+the extensions for images and 
+gif, GIF, mp4, MP4, and mov as the extensions for movies.
 Consequently, we downloaded 33,079 images and 3,819 movies.\masa{to kuramoto: i wrote these numbers. are the numbers correct?} 
 
 We classified the issues into three categories based on 
@@ -147,13 +155,6 @@ to compute these attributes.
 \kashiwa{I dont get this}
 \masa{to kashiwa: how about this?}
 
-Hence, we prepared the regular expression for this URL and 
-count the appearances of images and movies as $\#imgs$ and $\#movs$. 
-The identification of images and movies is based on the extension of 
-the URLs. 
-Specifically, we used png, PNG, jpg, JPG, and jpeg as 
-the extensions for images and 
-gif, GIF, mp4, MP4, and mov as the extensions for movies.
 
 We counted the number of characters as $\#chars$ and 
 stored the words as $Words$ for all issues. 
@@ -166,12 +167,15 @@ and convert all issues into $\#chars$ and $Words$.
 
 We noticed that some $IssueResolvedTime$ values are less than zero. 
 We decided that these values are invalid and the issues having 
-these values are excluded from the dataset. 
-In addition, to study the impact of movies and images on 
-the communication in issues, 
-we excluded issues that resolved less than 30 secs. 
-This is because this issue resolution time is too short 
-to communicate with each other. 
-Specifically, we only retrieved the issues that meet 
+these values are excluded from our analysis and the dataset. 
+In addition, we excluded issue reports resolved in 
+too short periods because such issue reports may not 
+be related to bugs. 
+% In addition, to study the impact of movies and images on 
+% the communication in issues, 
+% we excluded issues that resolved less than 30 secs. 
+% This is because this issue resolution time is too short 
+% to communicate with each other. 
+Specifically, we only retrieved the issue reports that meet 
 the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
-The number of issues that meet this condition is 711,160 (92.23\%).
+The number of issue reports that meet this condition is 711,160 (92.23\%).

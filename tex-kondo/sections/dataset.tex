@@ -128,15 +128,24 @@ the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I hi
 We retrieved the attributes from the collected issues 
 that are the data in the database. \tab{tab:issue-attr} shows the eight attributes 
 retrieved from the issues. 
-$IssueOpenTime$, $FirstCommentTime$,
+$IssueResolvedTime$, $FirstCommentTime$,
 and $IssueCreatedYear$ can be extracted from issue reports. 
 
 On the contrary, $\#chars$, $\#imgs$, $\#movs$, and $Words$ need several pre-processes from issue reports. 
-
-It should be noted that we converted the first description of 
-issues into these four attribute values and 
-ignore the comments and the title.
-\masa{Is this description correct?}\kashiwa{I dont get this}
+% It should be noted that we computed these attributes 
+% on the description of issue reports. 
+% Hence, we computed these attributes on neither 
+% the title nor the comments on the issue reports. 
+It should be noted that issue reports consist of three contents: 
+title, description, and comments. 
+We computed $\#chars$, $\#imgs$, $\#movs$, and $Words$ based on the description only. 
+Hence, we used neither the title nor the comments 
+to compute these attributes.
+% It should be noted that we converted the first description of 
+% issues into these four attribute values and 
+% ignore the comments and the title.
+\kashiwa{I dont get this}
+\masa{to kashiwa: how about this?}
 
 Hence, we prepared the regular expression for this URL and 
 count the appearances of images and movies as $\#imgs$ and $\#movs$. 
@@ -155,7 +164,7 @@ and convert all issues into $\#chars$ and $Words$.
 % counted the number of words as $\#words$. 
 % In addition, we counted the number of characters as $\#chars$. 
 
-We noticed that some $IssueOpenTime$ values are less than zero. 
+We noticed that some $IssueResolvedTime$ values are less than zero. 
 We decided that these values are invalid and the issues having 
 these values are excluded from the dataset. 
 In addition, to study the impact of movies and images on 
@@ -164,5 +173,5 @@ we excluded issues that resolved less than 30 secs.
 This is because this issue resolution time is too short 
 to communicate with each other. 
 Specifically, we only retrieved the issues that meet 
-the condition: $30\ sec \leq IssueOpenTime \leq 1\ year$.
+the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
 The number of issues that meet this condition is 711,160 (92.23\%).

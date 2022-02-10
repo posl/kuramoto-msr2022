@@ -172,12 +172,12 @@ def main():
     pyplot.xticks(left,x)
     pyplot.title(printName)
     pyplot.legend()
-    pyplot.savefig(f"{out_imgfile}issue_created_at#_ALL_REPOSITORY.png",dpi=200)
+    pyplot.savefig(f"{out_imgfile}IssueCreatedYear#_ALL_REPOSITORY.png",dpi=200)
     pyplot.close()
     pyplot.figure()
 
     out_text.set_field_names(["type",'~2015','2016','2017','2018','2019','2020','2021'])
-    out_text.setup_file(file_name=f"{out_imgfile}issue_created_at#_ALL_REPOSITORY.csv")
+    out_text.setup_file(file_name=f"{out_imgfile}IssueCreatedYear#_ALL_REPOSITORY.csv")
     out_text.reset_file()
     out_text.write_row(["None"]+y_0_none)
     out_text.write_row(["Img"]+y_0_img)
@@ -195,7 +195,7 @@ def main():
     data_4_dic_img  = {k:l for k,l in data_4_dic_img2[:num]}
     data_4_dic_mov  = {k:l for k,l in data_4_dic_mov2[:num]}
     outfile.set_field_names(["type","high_tfidf_words"])
-    outfile.setup_file(f"out/data/analyzer_Result/{printName}.csv")
+    outfile.setup_file(f"out/data/analyzer_Result/_{printName}.csv")
     outfile.write_row(["none",data_4_dic_none.keys()])
     outfile.write_row(["img",data_4_dic_img.keys()])
     outfile.write_row(["mov",data_4_dic_mov.keys()])
@@ -203,13 +203,11 @@ def main():
 
 ########### 箱図
     printName_list  = ["issue_open_time","first_comment_time","num_of_comments","num_of_char"]
-    df = pandas.read_csv("./out/data/data_for_RQ1/_all_repository.csv",usecols=lambda x: x not in ['issue_number', 'issue_created_at_year'])
+    printName_list2  = ["IssueResolvedTime","FirstCommentTime","#comments","#words"]
+    df = pandas.read_csv("./data/data_for_RQ1/all_repository.csv",usecols=lambda x: x not in ['issue_number', 'issue_created_at_year'])
     df_none = df.query('issue_type == "None"')
     df_img  = df.query('issue_type in ["Img", "Both"]')
     df_mov  = df.query('issue_type in ["Mov", "Both"]')
-    if min(len(df_none),len(df_img),len(df_mov))<SAMPLE_SIZE:
-        print("lack of number of samples\nPlease change SAMPLE_SIZE")
-        sys.exit()
     df_none = df_none.sample(n=SAMPLE_SIZE, replace=True)
     df_img  = df_img.sample(n=SAMPLE_SIZE, replace=True)
     df_mov  = df_mov.sample(n=SAMPLE_SIZE, replace=True)
@@ -237,13 +235,14 @@ def main():
         # 箱図は外れ値を除いている（極めて見づらいのと，知りたいのは中央値付近だから）
         data.boxplot(column=printName_list[i], whis=1, by='issue_type',ax=ax[i],sym="")
         ax[i].ticklabel_format(style="sci",  axis="y",scilimits=(0,0))
-    [ax[i].set_title(printName_list[i]) for i in range(4)]
+    [ax[i].set_title(printName_list2[i]) for i in range(4)]
     pyplot.tight_layout()
-    pyplot.savefig(f"{out_imgfile}_boxplot.png",dpi=100)
+    pyplot.savefig(f"{out_imgfile}_boxplot.png",dpi=1000)
     pyplot.close()
     pyplot.figure()
 
     print(f"distplot -->> ")
+    time = 0
     for i in printName_list:
         if i == "first_comment_time":
             data = x_for_comment_time
@@ -251,9 +250,10 @@ def main():
             data = x
         grid = seaborn.FacetGrid(data, col="issue_type")
         grid.map(seaborn.distplot, i, bins=7, kde=True)
-        pyplot.savefig(f"{out_imgfile}_distplot_{i}.png",dpi=100)
+        pyplot.savefig(f"{out_imgfile}_distplot_{printName_list2[time]}.png",dpi=100)
         pyplot.close()
         pyplot.figure()
+        time += 1
 
     print(f"violinplot -->> ")
     for i in range(4):
@@ -262,11 +262,11 @@ def main():
         else:
             data = x
         seaborn.catplot(x="issue_type", y=printName_list[i], kind="violin",data=data)
-        pyplot.savefig(f"{out_imgfile}_violin_{printName_list[i]}.png",dpi=100)
+        pyplot.savefig(f"{out_imgfile}_violin_{printName_list2[i]}.png",dpi=100)
         pyplot.close()
         pyplot.figure()
 
-    df2 = pandas.read_csv("./out/data/data_for_RQ1/_all_repository.csv")
+    df2 = pandas.read_csv("./data/data_for_RQ1/all_repository.csv")
     df2_none = df2.query('issue_type == "None"')
     df2_img  = df2.query('issue_type in ["Img", "Both"]')
     df2_mov  = df2.query('issue_type in ["Mov", "Both"]')
@@ -274,6 +274,7 @@ def main():
     df2_img_temp  = df2_img.replace('Both','Img')
     df2_mov_temp  = df2_mov.replace('Both','Mov')
     x2 = pandas.concat([df2_none_temp, df2_img_temp, df2_mov_temp], axis=0)
+
     print(f"boxplot_all -->> ")
     fig,ax2 = pyplot.subplots(1,4,figsize=(16,4))
     ax2=ax2.ravel()
@@ -282,14 +283,15 @@ def main():
         # 箱図は外れ値を除いている（極めて見づらいのと，知りたいのは中央値付近だから）
         data.boxplot(column=printName_list[i],whis=1.5,by='issue_type',ax=ax2[i],sym="")
         ax2[i].ticklabel_format(style="sci",  axis="y",scilimits=(0,0))
-    [ax2[i].set_title(printName_list[i]) for i in range(4)]
+    [ax2[i].set_title(printName_list2[i]) for i in range(4)]
     pyplot.tight_layout()
-    pyplot.savefig(f"{out_imgfile}_boxplot_all.png",dpi=100)
+    pyplot.savefig(f"{out_imgfile}_boxplot_all.png",dpi=500)
     pyplot.close()
     pyplot.figure()
+
     for i in range(4):
         out_text.set_field_names(["type","min","1-4th","2-4th","3-4th","max","mean","SD"])
-        out_text.setup_file(file_name=f"{out_imgfile}_data_{printName_list[i]}.csv")
+        out_text.setup_file(file_name=f"{out_imgfile}_data_{printName_list2[i]}.csv")
         out_text.reset_file()
         data = x2[x2["issue_type"]=="Img"][printName_list[i]]
         print(f"Img = {data.shape}")

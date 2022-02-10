@@ -3,31 +3,14 @@
 
 % In this section, we describe the data collection process and 
 % the overview of the collected dataset. 
-In this section, we describe our study design. 
-In particular, we describe research questions and 
-the data collection process.
+This section describes our study design, including research questions, data collection, metrics computation, and data description.
 
 \subsection{Research Questions}
 \label{sec:rqs}
 
-To clarify the characteristics of 
-the visual issue reports,
-% with images and movies, 
-% we executed an initial analysis 
-% in our dataset. 
-% Specifically, 
-we addressed the following 
-two research questions. 
+To identify the characteristics of the visual issue reports, we addressed the following two research questions. 
 \begin{itemize}
 	\item[RQ1:] \textbf{\RQone{}}\\
-	% The feature to share movies on GitHub 
-	% is still new. 
-	% Hence, we suppose that using visualization 
-	% is not popular for developers. 
-	% In this RQ, we counted the number of 
-	% issues that use either issues or movies 
-	% to clarify whether using visualization 
-	% is popular. 
 	We suppose visual issue reports provide 
 	more information than the other issue reports. 
 	Consequently, developers could discuss the details and 
@@ -89,7 +72,7 @@ This process was conducted from November 2021 to December 2021.
 \subsection{Data Collection}
 \fig{fig:data-collection-overview} shows an overview of 
 the data collection process. 
-We first collected closed issue report data with \texttt{PyGitHub}\masa{add citation} 
+We first collected closed issue report data with \texttt{PyGitHub}\footnote{https://pygithub.readthedocs.io/en/latest/index.html}
 that internally execute GitHub API. 
 Next, we downloaded movies and images from GitHub.
 % since the collected issue data contain only the file names of 

@@ -176,7 +176,7 @@ def main():
 
                         # 書き出し
                         if export_signal == True:
-                            num_of_char = int(row[in_f.get_column_id("num_of_char")])
+                            num_of_char = int(row[in_f.get_column_id("num_of_words")])
                             num_of_comments = int(row[in_f.get_column_id("num_of_comments")])
                             out_f.write_row([repo_org,
                                             issue_number,

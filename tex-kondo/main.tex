@@ -40,6 +40,14 @@
 \newcommand{\RQtwo}{Do the visual issue reports get resolved faster than non-visual issue reports?}
 % ============================================================
 
+\def\summarybox#1#2{
+\medskip
+\begin{tcolorbox}[enhanced,title=#1, attach boxed title to top left= {xshift=0mm, yshift*=-\tcboxedtitleheight/2}]
+    #2
+\end{tcolorbox}
+}
+
+
 %http://dl.acm.org/ccs.cfm
 %TODO: This should be changed
 \begin{CCSXML}

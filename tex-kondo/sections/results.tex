@@ -115,6 +115,9 @@ probably more related to reporting bugs.
 % the issues in terms of the attributes. 
 % As an initial analysis, 
 
+\input{tables/issue-stat}
+\input{tables/steel-dwass-result}
+
 \subsection{RQ1: \RQone{}}
 \textbf{The values of visual issue reports 
 result in higher than the other issue reports 
@@ -137,6 +140,10 @@ while they get slow responses.
 significant differences in $FirstCommentTime$ and $\#comments$.}
 \tab{tab:Steel-Dwass-test} shows the results of 
 the Steel-Dwass test. 
+we used a non-parametric test \textit{Steel-Dwass test}
+because our preliminary study shows that 
+the distributions for each category do not 
+come from normal distributions.
 The asterisks indicate significance based on 
 the Steel-Dwass test: * indicates $p$ < 0.05 in 
 the two-sided test; 
@@ -146,47 +153,51 @@ significant differences compared with
 the issue reports with images in 
 $FirstCommentTime$ and $\#comments$.
 
+\summarybox{Summary of RQ1}
+{
+	\masa{Do we need the summary box?}
+}
+
+
 \subsection{RQ2: \RQtwo{}}
 
-\input{tables/steel-dwass-result}
-\input{tables/issue-stat}
+%% We investigated 
+%% the differences with and without images and movies 
+%% for each attribute on the issues. 
+%% Specifically, we compared the attributes between 
+%% the categories in \tab{tab:issue-category}. 
+%% Because our preliminary study shows that 
+%% the distributions for each category do not 
+%% come from normal distributions, 
+%% we used a non-parametric test called the \textit{Steel-Dwass test}. 
 
-We investigated 
-the differences with and without images and movies 
-for each attribute on the issues. 
-Specifically, we compared the attributes between 
-the categories in \tab{tab:issue-category}. 
-Because our preliminary study shows that 
-the distributions for each category do not 
-come from normal distributions, 
-we used a non-parametric test called the \textit{Steel-Dwass test}. 
+\textbf{The visual issue reports get resolved faster than non-visual issue reports. }
 
-\textbf{The attribute values are changed 
-with and without images and movies.}
-\tab{tab:Steel-Dwass-test} shows the results of 
-the Steel-Dwass test. 
-The asterisks indicate significance based on 
-the Steel-Dwass test: * indicates $p$ < 0.05 in 
-the two-sided test; 
-** indicates $p$ < 0.05 in the one-sided test. 
+% \textbf{The attribute values are changed 
+% with and without images and movies.}
+% \tab{tab:Steel-Dwass-test} shows the results of 
+% the Steel-Dwass test. 
+% The asterisks indicate significance based on 
+% the Steel-Dwass test: * indicates $p$ < 0.05 in 
+% the two-sided test; 
+% ** indicates $p$ < 0.05 in the one-sided test. 
 We observed that the issues in the $Img$ category and 
 the $Mov$ category are significantly different from those 
 in the $None$ category in terms of $IssueResolvedTime$. 
 
-
-\tab{tab:issue_stat_categories} shows the statistics
-of the collected issues for the $Img$, $Mov$,
-and $None$ categories.
-The Mean row indicates the average values; 
-the Min and Max rows indicate the minimum and maximum values; 
-the 25th, 50th, and 75th rows indicate the percentile values; 
-the S.D. row indicates the standard deviation values. 
-% We may not find the general conclusion; 
-% however, we observed differences across the categories. 
-% For example, the 25th, 50th, and 75th percentiles of 
-% the $Img$ and $Mov$ categories in $IssueResolvedTime$ are 
-% longer than those of the $None$ category. 
-% % \tab{tab:issue_stat_categories} shows that 
+% \tab{tab:issue_stat_categories} shows the statistics
+% of the collected issues for the $Img$, $Mov$,
+% and $None$ categories.
+% The Mean row indicates the average values; 
+% the Min and Max rows indicate the minimum and maximum values; 
+% the 25th, 50th, and 75th rows indicate the percentile values; 
+% the S.D. row indicates the standard deviation values. 
+% % We may not find the general conclusion; 
+% % however, we observed differences across the categories. 
+% % For example, the 25th, 50th, and 75th percentiles of 
+% % the $Img$ and $Mov$ categories in $IssueResolvedTime$ are 
+% % longer than those of the $None$ category. 
+% % % \tab{tab:issue_stat_categories} shows that 
 This table shows that 
 the mean and the median $IssueResolvedTime$ values of 
 the issues in the $Img$ category and the $Mov$ category are 
@@ -194,17 +205,21 @@ longer than those in the $None$ category.
 Hence, the issues with images or movies tend to need 
 a longer time to be resolved. 
 
-In addition, we observed that the issues in 
-the $Img$ category and the $Mov$ category are 
-significantly different from those in 
-the $None$ category in terms of $\#comments$ and 
-$\#chars$. 
-Hence, the issues with images or movies 
-tend to have different numbers of 
-comments and words in the issue description.
+% In addition, we observed that the issues in 
+% the $Img$ category and the $Mov$ category are 
+% significantly different from those in 
+% the $None$ category in terms of $\#comments$ and 
+% $\#chars$. 
+% Hence, the issues with images or movies 
+% tend to have different numbers of 
+% comments and words in the issue description.
 
-It should be noted that we do not observe 
-the difference between the $Img$ category and 
-the $Mov$ category. 
+% It should be noted that we do not observe 
+% the difference between the $Img$ category and 
+% the $Mov$ category. 
 
 
+\summarybox{Summary of RQ2}
+{
+	\masa{Do we need the summary box?}
+}

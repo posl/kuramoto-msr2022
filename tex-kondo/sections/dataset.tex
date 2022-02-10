@@ -40,75 +40,33 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 \end{itemize}
 
 \subsection{Context Selection}
-We collected the data from closed issue reports of 
-the publicly available repositories on GitHub. 
-We first selected the repositories based on the following conditions:
+To select projects as context for our study, we employed \kashiwa{GitHubSercher???}. GitHubSercher can find repositories satisfying specific criteria. To filter out unpopular, inactive repositories, or repositories that have no issues, we set up the following criteria.
 \begin{itemize}
 	\item the number of stars $\geq$ 10
 	\item the number of issue reports $\geq$ 1
-	\item the latest commit is in 2021
+	\item at least one commit was made in 2021
 \end{itemize}
-% We used the number of stars for retrieving the repositories 
-% in which the owner may communicate with other developers and 
-% discard repositories developed by only the owner. 
-We used the number of stars for collecting the repositories 
-that get attention from other developers. 
-In addition, we used the date of the latest commit 
-because the major release of the feature is in 2021. 
-Beforehand, the feature was the beta version. 
-The number of the repositories that meet 
-the conditions is 289,115. 
-We randomly selected 4,173 repositories from them 
-due to the execution time to collect closed issue reports. 
-This number is less than 2\% of all repositories. 
-However, the number of closed issue reports
-in these repositories is already 770,656. 
-We discuss the threat to validity of 
-this process in \sec{sec:limitation}. 
-This process was conducted from November 2021 to December 2021.
+Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 770,656 closed issue reports from 4,173 projects that were randomly selected. While the number of sampled projects seems odds, we collected all the closed issue reports from as many projects as possible in the limited time.  
+As the sampled projects accounts for only less than 2\% of all repositories, we discuss the threat to validity of this process in \sec{sec:limitation}. 
+
 
 \input{figures/data-collection-overview}
 
 \subsection{Data Collection}
-\fig{fig:data-collection-overview} shows an overview of 
-the data collection process. 
-We first collected closed issue report data with \texttt{PyGitHub}\footnote{https://pygithub.readthedocs.io/en/latest/index.html}
-that internally execute GitHub API. 
-Next, we downloaded movies and images from GitHub.
-% since the collected issue data contain only the file names of 
-% images and movies. The attached images and movies are 
-% transformed into URLs and put in the text of issues as the markdown format. 
-%The following URL is an example to download mp4 files. 
-GitHub transforms the images and movies into URLs such as:
-\kashiwa{DO-YU-IMI???}
-\masa{to kashiwa: how about this?}
+\fig{fig:data-collection-overview} shows an overview of the data collection process. We first collected closed issue reports with \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3\footnote{\url{https://docs.github.com/en/rest}}. Next, we downloaded videos and images from GitHub, using the repositories' URLs and file names provided by PyGitHub. The URLs to download images and videos are built as follows:
 \begin{quote}
 	% https://user-images.githubusercontent.com/XXX.mp4
 	https://user-images.githubusercontent.com/file-name.mp4
-	\\\kashiwa{XXXX HA YADA. It looks a template}
-\masa{to kashiwa: how about this?}
 \end{quote}
-Hence, we prepared the regular expression 
-% to download the images and movies. 
-%\noindent{}
-%where, the part of XXX consists of alphanumeric, ``/'', and ``-''.
-% Hence, we prepared the regular expression for this URL and 
-to extract URLs. 
-The identification of images and movies is based on the extension of 
-the URLs. 
-Specifically, we used png, PNG, jpg, JPG, and jpeg as 
-the extensions for images and 
-gif, GIF, mp4, MP4, and mov as the extensions for movies.
+Each downloaded file was determined to be a image or video by its extension. Specifically, png, PNG, jpg, JPG, and jpeg are treated as images, and  gif, GIF, mp4, MP4, and mov as videos.
 Consequently, we downloaded 33,079 images and 3,819 movies
 with the collected URLs.\masa{to kuramoto: i wrote these numbers. are the numbers correct?} 
 
-We classified the issue reports into three categories based on 
-whether they have images and movies. 
-\tab{tab:issue-category} shows the number of issue reports for each category. 
+We classified the issue reports into three categories based on whether they have images and movies. \tab{tab:issue-category} shows the number of issue reports for each category. 
 Note that issue reports often have both images and movies. 
 These issue reports are included in both $Img$ and $Mov$ categories. 
 Thus, the total number of downloaded issue reports is different from 
-the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I highlight the unknown table number}. 
+the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I highlight the unknown table number->Yes}. 
 In this paper, we refer to the issue reports in the $Mov$ category 
 as \textit{visual issue reports}. 
 

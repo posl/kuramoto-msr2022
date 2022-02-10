@@ -218,18 +218,18 @@ def main():
                         pullrequest_merged_at = pullrequest.merged_at
 
                     target_text = issue_body
-                    words = re.findall("[a-zA-Z']+", target_text)
+                    
                     if target_text == None:
                         target_text = ""
                         num_of_char = 0
-                    else:num_of_char = len(words)
+                    else:num_of_char = len(issue_body)
 
-                    if img_exist:
-                        for rm_text in img_urls:
-                            num_of_char -= len(re.findall("[a-zA-Z']+",rm_text))
-                    if mov_exist:
-                        for rm_text in mov_urls:
-                            num_of_char -= len(re.findall("[a-zA-Z']+",rm_text))
+                    for rm_text in img_urls:
+                        num_of_char -= len(rm_text)
+                    for rm_text in mov_urls:
+                        num_of_char -= len(rm_text)
+                    
+                    words = re.findall("[a-zA-Z']+", target_text)
                     target_text = ""
                     for word in words:
                         target_text += f" {word}"

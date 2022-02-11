@@ -1,6 +1,21 @@
 
-\input{figures/data-category-trend}
 
+
+
+
+% We used $Words$ to compute the TFIDF values\masa{need citation} for each category. 
+% The TFIDF values will support researchers who investigate 
+% the differences in the appearances of words with and without 
+% images/movies. 
+%% We suppose that images and movies are utilized to 
+%% describe specific contents such as GUI bugs. 
+%% Hence, we computed the TFIDF values\masa{need citation} 
+%% on $Words$ for each category. 
+%% The TFIDF values clarify the differences in the appearances of 
+%% words with and without images/movies. 
+
+
+\input{figures/data-category-trend}
 \subsection{Data Description}
 In this section, we show the basic information of 
 the collected visual issue reports. \kashiwa{Wright how many issues are used (again)?} 
@@ -10,11 +25,6 @@ the topics visual issue reports are used to describe.
 
 To clarify the trend, we show the proportion of 
 visual issue reports for each year. 
-To clarify the topics, we computed the TFIDF values 
-on $Words$ for each category. 
-The TFIDF values clarify the differences in the appearances of 
-words between visual issue reports and 
-non-visual issue reports. 
 
 \textbf{Using visual issue reports is still not popular.} 
 \fig{fig:data-cat-trend} shows the proportions of 
@@ -36,43 +46,8 @@ This may be because we collected the resolved issues
 in 2021. 
 Hence, using visual issue reports may be more popular in the future. 
 
-\input{tables/tf-idf-result}
-
-% We used $Words$ to compute the TFIDF values\masa{need citation} for each category. 
-% The TFIDF values will support researchers who investigate 
-% the differences in the appearances of words with and without 
-% images/movies. 
-%% We suppose that images and movies are utilized to 
-%% describe specific contents such as GUI bugs. 
-%% Hence, we computed the TFIDF values\masa{need citation} 
-%% on $Words$ for each category. 
-%% The TFIDF values clarify the differences in the appearances of 
-%% words with and without images/movies. 
-
-\textbf{The visual issue reports and the issues 
-reports with images have more words 
-about visualization or GUI.}
-\tab{tab:tfidf-result} shows the top-10 TFIDF words
-% in $Words$ 
-for each category.
-It should be noted that we remove a kind of stop words such as 
-``at'', ``it'', and ``the''. 
-% extracted from our dataset. 
-We observed words related to visualization such as 
-``image'' and ``view'' in the $Img$ and $Mov$ categories. 
-Also, we observed words related to GUI such as 
-``dropdown'' and ``button'' in the $Mov$ category. 
-The word ``when'' indicates high TFIDF values 
-in the $Img$ and $Mov$ categories. 
-Our manual analysis reveals that the issues with 
-these words relate to reporting bugs. 
-Hence, the issues in these two categories are 
-probably more related to reporting bugs. 
-
 \section{Results}
 \label{sec:results}
-
-
 
 % 初期段階の調査として，画像及び動画がissueの各attributesに
 % 与える影響について調査する．
@@ -102,10 +77,28 @@ probably more related to reporting bugs.
 % the issues in terms of the attributes. 
 % As an initial analysis, 
 
-\input{tables/issue-stat}
-\input{tables/steel-dwass-result}
 
-\subsection{RQ1: \RQone{}}
+\subsection*{RQ1: \RQone{}}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\linewidth]{tex-kondo/figures/words.png}
+    \caption{Distributions of words written in issue reports. }
+    \label{fig:words}
+\end{figure}
+\fig{fig:data-cat-trend} shows the distributions in the number of words written in descriptions of issue reports. The green line in the box shows the median, the bottom and the top lines of the box show 25 and 75 percentile, respectively. The median of \#word was 36 in Img, 46 in Vid, and 36 in None. The number of words in videos is slightly larger than the others but no statistically significant differences are observed. This implies that reporters write as many texts as the others to describe the contents of videos. 
+
+\summarybox{Answer to RQ1}
+{\bf No, visual issue reports still require reporters to write similar amounts of texts to describe bugs. 
+}
+
+\subsection*{RQ2: \RQtwo{}}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{tex-kondo/figures/discussions.png}
+    \caption{Amount of texts written in issue reports. }
+    \label{fig:words}
+\end{figure}
+
 \textbf{The values of visual issue reports 
 result in higher than the other issue reports 
 in terms of $FirstCommentTime$ and $\#comments$}. 
@@ -123,14 +116,12 @@ the other two categories.
 Hence, the visual issue reports get more responses 
 while they get slow responses. 
 
+
 \textbf{However, we do not observe 
 significant differences in $FirstCommentTime$ and $\#comments$.}
 \tab{tab:Steel-Dwass-test} shows the results of 
 the Steel-Dwass test. 
-we used a non-parametric test \textit{Steel-Dwass test}
-because our preliminary study shows that 
-the distributions for each category do not 
-come from normal distributions.
+
 The asterisks indicate significance based on 
 the Steel-Dwass test: * indicates $p$ < 0.05 in 
 the two-sided test; 
@@ -140,14 +131,27 @@ significant differences compared with
 the issue reports with images in 
 $FirstCommentTime$ and $\#comments$.
 
-\summarybox{Summary of RQ1}
-{
-	\masa{Do we need the summary box?}
+\summarybox{Summary of RQ2}
+{\bf Yes, visual issue reports are likely to receive more comments that the others but the time until the first response is not different. 
 }
 
+\input{tables/steel-dwass-result}
 
-\subsection{RQ2: \RQtwo{}}
 
+
+
+
+
+
+
+\subsection*{RQ3: \RQthree{}}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.6\linewidth]{tex-kondo/figures/fixes.png}
+    \caption{Amount of texts written in issue reports. }
+    \label{fig:words}
+\end{figure}
+The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
 %% We investigated 
 %% the differences with and without images and movies 
 %% for each attribute on the issues. 
@@ -206,7 +210,7 @@ a longer time to be resolved.
 % the $Mov$ category. 
 
 
-\summarybox{Summary of RQ2}
-{
-	\masa{Do we need the summary box?}
+\summarybox{Summary of RQ3}
+{\bf No, resolution time for issues with videos are not different from those for the others. 
 }
+\input{tables/issue-stat}

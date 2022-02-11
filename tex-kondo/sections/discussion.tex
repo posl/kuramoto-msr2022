@@ -1,0 +1,27 @@
+\section{Discussion}
+\input{tex-kondo/tables/tf-idf-result}
+\subsection{Why Do Issue Reports with Videos or Images Take a Longer Time than Others?}
+To clarify the topics, we computed the TFIDF values 
+on $Words$ for each category. 
+The TFIDF values clarify the differences in the appearances of 
+words between visual issue reports and 
+non-visual issue reports. 
+\textbf{The visual issue reports and the issues 
+reports with images have more words 
+about visualization or GUI.}
+\tab{tab:tfidf-result} shows the top-10 TFIDF words
+% in $Words$ 
+for each category.
+It should be noted that we remove a kind of stop words such as 
+``at'', ``it'', and ``the''. 
+% extracted from our dataset. 
+We observed words related to visualization such as 
+``image'' and ``view'' in the $Img$ and $Mov$ categories. 
+Also, we observed words related to GUI such as 
+``dropdown'' and ``button'' in the $Mov$ category. 
+The word ``when'' indicates high TFIDF values 
+in the $Img$ and $Mov$ categories. 
+Our manual analysis reveals that the issues with 
+these words relate to reporting bugs. 
+Hence, the issues in these two categories are 
+probably more related to reporting bugs. 

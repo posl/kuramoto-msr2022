@@ -3,18 +3,22 @@
     \begin{center}
     \caption{The attributes we collected from the issues}
     \scalebox{0.85}[0.85]{
-    \begin{tabular}{ll} 
+    \begin{tabular}{llp{5cm}} 
         \toprule
-        \multicolumn{1}{c}{\textbf{Attributes}} & \multicolumn{1}{c}{\textbf{Description}} \\ 
+        \multicolumn{1}{c}{\textbf{Dimension}}&\multicolumn{1}{c}{\textbf{Attributes}} & \multicolumn{1}{c}{\textbf{Description}} \\ 
         \midrule
-        $IssueResolvedTime$ & The time until the issue is resolved (day) \\
-        $FirstCommentTime$ & The time until the first comment (day) \\
-        $IssueCreatedYear$ & The year when the issue is created \\
-        $\#comments$ & The number of comments \\
-        $\#words$ & The number of words in the description \\
-        $\#imgs$ & \# of attached images when the issue is created \\
-        $\#vids$ & \# of attached videos when the issue is created \\
-        $Words$ &  The words in the description \\
+        Report&$\#words$ & The number of words in the description \\
+        &$\#imgs$ & \# of attached images when the issue was created \\
+        &$\#vids$ & \# of attached videos when the issue was created \\
+        &$IssueCreatedYear$ & The year when the issue was created \\
+        % &$Words$ &  The words in the description \\
+        \hline
+        Discussion&$\#comments$ & The number of comments \\
+        &$FirstCommentTime$ & The time until the first comment (day) \\
+        
+        \hline
+        Fix&$IssueResolvedTime$ & The time until the issue is resolved (day) \\
+
         \bottomrule
     \end{tabular}
     }

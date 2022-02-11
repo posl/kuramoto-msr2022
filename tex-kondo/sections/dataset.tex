@@ -53,7 +53,9 @@ As the sampled projects accounts for only less than 2\% of all repositories, we 
 \input{figures/data-collection-overview}
 
 \subsection{Data Collection}
-\fig{fig:data-collection-overview} shows an overview of the data collection process. We first collected closed issue reports with \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3\footnote{\url{https://docs.github.com/en/rest}}. Next, we downloaded videos and images from GitHub, using the repositories' URLs and file names provided by PyGitHub. The URLs to download images and videos are built as follows:
+\fig{fig:data-collection-overview} shows an overview of the data collection process. We first collected closed issue reports with \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3\footnote{\url{https://docs.github.com/en/rest}}. 
+
+Next, we collected videos and images attached to the issue reports. While GitHub users can see videos and images on issue pages, the videos and images are stored in different URLs. As the URLs are written in the text description of issue reports, we parsed them with regular expressions and downloaded them. The regular expressions are shown as follows: 
 \begin{quote}
 	% https://user-images.githubusercontent.com/XXX.mp4
 	https://user-images.githubusercontent.com/file-name.mp4
@@ -75,57 +77,22 @@ as \textit{visual issue reports}.
 % \input{tables/issue-ex}
 % We extract a part of the retrieved issues in \tab{tab:example-dataset}. 
 % Each row corresponds to the values of the attributes of an issue. 
-
+\input{tex-kondo/tables/issue-attr}
 \subsection{Metrics Computation}
-\input{tables/issue-attr}
 We retrieved the attributes from the collected issue reports.
-% that are the data in the database. 
-\tab{tab:issue-attr} shows the eight attributes 
-retrieved from the issue reports. 
-$IssueResolvedTime$, $FirstCommentTime$,
-$IssueCreatedYear$, and $\#comments$ can be extracted from issue reports. 
+\tab{tab:issue-attr} shows six attributes extracted from the issue reports. The attributes can be classified into three dimensions, ``Report'', ``Discussion'', and ``Fix''. The attributes in dimension ``Report'' are extracted from the description of issue reports or attached files when the issue was created. In particular, in RQ1, we calculate the number of words in reports (i.e., $\#comments$) for Img, Vid, and None. 
+In addition, $IssueCreatedYear$, $\#imgs$, and $\#vids$ are used to show dataset description. Note that these attributes are not calculated from either title, not comments (i.e., only descriptions were used). 
 
-We noticed that some $IssueResolvedTime$ values are less than zero. 
-We decided that these values are invalid and the issue reports having 
-these values are excluded from our analysis and the dataset. 
-In addition, we excluded issue reports resolved in 
-too short periods because such issue reports may not 
-be related to bugs. 
-% In addition, to study the impact of movies and images on 
-% the communication in issues, 
-% we excluded issues that resolved less than 30 secs. 
-% This is because this issue resolution time is too short 
-% to communicate with each other. 
-Specifically, we only retrieved the issue reports that meet 
-the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
+Dimension ``Discussion''\kashiwa{TODO: ADD Explanations about comments and FirstComment time}
+
+Dimension ``Fix'' has one attribute $IssueResolvedTime$ which shows the time from reported to fixed. 
+Note that some negative values of $IssueResolvedTime$ were observed. We investigated it manually and found that these are because of a bug in GitHub.  We excluded those issues that have negative values from our dataset. 
+In addition, we excluded issue reports resolved in too short or long periods (e.g., 30 seconds) because they might be issued after being fixed or might not be fixed in reality. \kashiwa{check please}
+Specifically, we only use the issue reports that meet the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
 The number of issue reports that meet this condition is 711,160 (92.23\%).
 
-On the contrary, $\#chars$, $\#imgs$, $\#movs$, and $Words$ need several pre-processes from issue reports. 
-% It should be noted that we computed these attributes 
-% on the description of issue reports. 
-% Hence, we computed these attributes on neither 
-% the title nor the comments on the issue reports. 
-We counted the number of characters as $\#chars$ and 
-stored the words as $Words$ for all issue reports. 
-In this process, if the description of the issue report 
-includes the URL, we exclude it from the description, 
-and convert all issue reports into $\#chars$ and $Words$.
-We counted the appearances of images and movies
-as $\#imgs$ and $\#movs$
-with the regular expression for the URL.
-% For the issues that include the URL, we excluded them and 
-% counted the number of words as $\#words$. 
-% In addition, we counted the number of characters as $\#chars$. 
 
-It should be noted that issue reports consist of three contents: 
-title, description, and comments. 
-We computed $\#chars$, $\#imgs$, $\#movs$, and $Words$ based on the description only. 
-Hence, we used neither the title nor the comments 
-to compute these attributes.
-% It should be noted that we converted the first description of 
-% issues into these four attribute values and 
-% ignore the comments and the title.
-\kashiwa{I dont get this}
-\masa{to kashiwa: how about this?}
-
+\kashiwa{WAKARANAI???KOKOKARA}
+On the contrary, $\#chars$, $\#imgs$, $\#movs$, and $Words$ need several pre-processes from issue reports.  We counted the number of characters as $\#chars$ and stored the words as $Words$ for all issue reports. In this process, if the description of the issue report includes the URL, we exclude it from the description, and convert all issue reports into $\#chars$ and $Words$.
+We counted the appearances of images and movies as $\#imgs$ and $\#movs$ with the regular expression for the URL.\kashiwa{???KOKOMADE}
 

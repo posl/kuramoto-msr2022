@@ -160,7 +160,7 @@ are not significantly different in $\#comments$
 compared with the Img category.
 
 \summarybox{Summary of RQ2}
-{\bf Yes, visual issue reports are likely to receive more comments that the others but the time until the first response is not different. 
+{\bf Yes, visual issue reports are likely to receive more comments than the others but the time until the first response is not different. 
 }
 
 \input{tables/steel-dwass-result}
@@ -177,10 +177,12 @@ compared with the Img category.
     \centering
     %\includegraphics[width=0.6\linewidth]{tex-kondo/figures/fixes.png}
     \includegraphics[width=0.6\linewidth]{./figures/fixes.pdf}
-    \caption{Amount of texts written in issue reports. }
-    \label{fig:words}
+    \caption{Amount of texts written in issue reports. 
+    The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
+    \masa{I moved this comment to here (maybe removed later? I'm not sure)}
+    }
+    \label{fig:resolvedtime}
 \end{figure}
-The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
 %% We investigated 
 %% the differences with and without images and movies 
 %% for each attribute on the issues. 
@@ -191,8 +193,9 @@ The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
 %% come from normal distributions, 
 %% we used a non-parametric test called the \textit{Steel-Dwass test}. 
 
-\textbf{The visual issue reports get resolved faster than non-visual issue reports. }
-
+%\textbf{The visual issue reports get resolved faster than 
+\textbf{The visual issue reports need a longer time to be resolved than
+the issue reports in the None category. }
 % \textbf{The attribute values are changed 
 % with and without images and movies.}
 % \tab{tab:Steel-Dwass-test} shows the results of 
@@ -202,9 +205,9 @@ The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
 % the two-sided test; 
 % ** indicates $p$ < 0.05 in the one-sided test. 
 We observed that the issues in the $Img$ category and 
-the $Mov$ category are significantly different from those 
-in the $None$ category in terms of $IssueResolvedTime$. 
-
+the $Vid$ category are significantly different from those 
+in the $None$ category in terms of $IssueResolvedTime$
+(\tab{tab:Steel-Dwass-test}). 
 % \tab{tab:issue_stat_categories} shows the statistics
 % of the collected issues for the $Img$, $Mov$,
 % and $None$ categories.
@@ -218,11 +221,12 @@ in the $None$ category in terms of $IssueResolvedTime$.
 % % the $Img$ and $Mov$ categories in $IssueResolvedTime$ are 
 % % longer than those of the $None$ category. 
 % % % \tab{tab:issue_stat_categories} shows that 
-This table shows that 
+%This table shows that 
+Also, contrary to our hypothesis, \fig{fig:resolvedtime} and our observation show that 
 the mean and the median $IssueResolvedTime$ values of 
-the issues in the $Img$ category and the $Mov$ category are 
+the issue reports in the $Img$ category and the $Vid$ category are 
 longer than those in the $None$ category. 
-Hence, the issues with images or movies tend to need 
+Hence, the issue reports with images or videos tend to need 
 a longer time to be resolved. 
 
 % In addition, we observed that the issues in 
@@ -239,7 +243,8 @@ a longer time to be resolved.
 % the $Mov$ category. 
 
 
+%{\bf No, resolution time for issues with videos are not different from those for the others. 
 \summarybox{Summary of RQ3}
-{\bf No, resolution time for issues with videos are not different from those for the others. 
+{\bf No, resolution time for the visual issue reports needs a longer time than the issue reports in the None category at least.
 }
 \input{tables/issue-stat}

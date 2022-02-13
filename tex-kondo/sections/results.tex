@@ -65,12 +65,14 @@ We collected XXX videos and XXX images from XXX issue reports. Out of the collec
     \centering
     %\includegraphics[width=0.5\linewidth]{tex-kondo/figures/words.png}
     \includegraphics[width=0.5\linewidth]{./figures/words.png}
-    \caption{Distributions of words written in issue reports. }
+    %\caption{Distributions of words written in issue reports. }
+    %\caption{Boxplots of \# of words written in the description }
+    \caption{The attribute in the Report dimension}
     \label{fig:words}
 \end{figure}
 %\textbf{DescriptionLength of visual issue reports is 
 %similar to the others.}
-%\textbf{DescriptionLength of visual issue reports is no-significantly different from the others. }
+
 \fig{fig:words} shows the distributions in the number of words 
 written in descriptions of issue reports. 
 %The green line in the box shows the median, 
@@ -92,35 +94,41 @@ to write similar amounts of texts to describe bugs.
 \begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{./figures/discussions.pdf}
-    \caption{Amount of texts written in issue reports. }
+    %\caption{Amount of texts written in issue reports. }
+    \caption{The attributes in the Discussion dimension}
     \label{fig:discussion}
 \end{figure}
+
 
 \fig{fig:discussion}
 shows the values of the Discussion dimension
 for each category. 
 We observed that the 25th, 50th, and 75th percentiles of 
-the $Mov$ category in 
-this dimension result in the largest or faster values than those of 
+the $Vid$ category in 
+this dimension
+%$FirstCommentTime$ and $\#comments$ 
+result in the largest or faster values than those of 
 the other two categories.
 Hence, the visual issue reports get more responses 
 while they get faster responses. 
-
-% The Mean row indicates the average values; 
-% the Min and Max rows indicate the minimum and maximum values; 
-% the 25th, 50th, and 75th rows indicate the percentile values; 
-% the S.D. row indicates the standard deviation values. 
-
-\textbf{
-However, we occasionally observe non-significant differences
-in $FirstCommentTime$ and $\#comments$.}
-\tab{tab:Steel-Dwass-test} shows the results of 
-the Steel-Dwass test. 
-
-The asterisks indicate significance based on 
-the Steel-Dwass test: * indicates $p$ < 0.05 in 
-the two-sided test; 
-** indicates $p$ < 0.05 in the one-sided test. 
+%% 
+%% 
+%% %However, we do not observe significant differences 
+%% \textbf{
+%% However, we occasionally observe non-significant differences
+%% in $FirstCommentTime$ and $\#comments$.}
+%% %\textbf{
+%% %However, the visual issue reports are not significantly different 
+%% %from the issue reports in the Img category
+%% %in $FirstCommentTime$ and $\#comments$.
+%% %}
+%% \tab{tab:Steel-Dwass-test} shows the results of 
+%% the Steel-Dwass test. 
+%% 
+%% The asterisks indicate significance based on 
+%% the Steel-Dwass test: * indicates $p$ < 0.05 in 
+%% the two-sided test; 
+%% ** indicates $p$ < 0.05 in the one-sided test. 
 %In summary, the visual issue reports do not show 
 %significant differences compared with 
 %the issue reports with images in 
@@ -132,7 +140,8 @@ the two-sided test;
 %are significantly different from the issue reports 
 %in the None category in
 %$FirstCommentTime$ and $\#comments$.
-In summary, the visual issue reports are not 
+%In summary, the visual issue reports are not 
+However, the visual issue reports are not 
 significantly different in $FirstCommentTime$ 
 compared with the other two categories and 
 are not significantly different in $Comments$ 
@@ -156,10 +165,11 @@ compared with the Img category.
     \centering
     %\includegraphics[width=0.6\linewidth]{tex-kondo/figures/fixes.png}
     \includegraphics[width=0.5\linewidth]{./figures/fixes.pdf}
-    \caption{Amount of texts written in issue reports. 
-    The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
-    \masa{I moved this comment to here (maybe removed later? I'm not sure)}
-    }
+    %\caption{Amount of texts written in issue reports. 
+    %The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
+    %\masa{I moved this comment to here (maybe removed later? I'm not sure)}
+    %}
+    \caption{The attribute in the Fix dimension}
     \label{fig:resolvedtime}
 \end{figure}
 %% We investigated 
@@ -172,9 +182,11 @@ compared with the Img category.
 %% come from normal distributions, 
 %% we used a non-parametric test called the \textit{Steel-Dwass test}. 
 
-%\textbf{The visual issue reports get resolved faster than 
-%\textbf{The visual issue reports need a longer time to be resolved than the issue reports in the None category. }
-% \textbf{The attribute values are changed 
+
+%% %\textbf{The visual issue reports get resolved faster than 
+%% \textbf{The visual issue reports need a longer time to be resolved than
+%% the issue reports in the None category. }
+%% % \textbf{The attribute values are changed 
 % with and without images and movies.}
 % \tab{tab:Steel-Dwass-test} shows the results of 
 % the Steel-Dwass test. 
@@ -182,10 +194,14 @@ compared with the Img category.
 % the Steel-Dwass test: * indicates $p$ < 0.05 in 
 % the two-sided test; 
 % ** indicates $p$ < 0.05 in the one-sided test. 
-We observed that the issues in the $Img$ category and 
+Contrary to our hypothesis, \fig{fig:resolvedtime} and our observation show that 
+the mean and the median $IssueResolvedTime$ values of 
+the issue reports in the $Img$ category and the $Vid$ category are 
+longer than those in the $None$ category. 
+Also, we observed that the issues in the $Img$ category and 
 the $Vid$ category are significantly different from those 
-in the $None$ category in terms of $IssueResolvedTime$
-(\tab{tab:Steel-Dwass-test}). 
+in the $None$ category in terms of $IssueResolvedTime$.
+%(\tab{tab:Steel-Dwass-test}). 
 % \tab{tab:issue_stat_categories} shows the statistics
 % of the collected issues for the $Img$, $Mov$,
 % and $None$ categories.
@@ -200,10 +216,6 @@ in the $None$ category in terms of $IssueResolvedTime$
 % % longer than those of the $None$ category. 
 % % % \tab{tab:issue_stat_categories} shows that 
 %This table shows that 
-Also, contrary to our hypothesis, \fig{fig:resolvedtime} and our observation show that 
-the mean and the median $IssueResolvedTime$ values of 
-the issue reports in the $Img$ category and the $Vid$ category are 
-longer than those in the $None$ category. 
 Hence, the issue reports with images or videos tend to need 
 a longer time to be resolved. 
 

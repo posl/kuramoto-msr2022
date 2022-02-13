@@ -2,15 +2,22 @@
 %\input{tex-kondo/tables/tf-idf-result}
 \input{./tables/tf-idf-result}
 \subsection{Why Do Issue Reports with Videos or Images Take a Longer Time than Others?}
+
 \kashiwa{Dependabot makes resolution time small. Future reseach have to check the size of changes.}
+
+We hypothesize that the topics of the visual issue reports 
+affect the resolution time. 
 To clarify the topics, we computed the TFIDF values 
-on $Words$ for each category. \kashiwa{do not use Words. Just from description}
+%on $Words$ for each category. 
+on the words in the description for each category. \kashiwa{do not use Words. Just from description}
+
 The TFIDF values clarify the differences in the appearances of 
 words between visual issue reports and 
 non-visual issue reports. 
-\textbf{The visual issue reports and the issues 
-reports with images have more words 
-about visualization or GUI.}
+
+%\textbf{The visual issue reports and the issues 
+%reports with images have more words 
+%about visualization or GUI.}
 \tab{tab:tfidf-result} shows the top-10 TFIDF words
 % in $Words$ 
 for each category.
@@ -18,15 +25,25 @@ It should be noted that we remove a kind of stop words such as
 ``at'', ``it'', and ``the''. 
 % extracted from our dataset. 
 We observed words related to visualization such as 
-``image'' and ``view'' in the $Img$ and $Mov$ categories. 
+``image'' and ``view'' in the $Img$ and $Vid$ categories. 
 Also, we observed words related to GUI such as 
-``dropdown'' and ``button'' in the $Mov$ category. 
+``dropdown'' and ``button'' in the $Vid$ category. 
 The word ``when'' indicates high TFIDF values 
-in the $Img$ and $Mov$ categories. 
+in the $Img$ and $Vid$ categories. 
 Our manual analysis reveals that the issues with 
 these words relate to reporting bugs. 
 Hence, the issues in these two categories are 
 probably more related to reporting bugs. 
+On the contrary, the bot comment ``dependabot'' is 
+the top-1 word in the $None$ category. 
+\summarybox
+{\bf  
+%Reporting and fixing the bugs of visualization and GUI 
+%may need a longer time. 
+One reason is that the bugs of visualization and GUI are 
+reported in the issue reports with videos or images 
+while the bot comment is in the $None$ category.  
+}
 
 
 \subsection{Future Research Direction}

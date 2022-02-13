@@ -14,37 +14,19 @@
 %% The TFIDF values clarify the differences in the appearances of 
 %% words with and without images/movies. 
 
+\newpage
+\subsection{Data Description}
+\input{tables/issue-category}
+We classified the collected issue reports into three categories based on whether they have images and movies. \tab{tab:issue-category} shows the number of issue reports for each category. 
+Note that issue reports often have both images and movies. 
+These issue reports are counted in both $Img$ and $Mov$ categories (only X\%). 
+Thus, the total number of downloaded issue reports is different from the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I highlight the unknown table number->Yes}. 
+In this paper, we refer to the issue reports in the $Mov$ category 
+as \textit{visual issue reports}. 
 
 \input{figures/data-category-trend}
-\subsection{Data Description}
-In this section, we show the basic information of 
-the collected visual issue reports. \kashiwa{Wright how many issues are used (again)?} 
-Specifically, we show the trend of using 
-visual issue reports and 
-the topics visual issue reports are used to describe.
+We collected XXX videos and XXX images from XXX issue reports. Out of the collected issues, only 4.65\% of issue reports have images, and 0.54\% have videos. While this number seems to be small, looking into the trend shown in \fig{fig:data-cat-trend}, the rate of visual issue reports by year is increasing from 2017 to 2020. The ratio of visual issue reports reached to 5\% between 2018 and 2021.
 
-To clarify the trend, we show the proportion of 
-visual issue reports for each year. 
-
-\textbf{Using visual issue reports is getting popular but is still uncommon.} 
-\fig{fig:data-cat-trend} shows the proportions of 
-visual issue reports and issue reports in the $Img$ category 
-for each year. 
-The y-axis shows the proportion. 
-We observed that the proportion of the visual issue reports is 
-less than 1\%. 
-Even the proportion of the issue reports with images is around 6\% 
-in 2020 and 2021. 
-Hence, the proportions of the visual issue reports and 
-even issue reports in the $Img$ category are still low. 
-Given this result, both the images and movies are still not 
-popular for developers. 
-
-However, the proportions have slightly increased so far 
-except for 2021. 
-This may be because we collected the resolved issues 
-in 2021. 
-Hence, using visual issue reports may be more popular in the future. 
 
 \section{Results}
 \label{sec:results}
@@ -90,13 +72,12 @@ Hence, using visual issue reports may be more popular in the future.
 \end{figure}
 %\textbf{DescriptionLength of visual issue reports is 
 %similar to the others.}
-%\textbf{DescriptionLength of visual issue reports is 
-%no-significantly different from the others. }
+
 \fig{fig:words} shows the distributions in the number of words 
 written in descriptions of issue reports. 
 %The green line in the box shows the median, 
 %the bottom and the top lines of the box show 25 and 75 percentile, respectively. 
-The median of DescriptionLength was 36 in Img, 
+The median of DescriptionLength was 36 words in Img, 
 46 in Vid, and 36 in None. 
 The number of words in videos is slightly larger than 
 the others but no statistically significant differences are observed. 
@@ -105,35 +86,23 @@ to describe the contents of videos.
 
 \summarybox
 %{Answer to RQ1}
-{\bf No, visual issue reports still require reporters 
+{{\bf RQ1: }{No, visual issue reports still require reporters 
 to write similar amounts of texts to describe bugs. 
-}
+}}
 
 \subsection*{RQ2: \RQtwo{}}
 \begin{figure}[t]
     \centering
-    %\includegraphics[width=1\linewidth]{tex-kondo/figures/discussions.png}
     \includegraphics[width=1\linewidth]{./figures/discussions.pdf}
     %\caption{Amount of texts written in issue reports. }
     \caption{The attributes in the Discussion dimension}
     \label{fig:discussion}
 \end{figure}
 
-%\textbf{The values of visual issue reports 
-%result in faster and larger than the other issue reports 
-%in terms of $FirstCommentTime$ and $\#comments$.
-%} 
-%However, we do not observe significant differences.
-% \tab{tab:issue_stat_categories} shows the statistics
-% of the collected issues for the $Img$, $Mov$,
-% and $None$ categories.
+
 \fig{fig:discussion}
 shows the values of the Discussion dimension
 for each category. 
-% The Mean row indicates the average values; 
-% the Min and Max rows indicate the minimum and maximum values; 
-% the 25th, 50th, and 75th rows indicate the percentile values; 
-% the S.D. row indicates the standard deviation values. 
 We observed that the 25th, 50th, and 75th percentiles of 
 the $Vid$ category in 
 this dimension
@@ -175,15 +144,14 @@ while they get faster responses.
 However, the visual issue reports are not 
 significantly different in $FirstCommentTime$ 
 compared with the other two categories and 
-are not significantly different in $\#comments$ 
+are not significantly different in $Comments$ 
 compared with the Img category.
 
 \summarybox
 %{Summary of RQ2}
-{\bf Yes, visual issue reports are likely to receive more comments than the others but the time until the first response is not significantly different. 
+{{\bf RQ2: }{Yes, more active discussions happen in visual issue reports. Visual issue reports are 3-times likely to receive more comments than reports without images or videos. }
 }
 
-\input{tables/steel-dwass-result}
 
 
 
@@ -213,6 +181,7 @@ compared with the Img category.
 %% the distributions for each category do not 
 %% come from normal distributions, 
 %% we used a non-parametric test called the \textit{Steel-Dwass test}. 
+
 
 %% %\textbf{The visual issue reports get resolved faster than 
 %% \textbf{The visual issue reports need a longer time to be resolved than
@@ -267,6 +236,9 @@ a longer time to be resolved.
 %{\bf No, resolution time for issues with videos are not different from those for the others. 
 \summarybox
 %{Summary of RQ3}
-{\bf No, resolution time for the visual issue reports needs a longer time than the issue reports in the None category at least.
-}
-\input{tables/issue-stat}
+{{\bf RQ3: }{No, resolution time of visual issue reports is longer than that of other issue reports.
+}}
+
+
+
+

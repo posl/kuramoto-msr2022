@@ -1,39 +1,15 @@
 \section{Introduction}
 \label{sec:intro}
-~{\it ``What makes good issue reports?''} has been studied for decades and is still an ultimate research question for many studies improving the quality of issue reports\citep{TODO}. Issue reports (a.k.a. bug reports) often lack information to reproduce bugs~\citep{DBLP:conf/msr/JoorabchiMM14}\citep{DearGitHub}. 
+~{\it ``What makes good issue reports?''} has been studied for decades and is still an ultimate research question for many studies improving the quality of issue reports~\citep{TODO}. Issue reports (a.k.a. bug reports) often lack information to reproduce bugs~\citep{DBLP:conf/msr/JoorabchiMM14}\citep{DearGitHub}. 
 
 For example, Zimmermann~\et~\citep{zimmermann2010TSE} reported  that  stack traces and steps to reproduce are considered to be helpful by developers. On the other hand, it is difficult for users to provide these information, which are often missing or incorrect. 
 This mismatch between what developers need and what reporters can provide would delay fixing bugs~\citep{DBLP:conf/msr/JoorabchiMM14}. In addition, many studies reported the quality of issue reports impact the issue resolution time~\citep{DBLP:conf/cscw/BreuPSZ10}\citep{DBLP:conf/icse/GuoZNM10} and issue resolution rate~\citep{DBLP:conf/compsac/ZouXZCL15}\citep{DBLP:conf/icse/ZimmermannNGM12}. \kashiwa{These citations need to be confirmed whether they mentioned clearly}
 
 \kashiwa{WIP}
-To address this challenge, GitHub released a new feature to easily share movies in May 2021~\citep{github-video-blog}. Developers and reporters can share their movies such as the mp4 format on GitHub (\eg,  issue reports, pull requests, and discussions). 
-Visualized issue reports by this feature (\textit{visual issue reports}) have the potential to easily share information without incorrect ones.  
-For example, reporters can share the steps to reproduce bugs with the screen capture and developers can understand the steps quickly~\citep{github-video-blog}. 
-However, no studies about the impact of visual issue reports exist. Our ultimate goal is to establish the advantages of visual issue reports on software development and promote using them.
+To facilitate their bug-reproduction work, GitHub has provided a new feature that allows users to share videos (e.g., mp4 files) in May 2021~\citep{github-video-blog}. Using such videos, reports can be made to developers about the details of bugs by recording the symptoms, reproduction steps, and other important aspects of bug information. These visual images help developers understand what users did and encounter. While such visual issue reports have the potential to significantly improve the bug-fixing process, no studies have empirically examined this impact. 
+
+In this paper, we conduct a preliminary study to identify the characteristics of visual issue reports by comparing them with non-visual issue reports.  In addition, we provide the dataset used in this study, to promote future studies using visual issue reports. This dataset consists of movies and images in publicly available repositories on GitHub. Specifically, we collected 3,819 movies and 33,079 images from 711,160 issue reports on 4,173 publicly available repositories.
 
 
-As a precursor to this goal, in this paper, 
-we conducted a preliminary study about the characteristics of 
-visual issue reports in software development on GitHub
-by comparing them to the issue reports with images and 
-the other issue reports. 
-In addition, to promote the research about visual issue reports, 
-we built a dataset of visual issue reports. 
-This dataset consists of movies and images 
-in publicly available repositories on GitHub. 
-Specifically, we collected 
-3,819 movies and 
-33,079 images from 
-711,160 issue reports on
-4,173 publicly available repositories.
-
-Our initial analysis reveals that 
-1) the visual issue reports are still not popular,
-while the number of them has slightly increased in recent years, 
-2) the visual issue reports need 
-a longer time to be resolved than the issue reports without images and movies, and 
-3) the visual issue reports are more related to 
-the topics of visualization and GUI. 
-The main contribution of this paper is 
-opening a new research perspective to study visual issue reports
-and preparing a new dataset for this research. 
+Our initial analysis reveals that 1) visual issue reports still require reporters to write similar amounts of texts to describe bugs; 2) visual issue reports are 3-times likely to receive more comments than reports without images or videos; and 3) resolution time of visual issue reports is longer than that of other issue reports. 
+%The main contribution of this paper is opening a new research perspective to study visual issue reports and preparing a new dataset for this research. 

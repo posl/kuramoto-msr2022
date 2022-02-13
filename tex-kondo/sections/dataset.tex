@@ -11,9 +11,17 @@ This section describes our study design, including research questions, data coll
 To identify the characteristics of the visual issue reports, we addressed the following three research questions, focusing on Report (RQ1), Discussion (RQ2), and Fix (RQ3). 
 \begin{itemize}
 	\item[RQ1:] \textbf{\RQone{}}\\
-	Developers often suffer from reproducing bugs with the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{zimmermann2010TSE}\citep{DBLP:conf/icsm/0001KC20}. 
+	Developers often suffer from reproducing bugs with the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
 	On the other hands, as reporters are not always developers, it is not easy to tell what they did and what they encount~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a function that can easily provide information with videos and officially announced the function release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that visual images are a more effective approach to describe what people want to communicate and let other people understand it, compared with texts. We hypothesize that videos can reduce the effort for reporting bugs. In this RQ, we measured the number of words in the description of issues as a proxy measure for the effort. 
 	\item[RQ2:] \textbf{\RQtwo{}}\\
+	\kashiwa{WIP}
+	Joorabchi \et claim that lack of proper communication between the reporters and resolvers.
+	What are good discussions within bug report comments for shortening bug fixing time? says fixing time and discussion reduce time. 
+	An Empirical Study on Factors Impacting Bug Fixing Time says that maxLengthOfCommentHelp
+	Giger et al. [5] studied six projects: Eclipse JDT, Eclipse Platform, Mozilla Core, Mozilla Firefox, Gnome GStreamer and Gnome Evolution. They found that using post-submission data of bug reports (i.e., number of comments made to a bug and number of developers involved) improves bug-fix time prediction accuracy
+    E. Giger, M. Pinzger, and H. Gall. Predicting the fix time of bugs. In RSSE, 2010
+    four eyes better than two
+	Information Needs in Bug Reports:Improving Cooperation Between Developers and Users
 	We suppose visual issue reports provide 
 	more information than the other issue reports. 
 	Consequently, developers could discuss the details and 
@@ -36,14 +44,14 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 
 \subsection{Context Selection}
 \label{sec:design:context}
-To select projects as context for our study, we employed \texttt{GHS}\citep{msr2021data}\kashiwa{GitHubSercher???}. GitHubSercher can find repositories satisfying specific criteria. To filter out unpopular, inactive repositories, or repositories that have no issues, we set up the following criteria.
+To select projects as context for our study, we employed \texttt{GHS}\citep{msr2021data}. GHS can find repositories satisfying specific criteria. To filter out unpopular, inactive repositories, or repositories that have no issues, we set up the following criteria.
 \begin{itemize}
 	\item the number of stars $\geq$ 10
 	\item the number of issue reports $\geq$ 1
 	\item at least one commit was made in 2021
 \end{itemize}
 Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 770,656 closed issue reports from 4,173 projects that were randomly selected. While the number of sampled projects seems odds, we collected all the closed issue reports from as many projects as possible in the limited time.  
-As the sampled projects accounts for only less than 2\% of all repositories, we discuss the threat to validity of this process in \sec{sec:limitation}. 
+%As the sampled projects accounts for only less than 2\% of all repositories, we discuss the threat to validity of this process in \sec{sec:limitation}. 
 
 
 % \input{figures/data-collection-overview}
@@ -51,7 +59,6 @@ As the sampled projects accounts for only less than 2\% of all repositories, we 
 \subsection{Data Collection}
 %\fig{fig:data-collection-overview} shows an overview of the data collection process. 
 We first collected closed issue reports with \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3\footnote{\url{https://docs.github.com/en/rest}}. 
-
 Next, we collected videos and images attached to the issue reports. While GitHub users can see videos and images on issue pages, the videos and images are stored in different URLs. As the URLs are written in the text description of issue reports, we parsed them with regular expressions and downloaded them. The regular expressions we used are shown as follows:
 \begin{quote}
 \addtolength\leftmargini{0in}
@@ -60,15 +67,6 @@ Next, we collected videos and images attached to the issue reports. While GitHub
 Each downloaded file was determined to be a image or video by its extension. Specifically, png, PNG, jpg, JPG, and jpeg are treated as images, and  gif, GIF, mp4, MP4, and mov as videos.
 Consequently, we downloaded 33,079 images and 3,819 movies
 with the collected URLs.\masa{to kuramoto: i wrote these numbers. are the numbers correct?} 
-
-\input{tables/issue-category}
-We classified the issue reports into three categories based on whether they have images and movies. \tab{tab:issue-category} shows the number of issue reports for each category. 
-Note that issue reports often have both images and movies. 
-These issue reports are included in both $Img$ and $Mov$ categories. 
-Thus, the total number of downloaded issue reports is different from 
-the sum of \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I highlight the unknown table number->Yes}. 
-In this paper, we refer to the issue reports in the $Mov$ category 
-as \textit{visual issue reports}. 
 
 
 % \input{tables/issue-ex}
@@ -82,48 +80,28 @@ We retrieved the attributes from the collected issue reports.
 the issue reports. 
 The attributes can be classified into three dimensions, 
 ``Report'', ``Discussion'', and ``Fix''. 
-The attributes in dimension ``Report'' are extracted from 
+The attributes in the dimension ``Report'' are extracted from 
 the description of issue reports or attached files 
 when the issue was created. 
 In particular, in RQ1, we 
 %calculate 
 utilize the number of words 
-in reports 
-%(\ie, $\#comments$) 
-(\ie, $\#words$) \masa{to Kashiwa-sensei: not \#comments right?}
-for Img, Vid, and None. 
-In addition, 
-$IssueCreatedYear$, $\#imgs$, and $\#vids$ are used to show 
+in reports (\ie, $DescriptionLength$) for Img, Vid, and None. 
+In addition,  $\#imgs$ and $\#vids$ are used to show 
 dataset description. 
 Note that these attributes are not calculated from either title, not comments (i.e., only descriptions were used). 
-Also, when computing $\#words$, if the description of the issue report 
+Also, when computing $DescriptionLength$, if the description of the issue report 
 includes URLs for images/videos, 
 we exclude them from the description because these are not words.
 
-Dimension ``Discussion''
-has two attributes $\#comments$ 
-which shows the number of comments for each issue report and 
-$FirstCommentTime$ which shows the time from 
-reported to comment at the first time.
-We utilize these attributes as proxies of the level of 
-discussion activities in RQ2.
-\kashiwa{TODO: ADD Explanations about comments and FirstComment time}
-\masa{how about this?}
+The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. $Comments$ is the number of comments were made in the issue report. We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the days subtract from when the first comment was made to when issue was reported. We employ this attribute for measuring developers' interest. 
 
-Dimension ``Fix'' has one attribute $IssueResolvedTime$ which shows the time from reported to fixed. 
+The dimension ``Fix'' has one attribute $IssueResolvedTime$ which shows the time from reported to fixed. 
 Note that some negative values of $IssueResolvedTime$ were observed. We investigated it manually and found that these are because of a bug in GitHub.  We excluded those issues that have negative values from our dataset. 
 In addition, we excluded issue reports resolved in too short or long periods (e.g., 30 seconds) because they might be issued after being fixed or might not be fixed in reality.
 %\kashiwa{check please}
 Specifically, we only use the issue reports that meet the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
 The number of issue reports that meet this condition is 711,160 (92.23\%).
-
-
-\kashiwa{WAKARANAI???KOKOKARA}
-%On the contrary, $\#chars$, $\#imgs$, $\#movs$, and $Words$ need several pre-processes from issue reports.  We counted the number of characters as $\#chars$ and stored the words as $Words$ for all issue reports. In this process, if the description of the issue report includes the URL, we exclude it from the description, and convert all issue reports into $\#chars$ and $Words$.
-%We counted the appearances of images and movies as $\#imgs$ and $\#movs$ with the regular expression for the URL.
-\kashiwa{???KOKOMADE}
-\masa{I removed this and extended the explanation of the Report dimension}
-
 
 
 \kashiwa{Write what do you analyze (e.g., compare them in median)}

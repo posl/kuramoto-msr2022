@@ -1,68 +1,27 @@
 \section{Discussion}
 %\input{tex-kondo/tables/tf-idf-result}
-\input{./tables/tf-idf-result}
 \subsection{Why Do Issue Reports with Videos or Images Take a Longer Time than Others?}
+In this study, we observed that developers still write as many words in visual issue reports as in non-visual issue reports (RQ1). And also, we found that visual issue reports receive more comments that non-visual issue reports (RQ2). 
 
-\kashiwa{Dependabot makes resolution time small. Future reseach have to check the size of changes.}
+However, we confirmed that developers consume time to close visual issues reports longer than non-visual issues (RQ3), which rejected our hypothesis. To investigate the reason why visual issue reports take a longer time to be clolsed, we examine the differences in the contents of bugs in this section. 
 
-We hypothesize that the topics of the visual issue reports 
-affect the resolution time. 
-To clarify the topics, we computed the TFIDF values 
-%on $Words$ for each category. 
-on the words in the description for each category. \kashiwa{do not use Words. Just from description}
+We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. Then, we calculated TF-IDF values to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
 
-The TFIDF values clarify the differences in the appearances of 
-words between visual issue reports and 
-non-visual issue reports. 
+\tab{tab:tfidf-result} shows the top-10 TFIDF words for each category.
+First, in the $Vid$ categories, we observed many words  related to GUI such as ``dropdown'' and ``button''. It is worth noting that ``when'' is located at the top rank of the lists in both $Img$ and $Vid$. This implies that reporters may explain steps to reproduce complicated problems. 
 
-%\textbf{The visual issue reports and the issues 
-%reports with images have more words 
-%about visualization or GUI.}
-\tab{tab:tfidf-result} shows the top-10 TFIDF words
-% in $Words$ 
-for each category.
-It should be noted that we remove a kind of stop words such as 
-``at'', ``it'', and ``the''. 
-% extracted from our dataset. 
-We observed words related to visualization such as 
-``image'' and ``view'' in the $Img$ and $Vid$ categories. 
-Also, we observed words related to GUI such as 
-``dropdown'' and ``button'' in the $Vid$ category. 
-The word ``when'' indicates high TFIDF values 
-in the $Img$ and $Vid$ categories. 
-Our manual analysis reveals that the issues with 
-these words relate to reporting bugs. 
-Hence, the issues in these two categories are 
-probably more related to reporting bugs. 
-On the contrary, the bot comment ``dependabot'' is 
-the top-1 word in the $None$ category. 
-\summarybox
-{\bf  
-%Reporting and fixing the bugs of visualization and GUI 
-%may need a longer time. 
-One reason is that the bugs of visualization and GUI are 
-reported in the issue reports with videos or images 
-while the bot comment is in the $None$ category.  
-}
+On the other hand, ``dependabot'' and ``pull request'' are located at the top of  $None$.\footnote{closed issue reports in our dataset does not include pull requests.\kashiwa{check please}} This might be that suggested changes had been prepared when the issue is created. Future research should take account into creating the dataset of non-visual issue reports that contain steps to reproduce. 
 
+\input{./tables/tf-idf-result}
 
 \subsection{Future Research Direction}
-\kashiwa{TODO: Write future work here}\\
-
-\noindent
-\textbf{Cause and Effect. }
-As mentined above, issues with videos prolong the time to be resolved. It might be that reporters use videos because it is hard to describe. But it is not sure. 
+In this section, we discuss what should be considered by future studies. 
 
 \noindent
 \textbf{Fine-grained analysis. }
-%Specifically, we study the reduction of issue resolution time, 
-% the response rate of developers, and 
-% the reduction of the number of comments 
-% in which developers write ``works for me''.
-This preliminary study examined only time, comments, etc. Videos will impact seveal factors. For example, works for me. AAA et al. studied works for me. Shihab studied Reopen bugs. However, these tags are exist in Bugzilla  but GitHub does not. We need a manual inspections for finding such tags. 
-\\
-AAA studied Resolution rate. But likewise, GitHub does not. We could use wont'fix. 
+In RQ2, we showed that visual issue reports are 3-times likely to receive more comments than non-visual issues. As these might be caused by that  issue reports attract many developers or that visual issue reports deal with difficult problems. Future studies should examine how many developers involve~\citep{DBLP:conf/icsm/BavotaR15}, severity tags~\citep{DBLP:conf/issre/ZhouNG15}, and size of changes~\citep{DBLP:conf/kbse/HattoriL08}.
 
+In this study, we studied only closed bugs and examined only resolution time in RQ3 (Fix). However, previous studies examined several statuses of bugs. For example, Joorabchi et al.~\citep{DBLP:conf/msr/JoorabchiMM14} studied ``Works For Me'', Shihab et al.~\citep{DBLP:journals/ese/ShihabIKIOAHM13} studied Reopen bugs, and XXX et al.~\citep{TODO} examined bug resolution rate (``Won't fix''). However, most of the studies use other bug tracking systems, Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}. These bug tracking systems have various resolution statuses such as ``Won't Fix'' and ``Works For Me''  in default but GitHub we studied does not. Developers on GitHub can provide tags but it is not common (X\%). Future studies should collect more issues and show the percentage of each status, etc. 
 
 \noindent
 \textbf{Bug reproduction Automation.}

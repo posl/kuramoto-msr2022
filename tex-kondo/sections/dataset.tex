@@ -14,23 +14,8 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 	Developers often suffer from reproducing bugs with the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
 	On the other hands, as reporters are not always developers, it is not easy to tell what they did and what they encount~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a function that can easily provide information with videos and officially announced the function release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that visual images are a more effective approach to describe what people want to communicate and let other people understand it, compared with texts. We hypothesize that videos can reduce the effort for reporting bugs. In this RQ, we measured the number of words in the description of issues as a proxy measure for the effort. 
 	\item[RQ2:] \textbf{\RQtwo{}}\\
-	\kashiwa{WIP}
-	Joorabchi \et claim that lack of proper communication between the reporters and resolvers.
-	What are good discussions within bug report comments for shortening bug fixing time? says fixing time and discussion reduce time. 
-	An Empirical Study on Factors Impacting Bug Fixing Time says that maxLengthOfCommentHelp
-	Giger et al. [5] studied six projects: Eclipse JDT, Eclipse Platform, Mozilla Core, Mozilla Firefox, Gnome GStreamer and Gnome Evolution. They found that using post-submission data of bug reports (i.e., number of comments made to a bug and number of developers involved) improves bug-fix time prediction accuracy
-    E. Giger, M. Pinzger, and H. Gall. Predicting the fix time of bugs. In RSSE, 2010
-    four eyes better than two
-	Information Needs in Bug Reports:Improving Cooperation Between Developers and Users
-	We suppose visual issue reports provide 
-	more information than the other issue reports. 
-	Consequently, developers could discuss the details and 
-	result in active discussions. 
-	In this RQ, we clarify whether this assumption is true. 
-	We measured the activity in terms of 
-	the first response time, and
-	the number of comments.
-	%, and the number of words. 
+	Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} show that lack of proper communication between reporters and developers end up with being a cause of non-reproducible bug reports. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from them. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
+	% to clarify whether visual can attract developers これは突っ込まれる可能性が高いのでやめとく． 
 	\item[RQ3:] \textbf{\RQthree{}}\\
 	% We suppose that developers use visualization 
 	% in particular issues. 
@@ -94,7 +79,7 @@ Also, when computing $DescriptionLength$, if the description of the issue report
 includes URLs for images/videos, 
 we exclude them from the description because these are not words.
 
-The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. $Comments$ is the number of comments were made in the issue report. We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the days subtract from when the first comment was made to when issue was reported. We employ this attribute for measuring developers' interest. 
+The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. $Comments$ is the number of comments were made to an issue report. We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the days subtract from when the first comment was made to when issue was reported. We employ this attribute for measuring developers' interest. 
 
 The dimension ``Fix'' has one attribute $IssueResolvedTime$ which shows the time from reported to fixed. 
 Note that some negative values of $IssueResolvedTime$ were observed. We investigated it manually and found that these are because of a bug in GitHub.  We excluded those issues that have negative values from our dataset. 

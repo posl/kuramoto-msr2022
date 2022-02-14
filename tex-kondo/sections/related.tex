@@ -1,18 +1,10 @@
 \section{Related Work}
 \label{sec:relate}
+While numerous studies have studied bug resolution time~\citep{DBLP:conf/msr/ChenNSH14}\citep{DBLP:journals/jss/GarciaSN18}\citep{DBLP:conf/sigsoft/JeongKZ09}\\
+\citep{DBLP:conf/icsm/KashiwaYKO14}\citep{DBLP:conf/msr/ZamanAH11}, 
+in particular, the following studies investigated the relationship between bug resolution time and various elements of bug reports instead of videos~\citep{DBLP:conf/msr/BhattacharyaN11}\citep{DBLP:conf/csmr/BhattacharyaUNK13}\citep{DBLP:journals/ieicetd/NoyoriWFKONT21}. 
+Noyori~\et~\citep{DBLP:journals/ieicetd/NoyoriWFKONT21} investigated the relationship between resolution time and topics included in the comments of issue reports. 
+They found that bugs are resolved fast when discussions about symptoms are not needed.  Bhattacharya \et \citep{DBLP:conf/msr/BhattacharyaN11} developed bug-fix
+time prediction models using various metrics. They showed that the levels of bug severity and the number of attachments (patches) do not correlate well with bug-fix time. In addition, their later work by Bhattacharya \et~\citep{DBLP:conf/csmr/BhattacharyaUNK13} compared bug-fix time for high-quality and poor quality bug reports. They observed that the text length of descriptions is relatively correlated with bug resolution time. 
 
-Ford~\et~\citep{ford2021TOSEM} conducted 
-two large-scale surveys to study the affection of 
-the situation developers work from home. 
-They figure out the advantages and disadvantages of 
-remote work. 
-Interestingly, the change by remote work causes opposite opinions 
-to developers. 
-GitLab Inc.~\citep{gitlab2020survey} also conducted
-a large-scale survey of 3,000 professionals 
-who choose remote work or have the option of remote work. 
-Cooper~\et~\citep{9402526} proposed a bug analysis method 
-that utilizes both visual and textual information, 
-such as reproduction videos and bugs symptom images.
-Noyori~\et~\citep{9498236} investigated the relationship between the content of bug reports and the time to resolve issues, 
-and found that the more abstract the content, the longer it takes to resolve.
+Also, several studies utilize visual issue reports for improving bug-fixing process~\citep{DBLP:conf/icse/CooperBCMP21}\citep{TODO}. Cooper~\et~\citep{DBLP:conf/icse/CooperBCMP21} used videos and texts included in issue reports to detect duplicate issue reports. 

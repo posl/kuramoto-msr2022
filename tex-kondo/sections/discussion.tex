@@ -7,7 +7,7 @@ However, we confirmed that developers consume time to close visual issues report
 To investigate the reason why visual issue reports take a longer time to be clolsed, we examine the differences in the contents of bugs in this section. 
 
 We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. 
-Then, we calculated TF-IDF values to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
+Then, we calculated TF-IDF values~\citep{salton1988-tfidf} to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
 
 \tab{tab:tfidf-result} shows the top-10 characteristic words in each category, calculated by TF-IDF.
 First, in the $Vid$ categories, we observed many words  related to GUI such as ``dropdown'' and ``button''. It is worth noting that ``when'' is located at the top rank of the lists in both $Img$ and $Vid$. 

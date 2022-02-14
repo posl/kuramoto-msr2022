@@ -1,20 +1,26 @@
 \section{Discussion}
 %\input{tex-kondo/tables/tf-idf-result}
 \subsection{Why Do Issue Reports with Videos or Images Take a Longer Time than Others?}
-In this study, we observed that developers still write as many words in visual issue reports as in non-visual issue reports (RQ1). We also found that visual issue reports receive more comments that non-visual issue reports (RQ2). 
-However, we confirmed that developers consume time to close visual issues reports longer than non-visual issues (RQ3), which rejected our hypothesis. To investigate the reason why visual issue reports take a longer time to be clolsed, we examine the differences in the contents of bugs in this section. 
+In this study, we observed that developers still write as many words in visual issue reports as in non-visual issue reports (RQ1). 
+We also found that visual issue reports receive more comments that non-visual issue reports (RQ2). 
+However, we confirmed that developers consume time to close visual issues reports longer than non-visual issues (RQ3), which rejected our hypothesis. 
+To investigate the reason why visual issue reports take a longer time to be clolsed, we examine the differences in the contents of bugs in this section. 
 
-We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. Then, we calculated TF-IDF values to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
+We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. 
+Then, we calculated TF-IDF values to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
 
-\tab{tab:tfidf-result} shows the top-10 TF-IDF words for each category.
-First, in the $Vid$ categories, we observed many words  related to GUI such as ``dropdown'' and ``button''. It is worth noting that ``when'' is located at the top rank of the lists in both $Img$ and $Vid$. This implies that reporters may explain steps to reproduce complicated problems. 
+\tab{tab:tfidf-result} shows the top-10 characteristic words in each category, calculated by TF-IDF.
+First, in the $Vid$ categories, we observed many words  related to GUI such as ``dropdown'' and ``button''. It is worth noting that ``when'' is located at the top rank of the lists in both $Img$ and $Vid$. 
+This implies that reporters may explain steps to reproduce complicated problems. 
 
-On the other hand, ``dependabot'' and ``pull request'' are located at the top of  $None$.\footnote{closed issue reports in our dataset does not include pull requests.\kashiwa{check please}} This might be that suggested changes had been prepared when the issue is created. Future research should take account into creating the dataset of non-visual issue reports that contain steps to reproduce. 
+On the other hand, ``dependabot'' and ``pull request'' are located at the top of  $None$.\footnote{closed issue reports in our dataset does not include pull requests.\kashiwa{check please}} 
+This might be that suggested changes had been prepared when the issue is created. 
+Future research should take account into creating the dataset of non-visual issue reports that contain steps to reproduce. 
 
 \input{./tables/tf-idf-result}
 
 \subsection{Future Research Direction}
-In this section, we discuss what should be considered by future studies. 
+This section discusses what should be considered by future studies. 
 
 \noindent
 \textbf{Fine-grained analysis. }

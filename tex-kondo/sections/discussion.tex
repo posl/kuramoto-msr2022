@@ -7,7 +7,7 @@ However, we confirmed that developers consume time to close visual issues report
 
 We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. Then, we calculated TF-IDF values to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
 
-\tab{tab:tfidf-result} shows the top-10 TFIDF words for each category.
+\tab{tab:tfidf-result} shows the top-10 TF-IDF words for each category.
 First, in the $Vid$ categories, we observed many words  related to GUI such as ``dropdown'' and ``button''. It is worth noting that ``when'' is located at the top rank of the lists in both $Img$ and $Vid$. This implies that reporters may explain steps to reproduce complicated problems. 
 
 On the other hand, ``dependabot'' and ``pull request'' are located at the top of  $None$.\footnote{closed issue reports in our dataset does not include pull requests.\kashiwa{check please}} This might be that suggested changes had been prepared when the issue is created. Future research should take account into creating the dataset of non-visual issue reports that contain steps to reproduce. 
@@ -19,7 +19,7 @@ In this section, we discuss what should be considered by future studies.
 
 \noindent
 \textbf{Fine-grained analysis. }
-In RQ2, we showed that visual issue reports are 3-times likely to receive more comments than non-visual issues. As these might be caused by that  issue reports attract many developers or that visual issue reports deal with difficult problems. Future studies should examine how many developers involve~\citep{DBLP:conf/icsm/BavotaR15}, severity tags~\citep{DBLP:conf/issre/ZhouNG15}, and size of changes~\citep{DBLP:conf/kbse/HattoriL08}.
+In RQ2, we showed that visual issue reports are 3-times likely to receive more comments than non-visual issues. As these might be caused by that  issue reports attract many developers or that visual issue reports deal with difficult problems. Future studies should examine how many developers are involved~\citep{DBLP:conf/icsm/BavotaR15}, severity tags~\citep{DBLP:conf/issre/ZhouNG15}, and size of changes~\citep{DBLP:conf/kbse/HattoriL08}.
 
 In this study, we studied only closed bugs and examined only resolution time in RQ3 (Fix). However, previous studies examined several statuses of bugs. For example, Joorabchi et al.~\citep{DBLP:conf/msr/JoorabchiMM14} studied ``Works For Me'', Shihab et al.~\citep{DBLP:journals/ese/ShihabIKIOAHM13} studied Reopen bugs, and XXX et al.~\citep{TODO} examined bug resolution rate (``Won't fix''). However, most of the studies use other bug tracking systems, Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}. These bug tracking systems have various resolution statuses such as ``Won't Fix'' and ``Works For Me''  in default but GitHub we studied does not. Developers on GitHub can provide tags but it is not common (X\%). Future studies should collect more issues and show the percentage of each status, etc. 
 
@@ -33,7 +33,7 @@ Hence, it is an important future research direction
 to automate bug reproduction. 
 As the evolution of image processing with deep learning models, 
 the accuracy of image processing significantly improves\masa{citation}. 
-Hence, we apply such deep learning models to movies 
+Hence, we apply such deep learning models to videos 
 to implement automated bug reproduction tools. 
 
 

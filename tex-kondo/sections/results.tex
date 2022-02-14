@@ -1,18 +1,28 @@
+\begin{figure*}[!t]
+\begin{tabular}{ccc}
+\begin{minipage}[t]{0.23\hsize}
+    \includegraphics[width=1\linewidth]{./figures/words.pdf}
+    \caption{Distribution of the number of words in the descriptions of issue reports (``Report'' dimension)}
+    \label{fig:words}
+\end{minipage}
+\hspace{0.04\columnwidth}
+\begin{minipage}[t]{0.46\hsize}
+    \includegraphics[width=1\linewidth]{./figures/discussions.pdf}
+    %\caption{Amount of texts written in issue reports. }
+    % \caption{The attributes in the Discussion dimension}
+    \caption{Distribution of days to receive the first comments and the number of comments (``Discussion'' dimension)}
+    \label{fig:discussion}
+\end{minipage}
+\hspace{0.04\columnwidth}
+\begin{minipage}[t]{0.23\hsize}
+    \includegraphics[width=1\linewidth]{./figures/fixes.pdf}
+    \caption{Distribution of resolution time (``Fix'' dimension)}
+    \label{fig:resolvedtime}
+\end{minipage}
+\end{tabular}
+\end{figure*}
 
 
-
-
-
-% We used $Words$ to compute the TFIDF values\masa{need citation} for each category. 
-% The TFIDF values will support researchers who investigate 
-% the differences in the appearances of words with and without 
-% images/movies. 
-%% We suppose that images and movies are utilized to 
-%% describe specific contents such as GUI bugs. 
-%% Hence, we computed the TFIDF values\masa{need citation} 
-%% on $Words$ for each category. 
-%% The TFIDF values clarify the differences in the appearances of 
-%% words with and without images/movies. 
 
 \subsection{Dataset Description}
 \input{tables/issue-category}
@@ -60,16 +70,16 @@ We collected XXX videos and XXX images from XXX issue reports. Out of the collec
 
 
 \subsection*{RQ1: \RQone{}}
-\begin{figure}[t]
-    \centering
-    %\includegraphics[width=0.5\linewidth]{tex-kondo/figures/words.png}
-    \includegraphics[width=0.5\linewidth]{./figures/words.pdf}
-    %\caption{Distributions of words written in issue reports. }
-    %\caption{Boxplots of \# of words written in the description }
-    % \caption{The attribute in the Report dimension}
-    \caption{Distribution of the number of words in the descriptions of issue reports (``Report'' dimension)}
-    \label{fig:words}
-\end{figure}
+% \begin{figure}[t]
+%     \centering
+%     %\includegraphics[width=0.5\linewidth]{tex-kondo/figures/words.png}
+%     \includegraphics[width=0.5\linewidth]{./figures/words.pdf}
+%     %\caption{Distributions of words written in issue reports. }
+%     %\caption{Boxplots of \# of words written in the description }
+%     % \caption{The attribute in the Report dimension}
+%     \caption{Distribution of the number of words in the descriptions of issue reports (``Report'' dimension)}
+%     \label{fig:words}
+% \end{figure}
 %\textbf{DescriptionLength of visual issue reports is 
 %similar to the others.}
 
@@ -91,14 +101,14 @@ to write similar amounts of texts to describe bugs.
 }}
 
 \subsection*{RQ2: \RQtwo{}}
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=1\linewidth]{./figures/discussions.pdf}
-    %\caption{Amount of texts written in issue reports. }
-    % \caption{The attributes in the Discussion dimension}
-    \caption{Distribution of days to receive the first comments and the number of comments (``Discussion'' dimension)}
-    \label{fig:discussion}
-\end{figure}
+% \begin{figure}[t]
+%     \centering
+%     \includegraphics[width=1\linewidth]{./figures/discussions.pdf}
+%     %\caption{Amount of texts written in issue reports. }
+%     % \caption{The attributes in the Discussion dimension}
+%     \caption{Distribution of days to receive the first comments and the number of comments (``Discussion'' dimension)}
+%     \label{fig:discussion}
+% \end{figure}
 
 
 \fig{fig:discussion}
@@ -161,18 +171,18 @@ compared with the Img category.
 
 
 \subsection*{RQ3: \RQthree{}}
-\begin{figure}[t]
-    \centering
-    %\includegraphics[width=0.6\linewidth]{tex-kondo/figures/fixes.png}
-    \includegraphics[width=0.5\linewidth]{./figures/fixes.pdf}
-    %\caption{Amount of texts written in issue reports. 
-    %The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
-    %\masa{I moved this comment to here (maybe removed later? I'm not sure)}
-    %}
-    % \caption{The attribute in the Fix dimension}
-    \caption{Distribution of resolution time (``Fix'' dimension)}
-    \label{fig:resolvedtime}
-\end{figure}
+% \begin{figure}[t]
+%     \centering
+%     %\includegraphics[width=0.6\linewidth]{tex-kondo/figures/fixes.png}
+%     \includegraphics[width=0.5\linewidth]{./figures/fixes.pdf}
+%     %\caption{Amount of texts written in issue reports. 
+%     %The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
+%     %\masa{I moved this comment to here (maybe removed later? I'm not sure)}
+%     %}
+%     % \caption{The attribute in the Fix dimension}
+%     \caption{Distribution of resolution time (``Fix'' dimension)}
+%     \label{fig:resolvedtime}
+% \end{figure}
 %% We investigated 
 %% the differences with and without images and movies 
 %% for each attribute on the issues. 

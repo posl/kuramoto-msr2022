@@ -12,9 +12,9 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 \begin{itemize}
 	\item[RQ1:] \textbf{\RQone{}}\\
 	Developers often suffer from reproducing bugs with the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
-	On the other hands, as reporters are not always developers, it is not easy to tell what they did and what they encount~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a function that can easily provide information with videos and officially announced the function release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that visual images are a more effective approach to describe what people want to communicate and let other people understand it, compared with texts. We hypothesize that videos can reduce the effort for reporting bugs. In this RQ, we measured the number of words in the description of issues as a proxy measure for the effort. 
+	On the other hands, as reporters are not always developers, it is not easy to tell what they did and what they encount~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a function that can easily provide information with videos and officially announced the function release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that visual images in general are a more effective approach to describe what people want to communicate and let other people understand it, compared with texts. We hypothesize that videos can reduce the effort for reporting bugs. In this RQ, we measured the number of words in the description of issues as a proxy measure for the effort. 
 	\item[RQ2:] \textbf{\RQtwo{}}\\
-	Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} show that lack of proper communication between reporters and developers end up with being a cause of non-reproducible bug reports. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from them. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
+	Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} show that lack of proper communication between reporters and developers end up with being a cause of non-reproducible bug reports. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from the developers. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
 	% to clarify whether visual can attract developers これは突っ込まれる可能性が高いのでやめとく． 
 	\item[RQ3:] \textbf{\RQthree{}}\\
 	% We suppose that developers use visualization 
@@ -29,13 +29,16 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 
 \subsection{Context Selection}
 \label{sec:design:context}
-To select projects as context for our study, we employed \texttt{GHS}\citep{msr2021data}. GHS can find repositories satisfying specific criteria. To filter out unpopular, inactive repositories, or repositories that have no issues, we set up the following criteria.
+To select projects as context for our study, we employed \texttt{GHS}~\citep{msr2021data}. GHS can find repositories satisfying specific criteria. To filter out unpopular, inactive repositories, or repositories that have no issues, we set up the following criteria.
 \begin{itemize}
 	\item the number of stars $\geq$ 10
 	\item the number of issue reports $\geq$ 1
 	\item at least one commit was made in 2021
 \end{itemize}
-Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 770,656 closed issue reports from 4,173 projects that were randomly selected. While the number of sampled projects seems odds, we collected all the closed issue reports from as many projects as possible in the limited time.  
+Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 770,656 closed issue reports from 4,173 projects that were randomly selected. 
+%While the number of sampled projects seems odds, 
+%上の分，なくても繋がるし，表現としてネガティブなので消した．
+We collected all the closed issue reports from as many projects as possible in the limited time.  
 %As the sampled projects accounts for only less than 2\% of all repositories, we discuss the threat to validity of this process in \sec{sec:limitation}. 
 
 
@@ -43,7 +46,7 @@ Consequently, the number of the repositories satisfying the criteria was 289,115
 
 \subsection{Data Collection}
 %\fig{fig:data-collection-overview} shows an overview of the data collection process. 
-We first collected closed issue reports with \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3\footnote{\url{https://docs.github.com/en/rest}}. 
+We first collected closed issue reports with \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3.\footnote{\url{https://docs.github.com/en/rest}} 
 Next, we collected videos and images attached to the issue reports. While GitHub users can see videos and images on issue pages, the videos and images are stored in different URLs. As the URLs are written in the text description of issue reports, we parsed them with regular expressions and downloaded them. The regular expressions we used are shown as follows:
 \begin{quote}
 \addtolength\leftmargini{0in}

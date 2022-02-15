@@ -73,8 +73,8 @@
 \fig{fig:words} shows the distributions in the number of words written in descriptions of issue reports. The median of DescriptionLength was 42.0 words in Img, 54.5 in Vid, and 60.0 in None. 
 Compared with $Vid$ and $None$, the number of words in $Vid$ is slightly smaller than that of the non-visual ones. However, no statistically significant differences are observed between them (p $>$ 0.01). This implies that reporters write as many texts to describe the contents of videos as text-only reports. 
 
-Shedding light on $Img$, the number of words in $Img$ is larger than 
-$None$ with a statistical significant difference (p $<$ 0.01). However, there is no difference between $Img$ and $Vid$ (p $>$ 0.01). 
+Shedding light on $Img$, the number of words in $Img$ is larger (42 words) than 
+that in $None$ (60 words) with a statistical significant difference (p $<$ 0.01). Compared with $Vid$, the median in $Img$ is smaller than that in $Vid$ (55 words). However, there is no statistically significant difference between $Img$ and $Vid$ (55 words).%, p $>$ 0.01 
 \summarybox
 %{Answer to RQ1}
 {
@@ -94,53 +94,9 @@ $None$ with a statistical significant difference (p $<$ 0.01). However, there is
 % \end{figure}
 
 
-\fig{fig:discussion}
-shows the distributions of days until the first comment made and the number of comments in issue reports. 
-%% We observed that the 25th, 50th, and 75th percentiles of 
-%% the $Vid$ category in 
-%% this dimension
-%% %$FirstCommentTime$ and $\#comments$ 
-%% result in the largest or faster values than those of 
-%% the other two categories.
-%% Hence, the visual issue reports get more responses 
-%% while they get faster responses. 
-%% %% 
-%% %% 
-%% %% %However, we do not observe significant differences 
-%% %% \textbf{
-%% %% However, we occasionally observe non-significant differences
-%% %% in $FirstCommentTime$ and $\#comments$.}
-%% %% %\textbf{
-%% %% %However, the visual issue reports are not significantly different 
-%% %% %from the issue reports in the Img category
-%% %% %in $FirstCommentTime$ and $\#comments$.
-%% %% %}
-%% %% \tab{tab:Steel-Dwass-test} shows the results of 
-%% %% the Steel-Dwass test. 
-%% %% 
-%% %% The asterisks indicate significance based on 
-%% %% the Steel-Dwass test: * indicates $p$ < 0.05 in 
-%% %% the two-sided test; 
-%% %% ** indicates $p$ < 0.05 in the one-sided test. 
-%% %In summary, the visual issue reports do not show 
-%% %significant differences compared with 
-%% %the issue reports with images in 
-%% %In summary, the visual issue reports are not 
-%% %significantly different from the issue reports 
-%% %in the Img category, 
-%% %whereas visual issue reports and 
-%% %the issue reports in the Img category 
-%% %are significantly different from the issue reports 
-%% %in the None category in
-%% %$FirstCommentTime$ and $\#comments$.
-%% %In summary, the visual issue reports are not 
-%% However, the visual issue reports are not 
-%% significantly different in $FirstCommentTime$ 
-%% compared with the other two categories and 
-%% are not significantly different in $Comments$ 
-%% compared with the Img category.
+\fig{fig:discussion} shows the distributions of the number of comments and the days to receive the first comments. 
 We observed that the interquatile range (i.e., the box) of $FirstCommentTime$ in the $Vid$ category are the largest, whereas that of the issue reports in the $Img$ category are the shortest. 
-However, the median in the three categories are similar and no significant differences are observed. 
+However, the median in the three categories are similar and no significant differences are observed ($Img$: 0.24 days, $Vid$:0.40 days, $None$: 0.32). 
 
 Also, in terms of $Comments$, the median and the interquatile range are almost same across the three categories, and no significant differences are observed. 
 % Hence, the visual issue reports are not strongly related to active discussions.  
@@ -152,86 +108,13 @@ Also, in terms of $Comments$, the median and the interquatile range are almost s
     Visual issue reports do not lead to active discussions in terms of the number of words and the first response time. 
 }}
 \subsection*{RQ3: \RQthree{}}
-% \begin{figure}[t]
-%     \centering
-%     %\includegraphics[width=0.6\linewidth]{tex-kondo/figures/fixes.png}
-%     \includegraphics[width=0.5\linewidth]{./figures/fixes.pdf}
-%     %\caption{Amount of texts written in issue reports. 
-%     %The median of \#word was 2.96 in Img, 3.01 in Vid, and 1.09 in None.
-%     %\masa{I moved this comment to here (maybe removed later? I'm not sure)}
-%     %}
-%     % \caption{The attribute in the Fix dimension}
-%     \caption{Distribution of resolution time (``Fix'' dimension)}
-%     \label{fig:resolvedtime}
-% \end{figure}
-%% We investigated 
-%% the differences with and without images and movies 
-%% for each attribute on the issues. 
-%% Specifically, we compared the attributes between 
-%% the categories in \tab{tab:issue-category}. 
-%% Because our preliminary study shows that 
-%% the distributions for each category do not 
-%% come from normal distributions, 
-%% we used a non-parametric test called the \textit{Steel-Dwass test}. 
-
-
-
-%% %% %\textbf{The visual issue reports get resolved faster than 
-%% %% \textbf{The visual issue reports need a longer time to be resolved than
-%% %% the issue reports in the None category. }
-%% %% % \textbf{The attribute values are changed 
-%% % with and without images and movies.}
-%% % \tab{tab:Steel-Dwass-test} shows the results of 
-%% % the Steel-Dwass test. 
-%% % The asterisks indicate significance based on 
-%% % the Steel-Dwass test: * indicates $p$ < 0.05 in 
-%% % the two-sided test; 
-%% % ** indicates $p$ < 0.05 in the one-sided test. 
-%% Contrary to our hypothesis, \fig{fig:resolvedtime} and our observation show that 
-%% the mean and the median $ResolutionTime$ values of 
-%% the issue reports in the $Img$ category and the $Vid$ category are 
-%% longer than those in the $None$ category. 
-%% We also observed that the issues in the $Img$ category and 
-%% the $Vid$ category are significantly different from those 
-%% in the $None$ category in terms of $ResolutionTime$.
-%% %(\tab{tab:Steel-Dwass-test}). 
-%% % \tab{tab:issue_stat_categories} shows the statistics
-%% % of the collected issues for the $Img$, $Mov$,
-%% % and $None$ categories.
-%% % The Mean row indicates the average values; 
-%% % the Min and Max rows indicate the minimum and maximum values; 
-%% % the 25th, 50th, and 75th rows indicate the percentile values; 
-%% % the S.D. row indicates the standard deviation values. 
-%% % % We may not find the general conclusion; 
-%% % % however, we observed differences across the categories. 
-%% % % For example, the 25th, 50th, and 75th percentiles of 
-%% % % the $Img$ and $Mov$ categories in $IssueResolvedTime$ are 
-%% % % longer than those of the $None$ category. 
-%% % % % \tab{tab:issue_stat_categories} shows that 
-%% %This table shows that 
-%% Hence, the issue reports with images or videos tend to need 
-%% a longer time to be resolved. 
-%% % In addition, we observed that the issues in 
-%% % the $Img$ category and the $Mov$ category are 
-%% % significantly different from those in 
-%% % the $None$ category in terms of $\#comments$ and 
-%% % $\#chars$. 
-%% % Hence, the issues with images or movies 
-%% % tend to have different numbers of 
-%% % comments and words in the issue description.
-%% % It should be noted that we do not observe 
-%% % the difference between the $Img$ category and 
-%% % the $Mov$ category. 
-%% %{\bf No, resolution time for issues with videos are not different from those for the others. 
-\fig{fig:resolvedtime} shows that the 50th and 75th percentiles of the visual issue reports are shorter than those of the non-visual issue reports in ResolutionTime.
-However, the 25th percentile shows that the visual issue reports with videos need the longest resolution time. 
-Also, no statistically significant differences are observed. 
+\fig{fig:resolvedtime} shows the distribution of days between when the issue report was created and when the issue report was closed. The median of non-visual issues are larger (5.96 days) than that of $Img$ (4.78 days) and $Vid$ (5.70 days). Also, the interquatile range of $Img$ is smaller than the others. However, no statistically significant differences between any pairs are observed.  
 
 \summarybox
 %{Summary of RQ3}
 {{\bf RQ3: }{
     % No, resolution time of visual issue reports is longer than that of other issue reports.
-    Resolution time of visual issue reports is not shorter/longer than that of non-visual issue reports.
+The median of resolution time in non-visual issue reports are larger than that in visual issue reports but no statistically significant difference are observed. 
 }}
 
 

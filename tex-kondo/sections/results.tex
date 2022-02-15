@@ -24,25 +24,6 @@
 
 
 
-\subsection{Dataset Description}
-\input{tables/issue-category}
-We classified the collected issue reports into three categories based on whether they have images and videos. 
-\tab{tab:issue-category} shows the number of issue reports for each category. 
-Note that issue reports often have both images and videos. 
-These issue reports are counted in both $Img$ and $Vid$ categories (only around 0.05\%). 
-Thus, the total number of downloaded issue reports (263,596) is different from the sum of issues (263,725).
-% \#issues in \masa{Table X}\masa{Kashiwa-sensei wrote this right? I highlight the unknown table number->Yes}. 
-In this paper, we refer to the issue reports in the $Img$ and $Vid$ categories
-as \textit{visual issue reports}. 
-\input{figures/data-category-trend}
-We collected 1,324 videos and 21,003 images from 263,596 issue reports. 
-Out of the collected issues, only 7.97\% of issue reports have images, and 0.50\% have videos. 
-While this number seems to be small, looking into the trend shown in \fig{fig:data-cat-trend}, the rate of visual issue reports by year is increasing from 2017 to 2021. 
-The ratio of visual issue reports reached to 13\% between 2017 and 2021. 
-Also, we found that GitHub officially launched the function to share videos in May 2021 but developers often had uploaded videos before the beta release of the function~\citep{github-video-blog}. 
-% When we looked into issue reports, GitHub had allowed users to attach GIF files on the descriptions. \kashiwa{FIXME}
-When we manually looked into issue reports, GitHub had allowed users to attach GIF files on the descriptions.
-
 \section{Results}
 \label{sec:results}
 
@@ -104,7 +85,7 @@ However, no statistically significant differences are observed
 between the Vid category and the None category. 
 This implies that reporters write as many texts as the others 
 to describe the contents of videos. 
-\vspace{-0.2cm}%これは本当は入れたくないがスペースがない
+% \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
 \summarybox
 %{Answer to RQ1}
 {
@@ -175,7 +156,7 @@ We observed that the 25th, 50th, and 75th percentiles of the issue reports in th
 However, no significant differences are observed. 
 Also, the 25th, 50th, and 75th percentiles in Comments are the same across the categories, and no significant differences are observed. 
 % Hence, the visual issue reports are not strongly related to active discussions.  
-\vspace{-0.2cm}%これは本当は入れたくないがスペースがない
+% \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
 \summarybox
 %{Summary of RQ2}
 {{\bf RQ2: }{
@@ -253,7 +234,7 @@ a longer time to be resolved.
 % the difference between the $Img$ category and 
 % the $Mov$ category. 
 %{\bf No, resolution time for issues with videos are not different from those for the others. 
-\vspace{-0.2cm}%これは本当は入れたくないがスペースがない
+% \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
 \summarybox
 %{Summary of RQ3}
 {{\bf RQ3: }{No, resolution time of visual issue reports is longer than that of other issue reports.

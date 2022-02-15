@@ -34,28 +34,49 @@ To select projects as context for our study, we employed \texttt{GitHub Search}~
 	\item the number of stars $\geq$ 10
 	\item the number of issue reports $\geq$ 1
 	\item at least one commit was made in 2021
-	\item not include the following tags\\invalid, duplicate, document, question and enhancement
+% 	\item not include the following tags\\invalid, duplicate, document, question and enhancement
 \end{itemize}
 Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 263,596 closed issue reports from 4,173 projects that were randomly selected. 
-%While the number of sampled projects seems odds, 
-%上の分，なくても繋がるし，表現としてネガティブなので消した．
 We collected all the closed issue reports from as many projects as possible in the limited time.  
-%As the sampled projects accounts for only less than 2\% of all repositories, we discuss the threat to validity of this process in \sec{sec:limitation}. 
+
 
 
 % \input{figures/data-collection-overview}
 
 \subsection{Data Collection}
 %\fig{fig:data-collection-overview} shows an overview of the data collection process. 
-We first collected closed issue reports with \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3.\footnote{\url{https://docs.github.com/en/rest}} 
+We first collected closed issue reports with the method \texttt{get\_issue} provided by  \texttt{PyGitHub}\footnote{\url{https://pygithub.readthedocs.io/en/latest/index.html}} that internally execute GitHub API v3.\footnote{\url{https://docs.github.com/en/rest}} In total, we collected \textcolor{red}{XXX} closed issue reports. 
+
 Next, we collected videos and images attached to the issue reports. While GitHub users can see videos and images on issue pages, the videos and images are stored in different URLs. As the URLs are written in the text description of issue reports, we parsed them with regular expressions and downloaded them. The regular expressions we used are shown as follows:
 \begin{quote}
 \addtolength\leftmargini{0in}
 {\it https://user-images.githubusercontent.com/[a-zA-Z0-9\textbackslash-/]+\textbackslash.[a-zA-Z0-9]+}
 \end{quote}
 Each downloaded file was determined to be a image or video by its extension. Specifically, png, PNG, jpg, JPG, and jpeg are treated as images, and  gif, GIF, mp4, MP4, and mov as videos.
-Consequently, we downloaded 21,003 images and 1,324 movies with the collected URLs.\kura{move this underside?}
+Consequently, we downloaded \textcolor{red}{XXX} images and \textcolor{red}{XXX} videos with the collected URLs. 
+%These issues, images, and movies are also included in the dataset (i.e., original dataset) we provide. 
 
+Then, we removed issue reports inappropriate for this study. As \texttt{get\_issue} method collect pull requests as well, we excluded pull requests from the original dataset (\textcolor{red}{XXX} issues).  
+In addition, different from Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}, GitHub issues do not have resolution statuses (e.g., ``FIXED'', ``DUPLICATED''). 
+Instead,  GitHub provides default tags to indicate these resolution statuses. 
+We excluded \textcolor{red}{XXX} issues with tags indicating invalid issues (i.e., ``duplicated'', ``invalid'') or tags indicating non-bug (i.e., ``document'', ``question'', "enhancement"). Also, we removed \textcolor{red}{XXX} issue reports resolved in too short ($\leq$ 30 seconds) or long periods  ($\geq$ one year) because developers leave bugs for long years without addressing or they report issues after bug-fix. 
+
+\input{tables/issue-category}
+{\bf Dataset summary.} The final dataset contains 263,596 issue reports,  21,003 images, and 1,324 movies. 
+These issue reports are classified into three categories based on whether they have either image(s) or video(s). 
+\tab{tab:issue-category} shows the number of issue reports for each category. 
+Note that issue reports often have both images and videos. 
+These issue reports are counted in both $Img$ and $Vid$ categories (only around 0.05\%). 
+Thus, the total number of downloaded issue reports (i.e., 263,596) is different from the sum of issues (i.e., 263,725).
+In this paper, we refer to the issue reports in the $Img$ and $Vid$ categories
+as \textit{visual issue reports}. 
+
+\input{figures/data-category-trend}
+Out of the collected issues, only 7.97\% of issue reports have images, and 0.50\% have videos. 
+While this number seems to be small, looking into the trend shown in \fig{fig:data-cat-trend}, the rate of visual issue reports by year is increasing from 2017 to 2021. 
+The ratio of visual issue reports reached to 13\% between 2017 and 2021. 
+Also, we found that GitHub officially launched the function to share videos in May 2021 but developers often had uploaded videos before the beta release of the function~\citep{github-video-blog}. 
+When we manually looked into issue reports, GitHub had allowed users to attach GIF files on the descriptions.
 
 % \input{tables/issue-ex}
 % We extract a part of the retrieved issues in \tab{tab:example-dataset}. 
@@ -85,18 +106,11 @@ we exclude them from the description because these are not words.
 The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. $Comments$ is the number of comments were made to an issue report. We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the days subtract from when the first comment was made to when issue was reported. We employ this attribute for measuring developers' interest. 
 
 The dimension ``Fix'' has one attribute $IssueResolvedTime$ which shows the time from reported to fixed. 
-Note that some negative values of $IssueResolvedTime$ were observed. We investigated it manually and found that these are because of a bug in GitHub.  We excluded those issues that have negative values from our dataset. 
-In addition, we excluded issue reports resolved in too short or long periods (e.g., 30 seconds) because they might be issued after being fixed or might not be fixed in reality.
-%\kashiwa{check please}
-Specifically, we only use the issue reports that meet the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
-The number of issue reports that meet this condition is 263,596 (xx.xx\%).\kura{move to here?}
 
 
-For each research question, we measure the median values of visual reports.... \kashiwa{Please Write what do you analyze (e.g., compare them in median)}
+For each research question, we measure the median values of visual reports.... 
 To evaluate the difference, we used a non-parametric test \textit{Steel-Dwass test}~\citep{steel-dwass-test}.
 \textit{Steel-Dwass test} performs the multiple comparisons whilst taking into account of the number of comparisons so that family-wise error rate doesn't grow.
 \textit{Steel-Dwass test} also does not require normality and homoscedasticity.
 Our preliminary study shows that the distributions for each category do not come from normal distributions, and some of them do not satisfy homoscedasticity. 
 Hence we adopted \textit{Steel-Dwass test}.
-\kashiwa{This is too general...Why not mann-whitney.}
-\kashiwa{Write the reason why correction is not needed (i.e., how to deal with family-wise error rate)}

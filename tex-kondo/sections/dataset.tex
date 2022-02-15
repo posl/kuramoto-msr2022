@@ -52,7 +52,7 @@ Next, we collected videos and images attached to the issue reports. While GitHub
 \addtolength\leftmargini{0in}
 {\it https://user-images.githubusercontent.com/[a-zA-Z0-9\textbackslash-/]+\textbackslash.[a-zA-Z0-9]+}
 \end{quote}
-Each downloaded file was determined to be a image or video by its extension. Specifically, png, PNG, jpg, JPG, and jpeg are treated as images, and  gif, GIF, mp4, MP4, and mov as videos.
+Each downloaded file was determined by its extension to be a image, video, or neither of them. We use only images or videos. Specifically, ``png'', ``PNG'', ``jpg'', ``JPG'', and ``jpeg'' are treated as images, and  ``gif'', ``GIF'', ``mp4'', ``MP4'', and ``mov'' as videos. 
 Consequently, we downloaded \textcolor{red}{XXX} images and \textcolor{red}{XXX} videos with the collected URLs. 
 %These issues, images, and movies are also included in the dataset (i.e., original dataset) we provide. 
 
@@ -84,33 +84,20 @@ When we manually looked into issue reports, GitHub had allowed users to attach G
 %\input{tex-kondo/tables/issue-attr}
 \input{./tables/issue-attr}
 \subsection{Analysis}
-We retrieved the attributes from the collected issue reports.
-\tab{tab:issue-attr} shows seven attributes extracted from 
-the issue reports. 
-The attributes can be classified into three dimensions, 
-``Report'', ``Discussion'', and ``Fix''. 
-The attributes in the dimension ``Report'' are extracted from 
-the description of issue reports or attached files 
-when the issue was created. 
-In particular, in RQ1, we 
-%calculate 
-utilize the number of words 
-in reports (\ie, $DescriptionLength$) for Img, Vid, and None. 
-In addition,  $\#imgs$ and $\#vids$ are used to show 
-dataset description. 
-Note that these attributes are not calculated from either title, not comments (i.e., only descriptions were used). 
-Also, when computing $DescriptionLength$, if the description of the issue report 
-includes URLs for images/videos, 
-we exclude them from the description because these are not words.
+We retrived attributes from the collected issue reports. \tab{tab:issue-attr} shows six attributes used in this study, which are classified into three dimensions, ``Report'', ``Discussion'', and ``Fix''. 
 
-The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. $Comments$ is the number of comments were made to an issue report. We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the days subtract from when the first comment was made to when issue was reported. We employ this attribute for measuring developers' interest. 
+The attributes in the dimension ``Report'' are extracted from the description of issue reports or attached files when the issue was created. 
+In particular, in RQ1, we count the number of words in reports (\ie, $DescriptionLength$) for Img, Vid, and None. In addition,  $\#imgs$ and $\#vids$ are used to show the average number of the files attached in reports. 
+Note that these attributes are not calculated from either title, not comments (i.e., only descriptions were used). Also, URLs in the descriptions to attach images/videos are not counted as words in $DescriptionLength$.
 
-The dimension ``Fix'' has one attribute $IssueResolvedTime$ which shows the time from reported to fixed. 
+The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. 
+$Comments$ is the number of comments that were made to an issue report. 
+We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the days subtract from when the first comment was made to when issue was reported. We employ this attribute for measuring developers' interest. 
+
+The dimension ``Fix'' has one attribute $IssueResolvedTime$ which shows the time from reported to fixed. $IssueResolvedTime$ is the days subtract from when the issue is closed to when issue was reported.
 
 
-For each research question, we measure the median values of visual reports.... 
-To evaluate the difference, we used a non-parametric test \textit{Steel-Dwass test}~\citep{steel-dwass-test}.
-\textit{Steel-Dwass test} performs the multiple comparisons whilst taking into account of the number of comparisons so that family-wise error rate does not grow.
-\textit{Steel-Dwass test} also does not require normality and homoscedasticity.
-Our preliminary study shows that the distributions for each category do not come from normal distributions, and some of them do not satisfy homoscedasticity. 
-Hence we adopted \textit{Steel-Dwass test}.
+For each research question, we measure the median values of the attributes to compare $Img$, $Vid$ and $None$. 
+Also we apply a non-parametric test \textit{Steel-Dwass test}~\citep{steel-dwass-test} to evaluate the difference. 
+\textit{Steel-Dwass test} performs the multiple comparisons while taking into account of the number of comparisons to prevent increases of the family-wise error rate. 
+While the distributions for each category do not come from normal distributions and some of the distributions do not satisfy homoscedasticity, \textit{Steel-Dwass test} also does not require normality or homoscedasticity. 

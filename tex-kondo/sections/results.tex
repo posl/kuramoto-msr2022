@@ -70,30 +70,17 @@
 %\textbf{DescriptionLength of visual issue reports is 
 %similar to the others.}
 
-\fig{fig:words} shows the distributions in the number of words 
-written in descriptions of issue reports. 
-%The green line in the box shows the median, 
-%the bottom and the top lines of the box show 25 and 75 percentile, respectively. 
-The median of DescriptionLength was 42.0 words in Img, 
-54.5 in Vid, and 60.0 in None. 
-The numbers of words in the visual issue reports are slightly smaller than 
-that of the non-visual ones.
-% We observe statistically significant differences between the Img category and the others.
-% , whereas no statistically significant differences are observed between the other combinations.
-% but 
-However, no statistically significant differences are observed 
-between the Vid category and the None category. 
-This implies that reporters write as many texts as the others 
-to describe the contents of videos. 
-% \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
+\fig{fig:words} shows the distributions in the number of words written in descriptions of issue reports. The median of DescriptionLength was 42.0 words in Img, 54.5 in Vid, and 60.0 in None. 
+Compared with $Vid$ and $None$, the number of words in $Vid$ is slightly smaller than that of the non-visual ones. However, no statistically significant differences are observed between them (p $>$ 0.01). This implies that reporters write as many texts to describe the contents of videos as text-only reports. 
+
+Shedding light on $Img$, the number of words in $Img$ is larger than 
+$None$ with a statistical significant difference (p $<$ 0.01). However, there is no difference between $Img$ and $Vid$ (p $>$ 0.01). 
 \summarybox
 %{Answer to RQ1}
 {
 % {\bf RQ1: }{No, visual issue reports still require reporters 
 % to write similar amounts of texts to describe bugs. 
-{\bf RQ1: }{Yes, 
-% visual issue reports with images are likely to be described in fewer words, while those with videos still require reporters to write similar amounts of texts to describe bugs.
-visual issue reports are likely to be described in fewer words, although no significant differences are observed between visual issue reports with videos and non-visual issue reports. 
+{\bf RQ1: }{Issue reports with images are described in fewer words than non-visual issues, but still issue reports with videos require the same amount of words as non-visual issue reports. 
 }}
 
 \subsection*{RQ2: \RQtwo{}}
@@ -152,16 +139,17 @@ shows the distributions of days until the first comment made and the number of c
 %% compared with the other two categories and 
 %% are not significantly different in $Comments$ 
 %% compared with the Img category.
-We observed that the 25th, 50th, and 75th percentiles of the issue reports in the $Vid$ category are the longest in FirstCommentTime, whereas those of the issue reports in the $Img$ category are the shortest. 
-However, no significant differences are observed. 
-Also, the 25th, 50th, and 75th percentiles in Comments are the same across the categories, and no significant differences are observed. 
+We observed that the interquatile range (i.e., the box) of $FirstCommentTime$ in the $Vid$ category are the largest, whereas that of the issue reports in the $Img$ category are the shortest. 
+However, the median in the three categories are similar and no significant differences are observed. 
+
+Also, in terms of $Comments$, the median and the interquatile range are almost same across the three categories, and no significant differences are observed. 
 % Hence, the visual issue reports are not strongly related to active discussions.  
 % \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
 \summarybox
 %{Summary of RQ2}
 {{\bf RQ2: }{
     % Yes, visual issue reports are 3-times likely to receive more comments than reports without images or videos. 
-    No, visual issue reports are not strongly related to active discussions. 
+    Visual issue reports do not lead to active discussions in terms of the number of words and the first response time. 
 }}
 \subsection*{RQ3: \RQthree{}}
 % \begin{figure}[t]
@@ -243,7 +231,7 @@ Also, no statistically significant differences are observed.
 %{Summary of RQ3}
 {{\bf RQ3: }{
     % No, resolution time of visual issue reports is longer than that of other issue reports.
-    No, resolution time of visual issue reports is not shorter/longer than that of non-visual issue reports.
+    Resolution time of visual issue reports is not shorter/longer than that of non-visual issue reports.
 }}
 
 

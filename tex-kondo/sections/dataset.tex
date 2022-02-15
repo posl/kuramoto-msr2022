@@ -52,7 +52,7 @@ Next, we collected videos and images attached to the issue reports. While GitHub
 \addtolength\leftmargini{0in}
 {\it https://user-images.githubusercontent.com/[a-zA-Z0-9\textbackslash-/]+\textbackslash.[a-zA-Z0-9]+}
 \end{quote}
-Each downloaded file was determined by its extension to be a image, video, or neither of them. We use only images or videos. Specifically, ``png'', ``PNG'', ``jpg'', ``JPG'', and ``jpeg'' are treated as images, and  ``gif'', ``GIF'', ``mp4'', ``MP4'', and ``mov'' as videos. 
+Each downloaded file was determined by its extension to be an image, a video, or neither of these. We used only images and videos. Specifically, ``png'', ``PNG'', ``jpg'', ``JPG'', and ``jpeg'' are treated as images, and  ``gif'', ``GIF'', ``mp4'', ``MP4'', and ``mov'' as videos. 
 Consequently, we downloaded \textcolor{red}{XXX} images and \textcolor{red}{XXX} videos with the collected URLs. 
 %These issues, images, and movies are also included in the dataset (i.e., original dataset) we provide. 
 
@@ -92,12 +92,12 @@ Note that these attributes are not calculated from either title, not comments (i
 
 The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. 
 $Comments$ is the number of comments that were made to an issue report. 
-We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the days subtract from when the first comment was made to when issue was reported. We use this attribute for measuring developers' interest. 
+We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the time difference in days between when the first comment was made and when the issue was reported. 
+We use this attribute for measuring developers' interest. 
 
-The dimension ``Fix'' has $IssueResolvedTime$ which shows the time from reported to fixed. $IssueResolvedTime$ is the days subtract from when the issue is closed to when issue was reported.
-
+The dimension ``Fix'' has $IssueResolvedTime$ which is the time difference in days between when the issue was closed and when the issue was reported. 
 
 For each research question, we measure the median values of the attributes to compare $Img$, $Vid$ and $None$. 
 Also we apply a non-parametric test \textit{Steel-Dwass test}~\citep{steel-dwass-test} to evaluate the difference. 
-\textit{Steel-Dwass test} performs the multiple comparisons while taking into account of the number of comparisons to prevent increases of the family-wise error rate. 
-While the distributions for each category do not come from normal distributions and some of the distributions do not satisfy homoscedasticity, \textit{Steel-Dwass test} also does not require normality or homoscedasticity. 
+\textit{Steel-Dwass test} performs the multiple comparisons while taking into account the number of comparisons to prevent increases in the family-wise error rate.
+The datasets do not follow normal distributions, and do not satisfy homoscedasticity, and therefore are good candidates for analysis using the Steel-Dwass test. 

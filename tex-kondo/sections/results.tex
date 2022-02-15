@@ -187,57 +187,63 @@ Also, the 25th, 50th, and 75th percentiles in Comments are the same across the c
 %% we used a non-parametric test called the \textit{Steel-Dwass test}. 
 
 
-%% %\textbf{The visual issue reports get resolved faster than 
-%% \textbf{The visual issue reports need a longer time to be resolved than
-%% the issue reports in the None category. }
-%% % \textbf{The attribute values are changed 
-% with and without images and movies.}
-% \tab{tab:Steel-Dwass-test} shows the results of 
-% the Steel-Dwass test. 
-% The asterisks indicate significance based on 
-% the Steel-Dwass test: * indicates $p$ < 0.05 in 
-% the two-sided test; 
-% ** indicates $p$ < 0.05 in the one-sided test. 
-Contrary to our hypothesis, \fig{fig:resolvedtime} and our observation show that 
-the mean and the median $ResolutionTime$ values of 
-the issue reports in the $Img$ category and the $Vid$ category are 
-longer than those in the $None$ category. 
-We also observed that the issues in the $Img$ category and 
-the $Vid$ category are significantly different from those 
-in the $None$ category in terms of $ResolutionTime$.
-%(\tab{tab:Steel-Dwass-test}). 
-% \tab{tab:issue_stat_categories} shows the statistics
-% of the collected issues for the $Img$, $Mov$,
-% and $None$ categories.
-% The Mean row indicates the average values; 
-% the Min and Max rows indicate the minimum and maximum values; 
-% the 25th, 50th, and 75th rows indicate the percentile values; 
-% the S.D. row indicates the standard deviation values. 
-% % We may not find the general conclusion; 
-% % however, we observed differences across the categories. 
-% % For example, the 25th, 50th, and 75th percentiles of 
-% % the $Img$ and $Mov$ categories in $IssueResolvedTime$ are 
-% % longer than those of the $None$ category. 
-% % % \tab{tab:issue_stat_categories} shows that 
-%This table shows that 
-Hence, the issue reports with images or videos tend to need 
-a longer time to be resolved. 
-% In addition, we observed that the issues in 
-% the $Img$ category and the $Mov$ category are 
-% significantly different from those in 
-% the $None$ category in terms of $\#comments$ and 
-% $\#chars$. 
-% Hence, the issues with images or movies 
-% tend to have different numbers of 
-% comments and words in the issue description.
-% It should be noted that we do not observe 
-% the difference between the $Img$ category and 
-% the $Mov$ category. 
-%{\bf No, resolution time for issues with videos are not different from those for the others. 
-% \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
+
+%% %% %\textbf{The visual issue reports get resolved faster than 
+%% %% \textbf{The visual issue reports need a longer time to be resolved than
+%% %% the issue reports in the None category. }
+%% %% % \textbf{The attribute values are changed 
+%% % with and without images and movies.}
+%% % \tab{tab:Steel-Dwass-test} shows the results of 
+%% % the Steel-Dwass test. 
+%% % The asterisks indicate significance based on 
+%% % the Steel-Dwass test: * indicates $p$ < 0.05 in 
+%% % the two-sided test; 
+%% % ** indicates $p$ < 0.05 in the one-sided test. 
+%% Contrary to our hypothesis, \fig{fig:resolvedtime} and our observation show that 
+%% the mean and the median $ResolutionTime$ values of 
+%% the issue reports in the $Img$ category and the $Vid$ category are 
+%% longer than those in the $None$ category. 
+%% We also observed that the issues in the $Img$ category and 
+%% the $Vid$ category are significantly different from those 
+%% in the $None$ category in terms of $ResolutionTime$.
+%% %(\tab{tab:Steel-Dwass-test}). 
+%% % \tab{tab:issue_stat_categories} shows the statistics
+%% % of the collected issues for the $Img$, $Mov$,
+%% % and $None$ categories.
+%% % The Mean row indicates the average values; 
+%% % the Min and Max rows indicate the minimum and maximum values; 
+%% % the 25th, 50th, and 75th rows indicate the percentile values; 
+%% % the S.D. row indicates the standard deviation values. 
+%% % % We may not find the general conclusion; 
+%% % % however, we observed differences across the categories. 
+%% % % For example, the 25th, 50th, and 75th percentiles of 
+%% % % the $Img$ and $Mov$ categories in $IssueResolvedTime$ are 
+%% % % longer than those of the $None$ category. 
+%% % % % \tab{tab:issue_stat_categories} shows that 
+%% %This table shows that 
+%% Hence, the issue reports with images or videos tend to need 
+%% a longer time to be resolved. 
+%% % In addition, we observed that the issues in 
+%% % the $Img$ category and the $Mov$ category are 
+%% % significantly different from those in 
+%% % the $None$ category in terms of $\#comments$ and 
+%% % $\#chars$. 
+%% % Hence, the issues with images or movies 
+%% % tend to have different numbers of 
+%% % comments and words in the issue description.
+%% % It should be noted that we do not observe 
+%% % the difference between the $Img$ category and 
+%% % the $Mov$ category. 
+%% %{\bf No, resolution time for issues with videos are not different from those for the others. 
+\fig{fig:resolvedtime} shows that the 50th and 75th percentiles of the visual issue reports are shorter than those of the non-visual issue reports in ResolutionTime.
+However, the 25th percentile shows that the visual issue reports with videos need the longest resolution time. 
+Also, no statistically significant differences are observed. 
+
 \summarybox
 %{Summary of RQ3}
-{{\bf RQ3: }{No, resolution time of visual issue reports is longer than that of other issue reports.
+{{\bf RQ3: }{
+    % No, resolution time of visual issue reports is longer than that of other issue reports.
+    No, resolution time of visual issue reports is not shorter/longer than that of non-visual issue reports.
 }}
 
 

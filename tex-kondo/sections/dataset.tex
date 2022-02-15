@@ -34,8 +34,9 @@ To select projects as context for our study, we employed \texttt{GitHub Search}~
 	\item the number of stars $\geq$ 10
 	\item the number of issue reports $\geq$ 1
 	\item at least one commit was made in 2021
+	\item not include the following tags\\invalid, duplicate, document, question and enhancement
 \end{itemize}
-Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 770,656 closed issue reports from 4,173 projects that were randomly selected. 
+Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 263,596 closed issue reports from 4,173 projects that were randomly selected. 
 %While the number of sampled projects seems odds, 
 %上の分，なくても繋がるし，表現としてネガティブなので消した．
 We collected all the closed issue reports from as many projects as possible in the limited time.  
@@ -53,8 +54,7 @@ Next, we collected videos and images attached to the issue reports. While GitHub
 {\it https://user-images.githubusercontent.com/[a-zA-Z0-9\textbackslash-/]+\textbackslash.[a-zA-Z0-9]+}
 \end{quote}
 Each downloaded file was determined to be a image or video by its extension. Specifically, png, PNG, jpg, JPG, and jpeg are treated as images, and  gif, GIF, mp4, MP4, and mov as videos.
-Consequently, we downloaded 33,079 images and 3,819 movies
-with the collected URLs.\masa{to kuramoto: i wrote these numbers. are the numbers correct?} 
+Consequently, we downloaded 21,003 images and 1,324 movies with the collected URLs.\kura{move this underside?}
 
 
 % \input{tables/issue-ex}
@@ -89,7 +89,7 @@ Note that some negative values of $IssueResolvedTime$ were observed. We investig
 In addition, we excluded issue reports resolved in too short or long periods (e.g., 30 seconds) because they might be issued after being fixed or might not be fixed in reality.
 %\kashiwa{check please}
 Specifically, we only use the issue reports that meet the condition: $30\ sec \leq IssueResolvedTime \leq 1\ year$.
-The number of issue reports that meet this condition is 711,160 (92.23\%).
+The number of issue reports that meet this condition is 263,596 (xx.xx\%).\kura{move to here?}
 
 
 For each research question, we measure the median values of visual reports.... \kashiwa{Please Write what do you analyze (e.g., compare them in median)}

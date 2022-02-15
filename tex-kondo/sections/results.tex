@@ -97,9 +97,11 @@ The median of DescriptionLength was 42.0 words in Img,
 54.5 in Vid, and 60.0 in None. 
 The numbers of words in the visual issue reports are slightly smaller than 
 that of the non-visual ones.
-We observe statistically significant differences between the Img category and the others.
+% We observe statistically significant differences between the Img category and the others.
 % , whereas no statistically significant differences are observed between the other combinations.
-% but no statistically significant differences are observed between the . 
+% but 
+However, no statistically significant differences are observed 
+between the Vid category and the None category. 
 This implies that reporters write as many texts as the others 
 to describe the contents of videos. 
 \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
@@ -108,8 +110,9 @@ to describe the contents of videos.
 {
 % {\bf RQ1: }{No, visual issue reports still require reporters 
 % to write similar amounts of texts to describe bugs. 
-{\bf RQ1: }{No, 
-visual issue reports with images are likely to be described in fewer words, while those with videos still require reporters to write similar amounts of texts to describe bugs.
+{\bf RQ1: }{Yes, 
+% visual issue reports with images are likely to be described in fewer words, while those with videos still require reporters to write similar amounts of texts to describe bugs.
+visual issue reports are likely to be described in fewer words, although no significant differences are observed between visual issue reports with videos and non-visual issue reports. 
 }}
 
 \subsection*{RQ2: \RQtwo{}}
@@ -125,54 +128,60 @@ visual issue reports with images are likely to be described in fewer words, whil
 
 \fig{fig:discussion}
 shows the distributions of days until the first comment made and the number of comments in issue reports. 
-We observed that the 25th, 50th, and 75th percentiles of 
-the $Vid$ category in 
-this dimension
-%$FirstCommentTime$ and $\#comments$ 
-result in the largest or faster values than those of 
-the other two categories.
-Hence, the visual issue reports get more responses 
-while they get faster responses. 
-%% 
-%% 
-%% %However, we do not observe significant differences 
-%% \textbf{
-%% However, we occasionally observe non-significant differences
-%% in $FirstCommentTime$ and $\#comments$.}
-%% %\textbf{
-%% %However, the visual issue reports are not significantly different 
-%% %from the issue reports in the Img category
-%% %in $FirstCommentTime$ and $\#comments$.
-%% %}
-%% \tab{tab:Steel-Dwass-test} shows the results of 
-%% the Steel-Dwass test. 
-%% 
-%% The asterisks indicate significance based on 
-%% the Steel-Dwass test: * indicates $p$ < 0.05 in 
-%% the two-sided test; 
-%% ** indicates $p$ < 0.05 in the one-sided test. 
-%In summary, the visual issue reports do not show 
-%significant differences compared with 
-%the issue reports with images in 
-%In summary, the visual issue reports are not 
-%significantly different from the issue reports 
-%in the Img category, 
-%whereas visual issue reports and 
-%the issue reports in the Img category 
-%are significantly different from the issue reports 
-%in the None category in
-%$FirstCommentTime$ and $\#comments$.
-%In summary, the visual issue reports are not 
-However, the visual issue reports are not 
-significantly different in $FirstCommentTime$ 
-compared with the other two categories and 
-are not significantly different in $Comments$ 
-compared with the Img category.
+%% We observed that the 25th, 50th, and 75th percentiles of 
+%% the $Vid$ category in 
+%% this dimension
+%% %$FirstCommentTime$ and $\#comments$ 
+%% result in the largest or faster values than those of 
+%% the other two categories.
+%% Hence, the visual issue reports get more responses 
+%% while they get faster responses. 
+%% %% 
+%% %% 
+%% %% %However, we do not observe significant differences 
+%% %% \textbf{
+%% %% However, we occasionally observe non-significant differences
+%% %% in $FirstCommentTime$ and $\#comments$.}
+%% %% %\textbf{
+%% %% %However, the visual issue reports are not significantly different 
+%% %% %from the issue reports in the Img category
+%% %% %in $FirstCommentTime$ and $\#comments$.
+%% %% %}
+%% %% \tab{tab:Steel-Dwass-test} shows the results of 
+%% %% the Steel-Dwass test. 
+%% %% 
+%% %% The asterisks indicate significance based on 
+%% %% the Steel-Dwass test: * indicates $p$ < 0.05 in 
+%% %% the two-sided test; 
+%% %% ** indicates $p$ < 0.05 in the one-sided test. 
+%% %In summary, the visual issue reports do not show 
+%% %significant differences compared with 
+%% %the issue reports with images in 
+%% %In summary, the visual issue reports are not 
+%% %significantly different from the issue reports 
+%% %in the Img category, 
+%% %whereas visual issue reports and 
+%% %the issue reports in the Img category 
+%% %are significantly different from the issue reports 
+%% %in the None category in
+%% %$FirstCommentTime$ and $\#comments$.
+%% %In summary, the visual issue reports are not 
+%% However, the visual issue reports are not 
+%% significantly different in $FirstCommentTime$ 
+%% compared with the other two categories and 
+%% are not significantly different in $Comments$ 
+%% compared with the Img category.
+We observed that the 25th, 50th, and 75th percentiles of the issue reports in the $Vid$ category are the longest in FirstCommentTime, whereas those of the issue reports in the $Img$ category are the shortest. 
+However, no significant differences are observed. 
+Also, the 25th, 50th, and 75th percentiles in Comments are the same across the categories, and no significant differences are observed. 
+% Hence, the visual issue reports are not strongly related to active discussions.  
 \vspace{-0.2cm}%これは本当は入れたくないがスペースがない
 \summarybox
 %{Summary of RQ2}
-{{\bf RQ2: }{Yes, visual issue reports are 3-times likely to receive more comments than reports without images or videos. }
-}
+{{\bf RQ2: }{
+    % Yes, visual issue reports are 3-times likely to receive more comments than reports without images or videos. 
+    No, visual issue reports are not strongly related to active discussions. 
+}}
 \subsection*{RQ3: \RQthree{}}
 % \begin{figure}[t]
 %     \centering

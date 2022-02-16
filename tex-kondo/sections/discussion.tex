@@ -24,17 +24,18 @@
 \subsection{Are Visual Issue Reports and Non-Visual Issues Used for Similar Aims?}
 In this study, we observed that developers write fewer words in issue reports with images ($Img$) compared to non-visual issue reports ($None$). On the other hands, between $None$ and $Vid$, no statistically significant difference is observed (RQ1). 
 Also, we confirmed that there are no statistical significant differences of the resolution time between visual issue reports (i.e., $Img$ and $Vid$) and $None$ (RQ3). These findings rejected our hypothesis. 
-To investigate these reasons, we examine the differences in the contents of bugs in this section.
+To better understand the characteristics of visual/non-visual issue reports, we examine the differences in the contents of bugs in this section.
+%To investigate these reasons, we examine the differences in the contents of bugs in this section.
 
 We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. 
 Then, we calculated TF-IDF values~\citep{salton1988-tfidf} to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
 
 \tab{tab:tfidf-result} shows the top-10 characteristic words in each category, calculated by TF-IDF.
-First, in the $Vid$ and $Img$ categories, we observed many words related to GUI such as ``screenshot'' and ``pageviewcontroller''. 
+First, in the $Vid$ and $Img$ categories, we observed several words related to GUI, which is close to visual, such as ``screenshot'' and ``pageviewcontroller''. 
 On the other hand, ``line'' and ``java'' related to source codes are located at the top of $None$.
 % Second, it is worth noting that ``when'' is shown in all categories but it is located at the top rank of the lists in $Vid$ and $Img$. 
 Second, it is worth noting that ``when'' is shown in all categories but it is located in the top-5 ranks of the lists in $Vid$ and $Img$.
-This implies that visual issue reports are utilized to describe conditions/steps to reproduce bugs. In particular, as ``config'' is shown only in $Vid$, videos may be used to explain complicated conditions/environment to reproduce bugs. This studies do not measure the degree of the difficulties in reproducing bugs but future work should investigate it.
+This implies that visual issue reports are utilized to describe conditions/steps to reproduce bugs. In particular, as ``config'' is shown only in $Vid$, videos may be used to explain complicated conditions/environment to reproduce bugs. This study does not measure the degree of the difficulties in reproducing bugs but future work should investigate it.
 
 \input{./tables/tf-idf-result}
 

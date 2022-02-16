@@ -60,13 +60,13 @@ Each downloaded file was determined by its extension to be an image, a video, or
 Consequently, we downloaded \textcolor{red}{XXX} images and \textcolor{red}{XXX} videos with the collected URLs. 
 %These issues, images, and movies are also included in the dataset (i.e., original dataset) we provide. 
 
-Then, we removed issue reports inappropriate for this study. As \texttt{get\_issue} method collect pull requests as well, we excluded pull requests from the original dataset (\textcolor{red}{XXX} issues).  
-In addition, different from Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}, GitHub issues do not have resolution statuses (e.g., ``FIXED'', ``DUPLICATED''). 
+Then, we filtered out inappropriate issue reports for our analysis. As the method \texttt{get\_issue} collects not only issue reports but also pull requests, we excluded pull requests from the original dataset (\textcolor{red}{XXX} issues).  
+In addition, unlike Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}, GitHub issues do not have resolution statuses (e.g., ``FIXED'', ``DUPLICATED''). 
 Instead,  GitHub provides default tags to indicate these resolution statuses. 
 We excluded \textcolor{red}{XXX} issues with tags indicating invalid issues (i.e., ``duplicated'', ``invalid'') or tags indicating non-bug (i.e., ``document'', ``question'', "enhancement"). Also, we removed \textcolor{red}{XXX} issue reports resolved in too short ($\leq$ 30 seconds) or long periods  ($\geq$ one year) because developers leave bugs for long years without addressing or they report issues after bug-fix. 
 
 \input{tables/issue-category}
-{\bf Dataset summary.} The final dataset contains 263,596 issue reports,  21,003 images, and 1,324 movies. 
+\noindent{\bf Dataset summary.} The final dataset contains 263,596 issue reports,  21,003 images, and 1,324 movies. 
 These issue reports are classified into three categories based on whether they have either image(s) or video(s). 
 \tab{tab:issue-category} shows the number of issue reports for each category. 
 Note that issue reports often have both images and videos. 
@@ -89,7 +89,7 @@ When we manually looked into issue reports, GitHub had allowed users to attach G
 %\input{tex-kondo/tables/issue-attr}
 \input{./tables/issue-attr}
 \subsection{Analysis}
-We retrived attributes from the collected issue reports. \tab{tab:issue-attr} shows six attributes used in this study, which are classified into three dimensions, ``Report'', ``Discussion'', and ``Fix''. 
+\noindent{\bf Attributes.} We retrived attributes from the collected issue reports. \tab{tab:issue-attr} shows six attributes used in this study, which are classified into three dimensions, ``Report'', ``Discussion'', and ``Fix''. 
 
 The attributes in the dimension ``Report'' are extracted from the description of issue reports or attached files when the issue was created. 
 In particular, in RQ1, we count the number of words in reports (\ie, $DescriptionLength$) for Img, Vid, and None. 
@@ -103,7 +103,7 @@ We use this attribute for measuring developers' interest.
 
 The dimension ``Fix'' has $ResolutionTime$ which is the time difference in days between when the issue was closed and when the issue was reported. 
 
-For each research question, we measure the median values of the attributes to compare $Img$, $Vid$ and $None$. 
+\noindent{\bf Method.} For each research question, we measure the median values of the attributes to compare $Img$, $Vid$ and $None$. 
 Also we apply a non-parametric test \textit{Steel-Dwass test}~\citep{steel-dwass-test} to evaluate the difference. 
 \textit{Steel-Dwass test} performs the multiple comparisons while taking into account the number of comparisons to prevent increases in the family-wise error rate.
 The datasets do not follow normal distributions, and do not satisfy homoscedasticity, and therefore are good candidates for analysis using the Steel-Dwass test. 

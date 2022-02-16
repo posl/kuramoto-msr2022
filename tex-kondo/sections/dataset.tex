@@ -37,7 +37,7 @@ To select projects as context for our study, we employed \texttt{GitHub Search}~
 	\item at least one commit was made in 2021
 % 	\item not include the following tags\\invalid, duplicate, document, question and enhancement
 \end{itemize}
-Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 263,596 closed issue reports from 4,173 projects that were randomly selected. 
+Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 770,655 closed issue reports from 4,173 projects that were randomly selected. 
 We collected all the closed issue reports from as many projects as possible in the limited time.  
 % if need, please remove the comment out
 % However, our studied projects account for only less than 2\% of all the projects. 
@@ -57,21 +57,21 @@ Next, we collected videos and images attached to the issue reports. While GitHub
 {\it https://user-images.githubusercontent.com/[a-zA-Z0-9\textbackslash-/]+\textbackslash.[a-zA-Z0-9]+}
 \end{quote}
 Each downloaded file was determined by its extension to be an image, a video, or neither of these. We used only images and videos. Specifically, ``png'', ``PNG'', ``jpg'', ``JPG'', and ``jpeg'' are treated as images, and  ``gif'', ``GIF'', ``mp4'', ``MP4'', and ``mov'' as videos. 
-Consequently, we downloaded \textcolor{red}{XXX} images and \textcolor{red}{XXX} videos with the collected URLs. 
+Consequently, we downloaded 34,553 images and 3,914 videos with the collected URLs. 
 %These issues, images, and movies are also included in the dataset (i.e., original dataset) we provide. 
 
-Then, we filtered out inappropriate issue reports for our analysis. As the method \texttt{get\_issue} collects not only issue reports but also pull requests, we excluded pull requests from the original dataset (\textcolor{red}{XXX} issues).  
+Then, we filtered out inappropriate issue reports for our analysis. As the method \texttt{get\_issue} collects not only issue reports but also pull requests, we excluded pull requests from the original dataset (294,514 issues).  
 In addition, unlike Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}, GitHub issues do not have resolution statuses (e.g., ``FIXED'', ``DUPLICATED''). 
 Instead,  GitHub provides default tags to indicate these resolution statuses. 
-We excluded \textcolor{red}{XXX} issues with tags indicating invalid issues (i.e., ``duplicated'', ``invalid'') or tags indicating non-bug (i.e., ``document'', ``question'', "enhancement"). Also, we removed \textcolor{red}{XXX} issue reports resolved in too short ($\leq$ 30 seconds) or long periods  ($\geq$ one year) because developers leave bugs for long years without addressing or they report issues after bug-fix. 
+We excluded 42,514 issues with tags indicating invalid issues (i.e., ``duplicated'', ``invalid'') or tags indicating non-bug (i.e., ``document'', ``question'', "enhancement"). Also, we removed 25,732 issue reports resolved in too short ($\leq$ 30 seconds) or long periods  ($\geq$ one year) because developers leave bugs for long years without addressing or they report issues after bug-fix. 
 
 \input{tables/issue-category}
-\noindent{\bf Dataset summary.} The final dataset contains 263,596 issue reports,  21,003 images, and 1,324 movies. 
+\noindent{\bf Dataset summary.} The final dataset contains 226,286 issue reports,  18,760 images, and 1,230 videos. 
 These issue reports are classified into three categories based on whether they have either image(s) or video(s). 
 \tab{tab:issue-category} shows the number of issue reports for each category. 
 Note that issue reports often have both images and videos. 
 These issue reports are counted in both $Img$ and $Vid$ categories (only around 0.05\%). 
-Thus, the total number of downloaded issue reports (i.e., 263,596) is different from the sum of issues (i.e., 263,725). 
+Thus, the total number of downloaded issue reports (i.e., 226,286) is different from the sum of issues (i.e., 226,405). 
 In this paper, we refer to the issue reports in the $Img$ and $Vid$ categories
 as \textit{visual issue reports}. 
 

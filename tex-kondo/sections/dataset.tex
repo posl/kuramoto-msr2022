@@ -75,7 +75,7 @@ In this paper, we refer to the issue reports in the $Img$ and $Vid$ categories
 as \textit{visual issue reports}. 
 
 \input{figures/data-category-trend}
-In average, issue reports categorized in $Vis$ have 1.1 videos and issue reports in $Img$ have 1.5 images.  
+In average, issue reports categorized in $Vid$ have 1.1 videos and issue reports in $Img$ have 1.5 images.  
 Out of the collected issues, only 7.97\% of issue reports have images, and 0.50\% have videos. 
 While this number seems to be small, looking into the trend shown in \fig{fig:data-cat-trend}, the rate of visual issue reports by year is increasing from 2017 to 2021. 
 The ratio of visual issue reports reached to 13\% between 2017 and 2021. 
@@ -99,7 +99,7 @@ $Comments$ is the number of comments that were made to an issue report.
 We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the time difference in days between when the first comment was made and when the issue was reported. 
 We use this attribute for measuring developers' interest. 
 
-The dimension ``Fix'' has $IssueResolvedTime$ which is the time difference in days between when the issue was closed and when the issue was reported. 
+The dimension ``Fix'' has $ResolutionTime$ which is the time difference in days between when the issue was closed and when the issue was reported. 
 
 For each research question, we measure the median values of the attributes to compare $Img$, $Vid$ and $None$. 
 Also we apply a non-parametric test \textit{Steel-Dwass test}~\citep{steel-dwass-test} to evaluate the difference. 

@@ -1,22 +1,23 @@
 \section{Discussion}
-%\input{tex-kondo/tables/tf-idf-result}
-% \subsection{Why Do Issue Reports with Videos or Images Take a Longer Time than Others?}
-\subsection{Why Are Resolution Times of Visual Issue Reports Unchanged from Others?}
-In this study, we observed that developers write fewer words in visual issue reports compared to non-visual issue reports (RQ1). 
-However, we found that visual issue reports do not lead to active discussions (RQ2).
-Also, resolution times are unchanged (RQ3), which rejected our hypothesis. 
-To investigate the reason why visual issue reports take the same time to be closed, we examine the differences in the contents of bugs in this section.
-
-We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. 
-Then, we calculated TF-IDF values~\citep{salton1988-tfidf} to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
-
-\tab{tab:tfidf-result} shows the top-10 characteristic words in each category, calculated by TF-IDF.
-First, in the $Vid$ and $Img$ categories, we observed many words related to GUI such as ``screenshot'' and ``pageviewcontroller''. 
-On the other hand, ``line'' and ``java'' related to source codes are located at the top of $None$.
-Second, it is worth noting that ``when'' and ``error'' are located at the top rank of the lists in all categories.
-
-These findings imply that reporters explain different contents in the visual issue reports and the non-visual issue reports, whereas both explain steps to reproduce errors. 
-Hence, we suppose that texts in the description are different because of different contents but resolution times to fix errors are unchanged. 
+%% one candidate of discussion
+%% %\input{tex-kondo/tables/tf-idf-result}
+%% % \subsection{Why Do Issue Reports with Videos or Images Take a Longer Time than Others?}
+%% \subsection{Why Are Resolution Times of Visual Issue Reports Unchanged from Others?}
+%% In this study, we observed that developers write fewer words in visual issue reports compared to non-visual issue reports (RQ1). 
+%% However, we found that visual issue reports do not lead to active discussions (RQ2).
+%% Also, resolution times are unchanged (RQ3), which rejected our hypothesis. 
+%% To investigate the reason why visual issue reports take the same time to be closed, we examine the differences in the contents of bugs in this section.
+%% 
+%% We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. 
+%% Then, we calculated TF-IDF values~\citep{salton1988-tfidf} to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
+%% 
+%% \tab{tab:tfidf-result} shows the top-10 characteristic words in each category, calculated by TF-IDF.
+%% First, in the $Vid$ and $Img$ categories, we observed many words related to GUI such as ``screenshot'' and ``pageviewcontroller''. 
+%% On the other hand, ``line'' and ``java'' related to source codes are located at the top of $None$.
+%% Second, it is worth noting that ``when'' and ``error'' are located at the top rank of the lists in all categories.
+%% 
+%% These findings imply that reporters explain different contents in the visual issue reports and the non-visual issue reports, whereas both explain steps to reproduce errors. 
+%% Hence, we suppose that texts in the description are different because of different contents but resolution times to fix errors are unchanged. 
 
 
 

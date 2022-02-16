@@ -12,7 +12,8 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 \begin{itemize}
 	\item[RQ1:] \textbf{\RQone{}}\\
 	Developers often suffer from reproducing bugs with the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
-	On the other hand, as reporters are not always developers, it is not easy to tell what they did and what they encount~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a function that can easily provide information with videos and officially announced the function release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that visual images in general are a more effective approach to describe what people want to communicate and let other people understand it, compared with texts. We hypothesize that videos can reduce the effort for reporting bugs. In this RQ, we measure the number of words in the description of issues as a proxy measure for the effort. 
+	On the other hand, as reporters are not always developers, it is not easy to tell what they did and what they encount~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a feature that can easily provide information with videos and officially announced the feature release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that visual images in general are a more effective approach to describe what people want to communicate and let other people understand it, compared with texts. 
+	We hypothesize that videos or images can reduce the effort for reporting bugs. In this RQ, we measure the number of words in the description of issues as a proxy measure for the effort. 
 	\item[RQ2:] \textbf{\RQtwo{}}\\
 	Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} show that lack of proper communication between reporters and developers end up with being a cause of non-reproducible bug reports. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from the developers. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
 	% to clarify whether visual can attract developers これは突っ込まれる可能性が高いのでやめとく． 
@@ -75,11 +76,11 @@ In this paper, we refer to the issue reports in the $Img$ and $Vid$ categories
 as \textit{visual issue reports}. 
 
 \input{figures/data-category-trend}
-In average, issue reports categorized in $Vis$ have 1.1 videos and issue reports in $Img$ have 1.5 images.  
+In average, issue reports categorized in $Vid$ have 1.1 videos and issue reports in $Img$ have 1.5 images.  
 Out of the collected issues, only 7.97\% of issue reports have images, and 0.50\% have videos. 
 While this number seems to be small, looking into the trend shown in \fig{fig:data-cat-trend}, the rate of visual issue reports by year is increasing from 2017 to 2021. 
 The ratio of visual issue reports reached to 13\% between 2017 and 2021. 
-Also, we found that GitHub officially launched the function to share videos in May 2021 but developers often had uploaded videos before the beta release of the function~\citep{github-video-blog-beta}. 
+Also, we found that GitHub officially launched the feature to share videos in May 2021 but developers often had uploaded videos before the beta release of the feature~\citep{github-video-blog-beta}. 
 When we manually looked into issue reports, GitHub had allowed users to attach GIF files on the descriptions.
 
 % \input{tables/issue-ex}
@@ -91,7 +92,8 @@ When we manually looked into issue reports, GitHub had allowed users to attach G
 We retrived attributes from the collected issue reports. \tab{tab:issue-attr} shows six attributes used in this study, which are classified into three dimensions, ``Report'', ``Discussion'', and ``Fix''. 
 
 The attributes in the dimension ``Report'' are extracted from the description of issue reports or attached files when the issue was created. 
-In particular, in RQ1, we count the number of words in reports (\ie, $DescriptionLength$) for Img, Vid, and None. In addition,  $\#imgs$ and $\#vids$ are used to comapre the average number of the files attached in reports. 
+In particular, in RQ1, we count the number of words in reports (\ie, $DescriptionLength$) for Img, Vid, and None. 
+In addition,  $Images$ and $Videos$ are used to comapre the average number of the files attached in reports. 
 Note that these attributes are not calculated from either title, not comments (i.e., only descriptions were used). Also, URLs in the descriptions to attach images/videos are not counted as words in $DescriptionLength$.
 
 The dimension ``Discussion'' has two attributes, $Comments$ and $FirstCommentTime$. 
@@ -99,7 +101,7 @@ $Comments$ is the number of comments that were made to an issue report.
 We utilize this attribute as a proxy measure of discussion effort. $FirstCommentTime$ is the time difference in days between when the first comment was made and when the issue was reported. 
 We use this attribute for measuring developers' interest. 
 
-The dimension ``Fix'' has $IssueResolvedTime$ which is the time difference in days between when the issue was closed and when the issue was reported. 
+The dimension ``Fix'' has $ResolvedTime$ which is the time difference in days between when the issue was closed and when the issue was reported. 
 
 For each research question, we measure the median values of the attributes to compare $Img$, $Vid$ and $None$. 
 Also we apply a non-parametric test \textit{Steel-Dwass test}~\citep{steel-dwass-test} to evaluate the difference. 

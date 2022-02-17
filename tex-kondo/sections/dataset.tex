@@ -63,7 +63,7 @@ Consequently, we downloaded 34,553 images and 3,914 videos with the collected UR
 Then, we filtered out inappropriate issue reports for our analysis. As the method \texttt{get\_issue} collects not only issue reports but also pull requests, we excluded pull requests from the original dataset (294,514 issues).  
 In addition, unlike Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}, GitHub issues do not have resolution statuses (e.g., ``FIXED'', ``DUPLICATED''). 
 Instead,  GitHub provides default tags to indicate these resolution statuses. 
-We excluded 42,514 issues with tags indicating invalid issues (i.e., ``duplicated'', ``invalid'') or tags indicating non-bug (i.e., ``document'', ``question'', "enhancement"). Also, we removed 25,732 issue reports resolved in too short ($\leq$ 30 seconds) or long periods  ($\geq$ one year) because developers leave bugs for long years without addressing or they report issues after bug-fix. 
+We excluded 42,496 issues with tags indicating invalid issues (i.e., ``duplicated'', ``invalid'') or tags indicating non-bug (i.e., ``document'', ``question'', "enhancement"). Also, we removed 25,732 issue reports resolved in too short ($\leq$ 30 seconds) or long periods  ($\geq$ one year) because developers leave bugs for long years without addressing or they report issues after bug-fix. 
 
 \input{tables/issue-category}
 \noindent{\bf Dataset summary.} The final dataset contains 226,286 issue reports,  18,760 images, and 1,230 videos. 

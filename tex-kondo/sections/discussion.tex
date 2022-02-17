@@ -28,7 +28,7 @@ To better understand the characteristics of visual/non-visual issue reports, we 
 %To investigate these reasons, we examine the differences in the contents of bugs in this section.
 
 We extracted words from the descriptions of closed issue reports in the dataset, and  removed stop words such as ``at'', ``it'', and ``the'' from them. 
-Then, we calculated TF-IDF values~\citep{salton1988-tfidf} to clarify the characteristic words for each types of issues (i.g., Vid, Img, None). 
+Then, we calculated TF-IDF values~\citep{salton1988-tfidf} to clarify the characteristic words for each types of issues (\ie, $Vid$, $Img$, $None$). 
 
 \tab{tab:tfidf-result} shows the top-10 characteristic words in each category, calculated by TF-IDF.
 First, in the $Vid$ and $Img$ categories, we observed several words related to GUI, which is close to visual, such as ``screenshot'' and ``pageviewcontroller''. 
@@ -45,7 +45,7 @@ This section discusses what should be considered by future studies.
 \noindent
 \textbf{Fine-grained analysis. }
 % In RQ2, we showed that visual issue reports are 3-times likely to receive more comments than non-visual issues. As these might be caused by that  issue reports attract many developers or that visual issue reports deal with difficult problems. 
-In RQ2, we showed that issue reports in Vid take longer times to receive the first comment than issue reports in Img. 
+In RQ2, we showed that issue reports in $Vid$ take longer times to receive the first comment than issue reports in $Img$. 
 As these might be caused by that issue reports with images attract more developers or that issue reports with videos are more difficult problems.
 Future studies should examine how many developers are involved~\citep{DBLP:conf/icsm/BavotaR15}, severity tags~\citep{DBLP:conf/issre/ZhouNG15}, and size of changes~\citep{DBLP:conf/kbse/HattoriL08}.
 

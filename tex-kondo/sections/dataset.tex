@@ -8,14 +8,14 @@
 \subsection{Research Questions}
 \label{sec:rqs}
 
-To identify the characteristics of the visual issue reports, we addressed the following three research questions, focusing on Report (RQ1), Discussion (RQ2), and Fix (RQ3). 
+To identify the characteristics of the visual issue reports, we addressed the following three research questions: focusing on Report (RQ1), Discussion (RQ2), and Fix (RQ3). 
 \begin{itemize}
 	\item[RQ1:] \textbf{\RQone{}}\\
-	Developers often suffer from reproducing bugs with the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
-	On the other hand, as reporters are not always developers, it is not easy to tell what they did and what they encounter~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a feature that can easily provide information with videos and officially announced the feature release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that visual images in general are a more effective approach to describe what people want to communicate and let other people understand it, compared with texts. 
+	Developers often find it difficult to reproduce bugs using the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
+	On the other hand, as reporters are not always developers, it is not easy to tell what they did and what they encountered~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a feature that can easily provide information with videos and officially announced the feature release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that, in general, visual images are a more effective approach for describing what people want to communicate compared with text. 
 	We hypothesize that videos or images can reduce the effort for reporting bugs. In this RQ, we measure the number of words in the description of issues as a proxy measure for the effort. 
 	\item[RQ2:] \textbf{\RQtwo{}}\\
-	Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} show that lack of proper communication between reporters and developers end up with being a cause of non-reproducible bug reports. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from the developers. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
+	Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} showed that lack of proper communication between reporters and developers often ends up with reports in which the reported bugs are not able to be reproduced. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from the developers. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
 	% to clarify whether visual can attract developers これは突っ込まれる可能性が高いのでやめとく． 
 	\item[RQ3:] \textbf{\RQthree{}}\\
 	% We suppose that developers use visualization 
@@ -25,7 +25,7 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 	% In this RQ, we clarify the differences 
 	% between the issues with and without 
 	% visualization. 
-	Zimmermann~\et~\citep{zimmermann2010TSE} reported that issue reports occasionally have missing or incorrect steps to reproduce bugs, which delays the entire bug-fixing process~\citep{github-video-blog}. Also, Ohira et al. ~\citep{DBLP:conf/icsm/OhiraHOM12} shows that bug-fixing activities delays when the reporter and developer are different persons because they require communications. Visual issues may mitigate this issue by facilitating their communication. In this RQ, we measure the time from reported to closed to evaluate how quickly visual issue reports are resolved, compared with issues without videos or images. 
+	Zimmermann~\et~\citep{zimmermann2010TSE} reported that issue reports occasionally have missing or incorrect steps to reproduce bugs, which delays the entire bug-fixing process~\citep{github-video-blog}. Also, Ohira et al. ~\citep{DBLP:conf/icsm/OhiraHOM12} showed that bug-fixing activities are delayed when the reporter and developer are different persons,  because this situation requires communication between the two.  Visual issues may mitigate this issue by facilitating their communication. In this RQ, we measure the time from reported to closed to evaluate how quickly visual issue reports are resolved, compared with issues without videos or images. 
 \end{itemize}
 
 \subsection{Context Selection}

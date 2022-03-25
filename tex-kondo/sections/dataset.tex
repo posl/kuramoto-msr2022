@@ -30,13 +30,13 @@ To identify the characteristics of the visual issue reports, we addressed the fo
 
 \subsection{Context Selection}
 \label{sec:design:context}
-To select projects as context for our study, we employed \texttt{GitHub Search}~\citep{msr2021data}. GitHub Search can find repositories satisfying specific criteria. To filter out unpopular, inactive repositories, or repositories that have no issues, we set up the following criteria.
-\begin{itemize}
-	\item the number of stars $\geq$ 10
-	\item the number of issue reports $\geq$ 1
-	\item at least one commit was made in 2021
+To select projects as context for our study, we employed \texttt{GitHub Search}~\citep{msr2021data}. GitHub Search can find repositories satisfying specific criteria. To filter out unpopular, inactive repositories, or repositories that have no issues, we set up the following criteria: the number of stars $\geq$ 10, the number of issue reports $\geq$ 1 and at least one commit was made in 2021.
+%\begin{itemize}
+%	\item the number of stars $\geq$ 10
+%	\item the number of issue reports $\geq$ 1
+%	\item at least one commit was made in 2021
 % 	\item not include the following tags\\invalid, duplicate, document, question and enhancement
-\end{itemize}
+%\end{itemize}
 Consequently, the number of the repositories satisfying the criteria was 289,115. From November 2021 to December 2021, we collected 770,655 closed issue reports from 4,173 projects that were randomly selected. 
 We collected all the closed issue reports from as many projects as possible in the limited time.  
 % if need, please remove the comment out

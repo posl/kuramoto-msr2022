@@ -5,28 +5,30 @@
 % the overview of the collected dataset. 
 % This section describes our study design, including research questions, data collection, metrics computation, and data description.
 
+
 \subsection{Research Questions}
 \label{sec:rqs}
 
 To identify the characteristics of the visual issue reports, we addressed the following three research questions: focusing on Report (RQ1), Discussion (RQ2), and Fix (RQ3). 
-\begin{itemize}
-	\item[RQ1:] \textbf{\RQone{}}\\
-	Developers often find it difficult to reproduce bugs using the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
-	On the other hand, as reporters are not always developers, it is not easy to tell what they did and what they encountered~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a feature that can easily provide information with videos and officially announced the feature release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that, in general, visual images are a more effective approach for describing what people want to communicate compared with text. 
-	We hypothesize that videos or images can reduce the effort for reporting bugs. In this RQ, we measure the number of words in the description of issues as a proxy measure for the effort. 
-	\item[RQ2:] \textbf{\RQtwo{}}\\
-	Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} showed that lack of proper communication between reporters and developers often ends up with reports in which the reported bugs are not able to be reproduced. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from the developers. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
-	% to clarify whether visual can attract developers これは突っ込まれる可能性が高いのでやめとく． 
-	\item[RQ3:] \textbf{\RQthree{}}\\
-	% We suppose that developers use visualization 
-	% in particular issues. 
-	% For example, developers may use visualization 
-	% to share the way to reproduce bugs. 
-	% In this RQ, we clarify the differences 
-	% between the issues with and without 
-	% visualization. 
-	Zimmermann~\et~\citep{zimmermann2010TSE} reported that issue reports occasionally have missing or incorrect steps to reproduce bugs, which delays the entire bug-fixing process~\citep{github-video-blog}. Also, Ohira et al. ~\citep{DBLP:conf/icsm/OhiraHOM12} showed that bug-fixing activities are delayed when the reporter and developer are different persons,  because this situation requires communication between the two.  Visual issues may mitigate this issue by facilitating their communication. In this RQ, we measure the time from reported to closed to evaluate how quickly visual issue reports are resolved, compared with issues without videos or images. 
-\end{itemize}
+
+\noindent\textbf{RQ1: \RQone{}}
+Developers often find it difficult to reproduce bugs using the reported information~\citep{DBLP:conf/sigsoft/ChaparroLZMPMBN17}\citep{DBLP:conf/icsm/0001KC20}\citep{zimmermann2010TSE}. 
+On the other hand, as reporters are not always developers, it is not easy to tell what they did and what they encountered~\citep{DBLP:conf/sigsoft/ChaparroBLMMPPN19}. Thus, GitHub developed a feature that can easily provide information with videos and officially announced the feature release on May, 2021~\citep{github-video-blog}. Potter and Faulconer~\citep{POTTER1975} showed that, in general, visual images are a more effective approach for describing what people want to communicate compared with text. 
+We hypothesize that videos or images can reduce the effort for reporting bugs. In this RQ, we measure the number of words in the description of issues as a proxy measure for the effort. 
+
+\noindent\textbf{RQ2: \RQtwo{}}
+Joorabchi \et~\citep{DBLP:conf/msr/JoorabchiMM14} showed that lack of proper communication between reporters and developers often ends up with reports in which the reported bugs are not able to be reproduced. In addition, many studies claim that comments made to a bug contribute to improving bug-fixing activities~\citep{DBLP:conf/icse/GigerPG10}\citep{DBLP:conf/msr/Panjer07}\citep{zhang2012WCRE}.  Visual issue reports might have the potential to attract developers and receive many comments from the developers. In this RQ, we examine the number of comments in the closed issues and the days to receive the first comment.
+% to clarify whether visual can attract developers これは突っ込まれる可能性が高いのでやめとく． 
+
+\noindent\textbf{RQ3: \RQthree{}}
+% We suppose that developers use visualization 
+% in particular issues. 
+% For example, developers may use visualization 
+% to share the way to reproduce bugs. 
+% In this RQ, we clarify the differences 
+% between the issues with and without 
+% visualization. 
+Zimmermann~\et~\citep{zimmermann2010TSE} reported that issue reports occasionally have missing or incorrect steps to reproduce bugs, which delays the entire bug-fixing process~\citep{github-video-blog}. Also, Ohira et al. ~\citep{DBLP:conf/icsm/OhiraHOM12} showed that bug-fixing activities are delayed when the reporter and developer are different persons,  because this situation requires communication between the two.  Visual issues may mitigate this issue by facilitating their communication. In this RQ, we measure the time from reported to closed to evaluate how quickly visual issue reports are resolved, compared with issues without videos or images. 
 
 \subsection{Context Selection}
 \label{sec:design:context}
@@ -43,7 +45,13 @@ We collected all the closed issue reports from as many projects as possible in t
 % However, our studied projects account for only less than 2\% of all the projects. 
 % We believe that the selection of repositories is not biased because we randomly selected these repositories. 
 
-
+\input{tables/issue-category}
+\input{figures/data-category-trend}
+% \input{tables/issue-ex}
+% We extract a part of the retrieved issues in \tab{tab:example-dataset}. 
+% Each row corresponds to the values of the attributes of an issue. 
+%\input{tex-kondo/tables/issue-attr}
+\input{./tables/issue-attr}
 
 % \input{figures/data-collection-overview}
 
@@ -65,7 +73,6 @@ In addition, unlike Bugzilla~\citep{Bugzilla} or Jira~\citep{JIRA}, GitHub issue
 Instead,  GitHub provides default tags to indicate these resolution statuses. 
 We excluded 42,496 issues with tags indicating invalid issues (i.e., ``duplicated'', ``invalid'') or tags indicating non-bug (i.e., ``document'', ``question'', "enhancement"). Also, we removed 25,732 issue reports resolved in too short ($\leq$ 30 seconds) or long periods  ($\geq$ one year) because developers leave bugs for long years without addressing or they report issues after bug-fix. 
 
-\input{tables/issue-category}
 \noindent{\bf Dataset summary.} The final dataset contains 226,286 issue reports,  18,760 images, and 1,230 videos. 
 These issue reports are classified into three categories based on whether they have either image(s) or video(s). 
 \tab{tab:issue-category} shows the number of issue reports for each category. 
@@ -75,7 +82,6 @@ Thus, the total number of downloaded issue reports (i.e., 226,286) is different 
 In this paper, we refer to the issue reports in the $Img$ and $Vid$ categories
 as \textit{visual issue reports}. 
 
-\input{figures/data-category-trend}
 On average, issue reports categorized in $Vid$ have 1.1 videos and issue reports in $Img$ have 1.5 images.  
 Out of the collected issues, only 9.09\% of issue reports have images, and 0.54\% have videos. 
 While this number seems to be small, looking into the trend shown in \fig{fig:data-cat-trend}, the rate of visual issue reports by year is increasing from 2017 to 2021. 
@@ -83,11 +89,6 @@ The ratio of visual issue reports reached to 13\% between 2017 and 2021.
 Also, we found that GitHub officially launched the feature to share videos in May 2021 but developers often had uploaded videos before the beta release of the feature~\citep{github-video-blog-beta}. 
 We manually looked into issue reports and then found that GitHub had allowed users to attach GIF files on the descriptions.
 
-% \input{tables/issue-ex}
-% We extract a part of the retrieved issues in \tab{tab:example-dataset}. 
-% Each row corresponds to the values of the attributes of an issue. 
-%\input{tex-kondo/tables/issue-attr}
-\input{./tables/issue-attr}
 \subsection{Analysis}
 \noindent{\bf Attributes.} We retrieved attributes from the collected issue reports. \tab{tab:issue-attr} shows six attributes used in this study, which are classified into three dimensions, ``Report'', ``Discussion'', and ``Fix''. 
 
